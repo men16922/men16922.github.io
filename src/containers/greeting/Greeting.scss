@@ -3,59 +3,76 @@
 .main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 4rem;
 }
+
 .greet-main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
 .greeting-main {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; // 기존 2rem에서 축소
+  flex-wrap: wrap;
+}
+
+.greeting-text-div {
+  flex: 1;
+  max-width: 580px; // 약간 축소해서 양쪽 여백 확보
+  margin-right: 1rem; // 살짝 오른쪽 여백만
+}
+
+.greeting-image-div {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-image-div > img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-left: 0; // 불필요한 여백 제거
+}
+
+
+.greeting-text {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: $textColor !important;
+  margin-bottom: 1rem;
+}
+
+.greeting-text-p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: $subTitle;
 }
 
 .subTitle {
   color: $subTitle !important;
 }
 
-.greeting-main {
-  display: flex;
-}
-
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-
-.empty-div {
-  margin-bottom: 40px;
-}
-
 .button-greeting-div {
   display: flex;
-  margin-top: 40px;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
+
 .download-link-button {
   text-decoration: none;
-}
-
-.greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
-  color: $textColor !important;
-}
-
-.greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
 }
 
 .wave-emoji {
@@ -67,61 +84,57 @@
 }
 
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(12deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(9deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ---------------------- */
+/* Media Queries          */
+/* ---------------------- */
+@media (max-width: 1024px) {
+  .greeting-text {
+    font-size: 36px;
   }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
+
+  .greeting-text-p {
+    font-size: 16px;
   }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-p {
-    font-size: 20px;
-  }
-}
 @media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
-  }
-  .greeting-text {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
   .greeting-main {
-    display: block;
+    flex-direction: column;
+    text-align: center;
   }
+
   .greeting-image-div {
-    height: 256px;
+    margin-top: 1rem;
+  }
+
+  .greeting-text-div {
+    margin-right: 0;
+  }
+
+  .greeting-text {
+    font-size: 28px;
+  }
+
+  .greeting-text-p {
+    font-size: 15px;
+  }
+
+  .button-greeting-div {
+    justify-content: center;
   }
 }
 
 @media (max-width: 320px) {
   .main {
-    width: auto;
+    width: 100%;
   }
 }

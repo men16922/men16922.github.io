@@ -1,389 +1,457 @@
-/* Change this file to get your personal Portfolio */
-
-// To change portfolio colors globally go to the  _globalColor.scss file
+// Customized developerFolio config for Byung Min Choi
 
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import splashAnimation from "./assets/lottie/splashAnimation";
 
-// Splash Screen
 
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
+  enabled: true,
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 2000
 };
 
-// Summary And Greeting Section
-
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: false
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
-  subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
-  ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+  username: "Byung Min Choi (Paul)",
+  title: "Hi, I'm Byung Min Choi (Paul)",
+  subTitle: `
+• Backend Engineer with 5+ years of experience building scalable microservices
+• Proficient in Java, Spring Boot, Kafka, Redis, and PostgreSQL
+• Cloud-native architect with production experience on AWS and Kubernetes (EKS)
+• Strong focus on DevOps practices: CI/CD, Infrastructure as Code (Terraform)
+• Passionate about system design, observability, and platform reliability
+  `,
+  resumeLink: "https://www.notion.so/0dab080e9ccf490a8391be50fa01448f",
+  displayGreeting: true
 };
 
-// Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  github: "https://github.com/men16922",
+  linkedin: "https://www.linkedin.com/in/%EB%B3%91%EB%AF%BC-%EC%B5%9C-99a192244/",
+  gmail: "men16922@gmail.com",
+  gitlab: "",
+  facebook: "",
+  medium: "",
+  stackoverflow: "",
+  display: true
 };
-
-// Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "BACKEND/PLATFORM ENGINEER",
+  subTitle: "BACKEND ENGINEER FOCUSED ON CLOUD-NATIVE, SCALABLE SYSTEMS",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    emoji("⚡ Develop scalable backend services with Java, Spring Boot, and microservices architecture"),
+    emoji("⚡ Deploy and manage production-grade workloads on AWS + EKS EC2/Fargate"),
+    emoji("⚡ Automate infrastructure using Terraform and GitHub Actions")
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Education Section
-
-const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
-  schools: [
-    {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
-    },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
-    }
+    { skillName: "Java", fontAwesomeClassname: "fab fa-java" },
+    { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
+    { skillName: "Oracle", fontAwesomeClassname: "fas fa-circle" },
+    { skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "MongoDB", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "Redis", fontAwesomeClassname: "fas fa-memory" },
+    { skillName: "Kafka", fontAwesomeClassname: "fas fa-stream" },
+    { skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line" },
+    { skillName: "Linux", fontAwesomeClassname: "fab fa-linux" },
+    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
+    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
+    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" }
   ]
+,
+  display: true
 };
-
-// Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true,
   experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+    { Stack: "Java / Spring Boot", progressPercentage: "85%" },
+    { Stack: "Microservices Architecture (MSA)", progressPercentage: "80%" },
+    { Stack: "Site Reliable Engineering", progressPercentage: "75%" },
+    { Stack: "RDBMS", progressPercentage: "70%" },
+    { Stack: "System Architecture", progressPercentage: "75%" },
+    { Stack: "AWS / EKS", progressPercentage: "70%" },
+    { Stack: "Observability", progressPercentage: "60%" },
+    { Stack: "Redis", progressPercentage: "70%" },
+    { Stack: "kafka", progressPercentage: "70%" }
+  ]
 };
 
-// Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Backend Developer / Technical Architect",
+      company: "Hyundai AutoEver",
+      companylogo: require("./assets/images/hyundaiLogo2.png"),
+      date: "2023 – Present",
+      desc: "Led backend architecture for Hyundai’s global EV charging platform (eMSP), including Indonesia deployment and unified global app.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Designed subscription/payment/vehicle/member services with Spring Boot & Kafka",
+        "Integrated OAuth2 (HMG ID 2.0) and HMG Pay 2.0 recurring billing",
+        "Built BFF/BFI gateways and deployed services on AWS EKS Fargate",
+        "Streamed domain events to MongoDB for analytics via Eventuate Tram",
+        "Owned observability and CI/CD pipeline design"
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "SRE Engineer",
+      company: "Bithumb Korea",
+      companylogo: require("./assets/images/bithumb.png"),
+      date: "2022 – 2023",
+      desc: "Improved system reliability and monitoring for high-volume crypto exchange infrastructure.",
+      descBullets: [
+        "Developed batch monitoring platform with Slack alerting",
+        "Built Kafka-based log alerting system with retry logic",
+        "Created dashboards for trade/FDS consistency tracking",
+        "Migrated secrets to AWS Secrets Manager with Spring integration",
+        "Led postmortem culture and SRE dashboard adoption"
+      ]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Backend Developer",
+      company: "Danal",
+      companylogo: require("./assets/images/Danal.png"),
+      date: "2020 – 2022",
+      desc: "Developed global/domestic payment APIs and simplified payment solutions for PG platforms.",
+      descBullets: [
+        "Built Cafe24, LG Pay, Alipay, BOKU, and EXIMBAY payment integrations",
+        "Handled recurring billing, cancellation, and refund APIs",
+        "Used Spring Boot, Batch, Gateway, JPA/MyBatis across projects",
+        "Built centralized ELK-based logging for international services",
+        "Collaborated with global vendors on API and system integration"
+      ]
     }
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
 
-const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+
+const educationInfo = {
+
+  schools: [
+  {
+        schoolName: "Handong Global University",
+        logo: require("./assets/images/HGU.png"),
+        subHeader: "Bachelor of Science in Computer Science",
+        duration: "February 2011 - February 2020",
+        desc: "Dual B.S. in Computer & Electronic Engineering and Business Economics"
+      }
+  ],
+  display: true
 };
 
-// Some big projects you have worked on
+const openSource = {
+  showGithubProfile: "true",
+  display: true
+};
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Key Projects",
+  subtitle: "SIGNIFICANT WORK I'VE LED OR CONTRIBUTED TO",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/hyundaiLogo.png"),
+      projectName: "Global eMSP Platform (Hyundai AutoEver)",
+      projectDesc:
+        "Led backend architecture and implementation of Hyundai’s global EV charging platform. Built subscription, member, vehicle, and payment domains with microservice architecture. Integrated HMG ID (OAuth2.0) and HMG Pay (real-time billing), and deployed services on AWS EKS Fargate. As a Technical Architect, designed observability stack using ADOT Collector, CloudWatch, and X-Ray to enable tracing, metrics, and log correlation across Fargate workloads.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/hyundaiLogo.png"),
+      projectName: "Indonesia EV Infrastructure Design",
+      projectDesc:
+        "Proposed migration strategy to AMPECO platform for Indonesia EV charging market. Delivered architectural design covering subscription, home/public charging, and backend system transition. Delivered directly to Hyundai AutoEver Indonesia.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
+                  name: "More on Notion",
+                  url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                }
       ]
-    }
+    },
+    {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Batch Monitoring Platform",
+          projectDesc:
+            "Developed a unified batch monitoring system covering critical services (FDS, trading, assets, AML). Integrated multi-DB sources (MySQL, Oracle) and provided Slack-based real-time alerts for missed, failed, or delayed batch executions.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Kafka-based Log Alerting System",
+          projectDesc:
+            "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "SecretsManager Integration",
+          projectDesc:
+            "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Proxy Access Log Aggregation",
+          projectDesc:
+            "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Monitoring Console Development",
+          projectDesc:
+            "Developed frontend React-based dashboard for alert settings (Kafka lag, batch jobs), and Spring Security-based OTP/IP login controls. Built modular UI using Antd + Tailwind with scope-aware access management.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+    {
+          image: require("./assets/images/Danal.png"),
+          projectName: "Cafe24 PG Platform",
+          projectDesc:
+            "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "LG Pay & BOKU Simplified Payment",
+          projectDesc:
+            "Integrated LG Pay and BOKU payment gateways including method registration, payment, refund, and status sync. Developed caching and batch systems (e.g. exchange rate) using Spring Batch and Spring Cache.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "Global Payment Gateway API",
+          projectDesc:
+            "Built unified overseas payment APIs via Spring Cloud Gateway. Supported 1-time and recurring flows, routing, and filter logic. Collaborated with global providers (Alipay, EXIMBAY, Cybersource) for full-cycle payment integration.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "Alipay & Cybersource Integration",
+          projectDesc:
+            "Implemented authentication, recurring billing, refund, and merchant registration APIs for Alipay and Visa Cybersource. Delivered Hosted Checkout + REST API flows and maintained direct communication with payment providers.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "UnionPay Prepaid Ops",
+          projectDesc:
+            "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "ELK-based Logging System",
+          projectDesc:
+            "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Achievement Section
-// Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
+  title: emoji("Certifications & Awards 🏆"),
+  subtitle: "Certifications and achievements",
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
-      subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+      title: "AWS Certified Solutions Architect – Associate",
+      subtitle: "Verified by AWS in 2025",
+      image: require("./assets/images/aws_cert.png"),
+      imageAlt: "AWS Logo",
       footerLink: [
         {
           name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
+          url: "https://www.credly.com/badges/72e4e35c-7d5f-4420-99af-03614d6eae2c/linked_in_profile"
         }
       ]
     },
     {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
+          title: "SQLD (SQL Developer)",
+          subtitle: "Issued by Korea Data Agency (한국데이터산업진흥원) in 2022",
+          image: require("./assets/images/sqld.png"),
+          imageAlt: "SQLD Certificate",
+          footerLink: [
+            {
+              name: "More Info",
+              url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+            }
+          ]
     },
-
     {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
+              title: "Hyundai SPA (Speaking Proficiency Assessment) 46",
+              subtitle: "Issued by HMG in 2024",
+              image: require("./assets/images/HMC.png"),
+              imageAlt: "SQLD Certificate",
+              footerLink: [
+                {
+                  name: "More Info",
+                  url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+                }
+              ]
+    },
+    {
+          title: "정보처리기사 (Engineer Information Processing)",
+          subtitle: "Issued by HRDK (한국산업인력공단) in 2019",
+          image: require("./assets/images/kr_cert.png"),
+          imageAlt: "정보처리기사 Certificate",
+          footerLink: [
+            {
+                name: "More Info",
+                url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+            }
+          ]
+        },
         {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
+          title: "OPIC - AL",
+          subtitle: "Issued by ACTFL / YBM in 2021",
+          image: require("./assets/images/opic.png"),
+          imageAlt: "OPIc Certificate",
+          footerLink: [
+            {
+                name: "More Info",
+                url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+            }
+          ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
-
-// Blogs Section
 
 const blogSection = {
-  title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  title: "Technical Writings",
+  subtitle: "A few articles I've written about backend systems and DevOps",
+  displayMediumBlogs: "false",
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+      url: "https://www.notion.so/SRE-Service-Reliable-Engineering-1a14c2420ac48010bf5cdb4ec9439bad",
+      title: "Site Reliable Engineering",
+      description: "SRE Introduction"
     },
     {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+          url: "https://www.notion.so/1b84c2420ac4800aabecc3f08a77eb0f",
+          title: "Software Architecture Design",
+          description: "Software Architecture Design"
+    },
+    {
+              url: "https://www.notion.so/Apache-Kafka-1dc4c2420ac4806b94bacccc38739f13",
+              title: "Apache Kafka",
+              description: "Fundamentals of Kafka"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Talks Sections
 
 const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
+  title: "Studies",
+  subtitle: emoji("Sharing backend scaling & cloud infrastructure knowledge."),
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      title: "Tech Study Notes",
+      subtitle: "Personal notion study notes",
+      slides_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
+      event_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
+      date: "Ongoing",
+      location: "Notion"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Podcast Section
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "Coming soon.",
+  podcast: [],
+  display: false
 };
 
-// Resume Section
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "Download my latest resume here.",
+  display: true
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  title: "Contact Me",
+  subtitle: "Feel free to reach out!",
+  number: "+82-10-4602-1692",
+  email_address: "men16922@gmail.com"
 };
-
-// Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  userName: "",
+  display: false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true;
 
 export {
   illustration,

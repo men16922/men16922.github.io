@@ -8,6 +8,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import profileImage from "../../assets/images/profile.jpg";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -34,7 +35,12 @@ export default function Greeting() {
                     : "greeting-text-p subTitle"
                 }
               >
-                {greeting.subTitle}
+                {greeting.subTitle.split("\n").map((line, index) => (
+                     <span key={index}>
+                       {line}
+                       <br />
+                     </span>
+                   ))}
               </p>
               <div id="resume" className="empty-div"></div>
               <SocialMedia />
@@ -42,11 +48,12 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
+                    href={greeting.resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="View My Resume" />
                   </a>
                 )}
               </div>
@@ -57,9 +64,17 @@ export default function Greeting() {
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
+                alt="profile"
+                src={profileImage}
+                style={{
+                  width: "240px",
+                      height: "auto",         // 비율 유지
+                      borderRadius: "12px",   // 원형 대신 라운드 사각형
+                      objectFit: "contain",
+                      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
+                      backgroundColor: "#fff"
+                }}
+              />
             )}
           </div>
         </div>
