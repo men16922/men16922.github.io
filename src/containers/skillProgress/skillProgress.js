@@ -8,7 +8,7 @@ export default function StackProgress() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="skills-container-full"> {/* 수정된 컨테이너 */}
+      <div className="skills-container"> {/* 수정된 컨테이너 */}
         <div className="skills-bar">
           <h1 className="skills-heading">Proficiency</h1>
           {techStack.experience.map((exp, i) => {

@@ -167,18 +167,18 @@ const bigProjects = {
         }
       ]
     },
-//    {
-//      image: require("./assets/images/hyundaiLogo.png"),
-//      projectName: "Indonesia EV Infrastructure Design",
-//      projectDesc:
-//        "Proposed migration strategy to AMPECO platform for Indonesia EV charging market. Delivered architectural design covering subscription, home/public charging, and backend system transition. Delivered directly to Hyundai AutoEver Indonesia.",
-//      footerLink: [
-//        {
-//                  name: "More on Notion",
-//                  url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//                }
-//      ]
-//    },
+    {
+      image: require("./assets/images/hyundaiLogo.png"),
+      projectName: "Indonesia EV Infrastructure Design",
+      projectDesc:
+        "Proposed migration strategy to AMPECO platform for Indonesia EV charging market. Delivered architectural design covering subscription, home/public charging, and backend system transition. Delivered directly to Hyundai AutoEver Indonesia.",
+      footerLink: [
+        {
+                  name: "More on Notion",
+                  url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                }
+      ]
+    },
     {
           image: require("./assets/images/bithumb.png"),
           projectName: "Batch Monitoring Platform",
@@ -191,42 +191,42 @@ const bigProjects = {
                     }
           ]
         },
-//        {
-//          image: require("./assets/images/bithumb.png"),
-//          projectName: "Kafka-based Log Alerting System",
-//          projectDesc:
-//            "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
-//          footerLink: [
-//            {
-//                      name: "More on Notion",
-//                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//                    }
-//          ]
-//        },
-//        {
-//          image: require("./assets/images/bithumb.png"),
-//          projectName: "SecretsManager Integration",
-//          projectDesc:
-//            "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
-//          footerLink: [
-//            {
-//                      name: "More on Notion",
-//                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//                    }
-//          ]
-//        },
-//        {
-//          image: require("./assets/images/bithumb.png"),
-//          projectName: "Proxy Access Log Aggregation",
-//          projectDesc:
-//            "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
-//          footerLink: [
-//            {
-//                      name: "More on Notion",
-//                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//                    }
-//          ]
-//        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Kafka-based Log Alerting System",
+          projectDesc:
+            "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "SecretsManager Integration",
+          projectDesc:
+            "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
+        {
+          image: require("./assets/images/bithumb.png"),
+          projectName: "Proxy Access Log Aggregation",
+          projectDesc:
+            "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
+          footerLink: [
+            {
+                      name: "More on Notion",
+                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+                    }
+          ]
+        },
         {
           image: require("./assets/images/bithumb.png"),
           projectName: "Monitoring Console Development",
@@ -239,18 +239,18 @@ const bigProjects = {
                     }
           ]
         },
-//    {
-//          image: require("./assets/images/Danal.png"),
-//          projectName: "Cafe24 PG Platform",
-//          projectDesc:
-//            "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
-//          footerLink: [
-//            {
-//              name: "More on Notion",
-//              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//            }
-//          ]
-//        },
+    {
+          image: require("./assets/images/Danal.png"),
+          projectName: "Cafe24 PG Platform",
+          projectDesc:
+            "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
         {
           image: require("./assets/images/Danal.png"),
           projectName: "LG Pay & BOKU Simplified Payment",
@@ -286,31 +286,31 @@ const bigProjects = {
               url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
             }
           ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "UnionPay Prepaid Ops",
+          projectDesc:
+            "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
+        },
+        {
+          image: require("./assets/images/Danal.png"),
+          projectName: "ELK-based Logging System",
+          projectDesc:
+            "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
+          footerLink: [
+            {
+              name: "More on Notion",
+              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+            }
+          ]
         }
-//        {
-//          image: require("./assets/images/Danal.png"),
-//          projectName: "UnionPay Prepaid Ops",
-//          projectDesc:
-//            "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
-//          footerLink: [
-//            {
-//              name: "More on Notion",
-//              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//            }
-//          ]
-//        },
-//        {
-//          image: require("./assets/images/Danal.png"),
-//          projectName: "ELK-based Logging System",
-//          projectDesc:
-//            "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
-//          footerLink: [
-//            {
-//              name: "More on Notion",
-//              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-//            }
-//          ]
-//        }
   ],
   display: true
 };
