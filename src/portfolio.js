@@ -411,15 +411,15 @@ const blogSection = {
 
 const talkSection = {
   title: "Studies",
-  subtitle: emoji("Sharing backend scaling & cloud infrastructure knowledge."),
+  subtitle: emoji("Engineering, Architecture, DevOps – Curated by Me"),
   talks: [
     {
-      title: "Tech Study Notes",
-      subtitle: "Personal notion study notes",
+      title: "Engineering Knowledge Base",
+      subtitle: "Notion-based technical archive: Java, Spring, DevOps, System Design",
       slides_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
       event_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
       date: "Ongoing",
-      location: "Notion"
+      location: "Notion Workspace"
     }
   ],
   display: true
