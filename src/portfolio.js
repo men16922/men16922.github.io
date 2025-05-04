@@ -148,7 +148,7 @@ const educationInfo = {
 
 const openSource = {
   showGithubProfile: "true",
-  display: true
+  display: false
 };
 
 const bigProjects = {
