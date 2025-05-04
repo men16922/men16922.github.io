@@ -35,7 +35,7 @@ const socialMediaLinks = {
   gmail: "men16922@gmail.com",
   gitlab: "",
   facebook: "",
-  medium: "",
+  medium: "https://medium.com/@men16922",
   stackoverflow: "",
   display: true
 };
@@ -387,7 +387,7 @@ const achievementSection = {
 const blogSection = {
   title: "Technical Writings",
   subtitle: "A few articles I've written about backend systems and DevOps",
-  displayMediumBlogs: "false",
+  displayMediumBlogs: "true",
   blogs: [
     {
       url: "https://www.notion.so/SRE-Service-Reliable-Engineering-1a14c2420ac48010bf5cdb4ec9439bad",

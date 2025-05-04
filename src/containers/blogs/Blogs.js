@@ -62,35 +62,34 @@ export default function Blogs() {
         </div>
         <div className="blog-main-div">
           <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
-            mediumBlogs === "Error"
-              ? blogSection.blogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.url,
-                        image: blog.image,
-                        title: blog.title,
-                        description: blog.description
-                      }}
-                    />
-                  );
-                })
-              : mediumBlogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.link,
-                        title: blog.title,
-                        description: extractTextContent(blog.content)
-                      }}
-                    />
-                  );
-                })}
+            {/* 직접 추가한 블로그 먼저 렌더링 */}
+            {blogSection.blogs.map((blog, i) => (
+              <BlogCard
+                key={`manual-${i}`}
+                isDark={isDark}
+                blog={{
+                  url: blog.url,
+                  image: blog.image,
+                  title: blog.title,
+                  description: blog.description
+                }}
+              />
+            ))}
+
+            {/* Medium에서 가져온 블로그도 렌더링 */}
+            {blogSection.displayMediumBlogs === "true" &&
+              mediumBlogs !== "Error" &&
+              mediumBlogs.map((blog, i) => (
+                <BlogCard
+                  key={`medium-${i}`}
+                  isDark={isDark}
+                  blog={{
+                    url: blog.link,
+                    title: blog.title,
+                    description: extractTextContent(blog.content)
+                  }}
+                />
+              ))}
           </div>
         </div>
       </div>
