@@ -389,23 +389,9 @@ const blogSection = {
   subtitle: "A few articles I've written about backend systems and DevOps",
   displayMediumBlogs: "true",
   blogs: [
-    {
-      url: "https://www.notion.so/SRE-Service-Reliable-Engineering-1a14c2420ac48010bf5cdb4ec9439bad",
-      title: "Site Reliable Engineering",
-      description: "SRE Introduction"
-    },
-    {
-          url: "https://www.notion.so/1b84c2420ac4800aabecc3f08a77eb0f",
-          title: "Software Architecture Design",
-          description: "Software Architecture Design"
-    },
-    {
-              url: "https://www.notion.so/Apache-Kafka-1dc4c2420ac4806b94bacccc38739f13",
-              title: "Apache Kafka",
-              description: "Fundamentals of Kafka"
-    }
+
   ],
-  display: true
+  display: false
 };
 
 
