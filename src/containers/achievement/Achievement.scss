@@ -9,15 +9,15 @@
 }
 
 .achievement-section {
-  @extend .section-container;  // ✅ 폭 제한 공통 클래스 적용
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+  @extend .section-container; // ✅ 폭 제한 공통 클래스 적용
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .achievement-heading {
-  font-size: 48px;         // ✅ 기존 56 → 48
+  font-size: 48px; // ✅ 기존 56 → 48
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 1rem;

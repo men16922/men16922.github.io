@@ -3,7 +3,6 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation";
 
-
 const splashScreen = {
   enabled: true,
   animation: splashAnimation,
@@ -28,10 +27,10 @@ const greeting = {
   displayGreeting: true
 };
 
-
 const socialMediaLinks = {
   github: "https://github.com/men16922",
-  linkedin: "https://www.linkedin.com/in/%EB%B3%91%EB%AF%BC-%EC%B5%9C-99a192244/",
+  linkedin:
+    "https://www.linkedin.com/in/%EB%B3%91%EB%AF%BC-%EC%B5%9C-99a192244/",
   gmail: "men16922@gmail.com",
   gitlab: "",
   facebook: "",
@@ -44,43 +43,45 @@ const skillsSection = {
   title: "BACKEND/PLATFORM ENGINEER",
   subTitle: "BACKEND ENGINEER FOCUSED ON CLOUD-NATIVE, SCALABLE SYSTEMS",
   skills: [
-    emoji("⚡ Develop scalable backend services with Java, Spring Boot, and microservices architecture"),
-    emoji("⚡ Deploy and manage production-grade workloads on AWS + EKS EC2/Fargate"),
+    emoji(
+      "⚡ Develop scalable backend services with Java, Spring Boot, and microservices architecture"
+    ),
+    emoji(
+      "⚡ Deploy and manage production-grade workloads on AWS + EKS EC2/Fargate"
+    ),
     emoji("⚡ Automate infrastructure using Terraform and GitHub Actions")
   ],
   softwareSkills: [
-    { skillName: "Java", fontAwesomeClassname: "fab fa-java" },
-    { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
-    { skillName: "Oracle", fontAwesomeClassname: "fas fa-circle" },
-    { skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database" },
-    { skillName: "MongoDB", fontAwesomeClassname: "fas fa-database" },
-    { skillName: "Redis", fontAwesomeClassname: "fas fa-memory" },
-    { skillName: "Kafka", fontAwesomeClassname: "fas fa-stream" },
-    { skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line" },
-    { skillName: "Linux", fontAwesomeClassname: "fab fa-linux" },
-    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
-    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
-    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" }
-  ]
-  ,
+    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
+    {skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf"},
+    {skillName: "Oracle", fontAwesomeClassname: "fas fa-circle"},
+    {skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "MongoDB", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "Redis", fontAwesomeClassname: "fas fa-memory"},
+    {skillName: "Kafka", fontAwesomeClassname: "fas fa-stream"},
+    {skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line"},
+    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
+    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
+    {skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired"},
+    {skillName: "AWS", fontAwesomeClassname: "fab fa-aws"}
+  ],
   display: true
 };
 
 const techStack = {
   viewSkillBars: true,
   experience: [
-    { Stack: "Java / Spring Boot", progressPercentage: "85%" },
-    { Stack: "Microservices Architecture (MSA)", progressPercentage: "80%" },
-    { Stack: "Site Reliable Engineering", progressPercentage: "75%" },
-    { Stack: "RDBMS", progressPercentage: "70%" },
-    { Stack: "System Architecture", progressPercentage: "75%" },
-    { Stack: "AWS / EKS", progressPercentage: "70%" },
-    { Stack: "Observability", progressPercentage: "60%" },
-    { Stack: "Redis", progressPercentage: "70%" },
-    { Stack: "kafka", progressPercentage: "70%" }
+    {Stack: "Java / Spring Boot", progressPercentage: "85%"},
+    {Stack: "Microservices Architecture (MSA)", progressPercentage: "80%"},
+    {Stack: "Site Reliable Engineering", progressPercentage: "75%"},
+    {Stack: "RDBMS", progressPercentage: "70%"},
+    {Stack: "System Architecture", progressPercentage: "75%"},
+    {Stack: "AWS / EKS", progressPercentage: "70%"},
+    {Stack: "Observability", progressPercentage: "60%"},
+    {Stack: "Redis", progressPercentage: "70%"},
+    {Stack: "kafka", progressPercentage: "70%"}
   ]
 };
-
 
 const workExperiences = {
   display: true,
@@ -130,10 +131,7 @@ const workExperiences = {
   ]
 };
 
-
-
 const educationInfo = {
-
   schools: [
     {
       schoolName: "Handong Global University",
@@ -315,7 +313,6 @@ const bigProjects = {
   display: true
 };
 
-
 const achievementSection = {
   title: emoji("Certifications & Awards 🏆"),
   subtitle: "Certifications and achievements",
@@ -400,12 +397,9 @@ const blogSection = {
   title: "Technical Writings",
   subtitle: "A few articles I've written about backend systems and DevOps",
   displayMediumBlogs: "true",
-  blogs: [
-
-  ],
+  blogs: [],
   display: false
 };
-
 
 const talkSection = {
   title: "Studies",
@@ -413,16 +407,18 @@ const talkSection = {
   talks: [
     {
       title: "Engineering Knowledge Base",
-      subtitle: "Notion-based technical archive: Java, Spring, DevOps, System Design",
-      slides_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
-      event_url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
+      subtitle:
+        "Notion-based technical archive: Java, Spring, DevOps, System Design",
+      slides_url:
+        "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
+      event_url:
+        "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
       date: "Ongoing",
       location: "Notion Workspace"
     }
   ],
   display: true
 };
-
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),

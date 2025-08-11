@@ -36,11 +36,11 @@ export default function Greeting() {
                 }
               >
                 {greeting.subTitle.split("\n").map((line, index) => (
-                     <span key={index}>
-                       {line}
-                       <br />
-                     </span>
-                   ))}
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </p>
               <div id="resume" className="empty-div"></div>
               <SocialMedia />
@@ -68,11 +68,11 @@ export default function Greeting() {
                 src={profileImage}
                 style={{
                   width: "240px",
-                      height: "auto",         // 비율 유지
-                      borderRadius: "12px",   // 원형 대신 라운드 사각형
-                      objectFit: "contain",
-                      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
-                      backgroundColor: "#fff"
+                  height: "auto", // 비율 유지
+                  borderRadius: "12px", // 원형 대신 라운드 사각형
+                  objectFit: "contain",
+                  boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: "#fff"
                 }}
               />
             )}

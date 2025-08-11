@@ -18,11 +18,11 @@
 }
 
 .repo-cards-div-main {
-  @extend .section-container;  // ✅ 폭 제한 공통 클래스 적용
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+  @extend .section-container; // ✅ 폭 제한 공통 클래스 적용
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 /* Media Query */

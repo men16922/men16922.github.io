@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import { skillsSection } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {skillsSection} from "../../portfolio";
+import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Skills() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
   if (!skillsSection.display) {
     return null;
   }
@@ -17,9 +17,7 @@ export default function Skills() {
         <Fade right duration={1000}>
           <div className="skills-text-div">
             <h1
-              className={
-                isDark ? "dark-mode skills-heading" : "skills-heading"
-              }
+              className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >
               {skillsSection.title}
             </h1>
