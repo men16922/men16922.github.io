@@ -62,7 +62,7 @@ const skillsSection = {
     { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
     { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" }
   ]
-,
+  ,
   display: true
 };
 
@@ -135,13 +135,13 @@ const workExperiences = {
 const educationInfo = {
 
   schools: [
-  {
-        schoolName: "Handong Global University",
-        logo: require("./assets/images/HGU.png"),
-        subHeader: "Bachelor of Science in Computer Science",
-        duration: "February 2011 - February 2020",
-        desc: "Dual B.S. in Computer & Electronic Engineering and Business Economics"
-      }
+    {
+      schoolName: "Handong Global University",
+      logo: require("./assets/images/HGU.png"),
+      subHeader: "Bachelor of Science in Computer Science",
+      duration: "February 2011 - February 2020",
+      desc: "Dual B.S. in Computer & Electronic Engineering and Business Economics"
+    }
   ],
   display: true
 };
@@ -174,143 +174,143 @@ const bigProjects = {
         "Proposed migration strategy to AMPECO platform for Indonesia EV charging market. Delivered architectural design covering subscription, home/public charging, and backend system transition. Delivered directly to Hyundai AutoEver Indonesia.",
       footerLink: [
         {
-                  name: "More on Notion",
-                  url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                }
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
       ]
     },
     {
-          image: require("./assets/images/bithumb.png"),
-          projectName: "Batch Monitoring Platform",
-          projectDesc:
-            "Developed a unified batch monitoring system covering critical services (FDS, trading, assets, AML). Integrated multi-DB sources (MySQL, Oracle) and provided Slack-based real-time alerts for missed, failed, or delayed batch executions.",
-          footerLink: [
-            {
-                      name: "More on Notion",
-                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                    }
-          ]
-        },
+      image: require("./assets/images/bithumb.png"),
+      projectName: "Batch Monitoring Platform",
+      projectDesc:
+        "Developed a unified batch monitoring system covering critical services (FDS, trading, assets, AML). Integrated multi-DB sources (MySQL, Oracle) and provided Slack-based real-time alerts for missed, failed, or delayed batch executions.",
+      footerLink: [
         {
-          image: require("./assets/images/bithumb.png"),
-          projectName: "Kafka-based Log Alerting System",
-          projectDesc:
-            "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
-          footerLink: [
-            {
-                      name: "More on Notion",
-                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                    }
-          ]
-        },
-        {
-          image: require("./assets/images/bithumb.png"),
-          projectName: "SecretsManager Integration",
-          projectDesc:
-            "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
-          footerLink: [
-            {
-                      name: "More on Notion",
-                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                    }
-          ]
-        },
-        {
-          image: require("./assets/images/bithumb.png"),
-          projectName: "Proxy Access Log Aggregation",
-          projectDesc:
-            "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
-          footerLink: [
-            {
-                      name: "More on Notion",
-                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                    }
-          ]
-        },
-        {
-          image: require("./assets/images/bithumb.png"),
-          projectName: "Monitoring Console Development",
-          projectDesc:
-            "Developed frontend React-based dashboard for alert settings (Kafka lag, batch jobs), and Spring Security-based OTP/IP login controls. Built modular UI using Antd + Tailwind with scope-aware access management.",
-          footerLink: [
-            {
-                      name: "More on Notion",
-                      url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-                    }
-          ]
-        },
-    {
-          image: require("./assets/images/Danal.png"),
-          projectName: "Cafe24 PG Platform",
-          projectDesc:
-            "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
-        },
-        {
-          image: require("./assets/images/Danal.png"),
-          projectName: "LG Pay & BOKU Simplified Payment",
-          projectDesc:
-            "Integrated LG Pay and BOKU payment gateways including method registration, payment, refund, and status sync. Developed caching and batch systems (e.g. exchange rate) using Spring Batch and Spring Cache.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
-        },
-        {
-          image: require("./assets/images/Danal.png"),
-          projectName: "Global Payment Gateway API",
-          projectDesc:
-            "Built unified overseas payment APIs via Spring Cloud Gateway. Supported 1-time and recurring flows, routing, and filter logic. Collaborated with global providers (Alipay, EXIMBAY, Cybersource) for full-cycle payment integration.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
-        },
-        {
-          image: require("./assets/images/Danal.png"),
-          projectName: "Alipay & Cybersource Integration",
-          projectDesc:
-            "Implemented authentication, recurring billing, refund, and merchant registration APIs for Alipay and Visa Cybersource. Delivered Hosted Checkout + REST API flows and maintained direct communication with payment providers.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
-        },
-        {
-          image: require("./assets/images/Danal.png"),
-          projectName: "UnionPay Prepaid Ops",
-          projectDesc:
-            "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
-        },
-        {
-          image: require("./assets/images/Danal.png"),
-          projectName: "ELK-based Logging System",
-          projectDesc:
-            "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
-          footerLink: [
-            {
-              name: "More on Notion",
-              url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-            }
-          ]
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
         }
+      ]
+    },
+    {
+      image: require("./assets/images/bithumb.png"),
+      projectName: "Kafka-based Log Alerting System",
+      projectDesc:
+        "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/bithumb.png"),
+      projectName: "SecretsManager Integration",
+      projectDesc:
+        "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/bithumb.png"),
+      projectName: "Proxy Access Log Aggregation",
+      projectDesc:
+        "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/bithumb.png"),
+      projectName: "Monitoring Console Development",
+      projectDesc:
+        "Developed frontend React-based dashboard for alert settings (Kafka lag, batch jobs), and Spring Security-based OTP/IP login controls. Built modular UI using Antd + Tailwind with scope-aware access management.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "Cafe24 PG Platform",
+      projectDesc:
+        "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "LG Pay & BOKU Simplified Payment",
+      projectDesc:
+        "Integrated LG Pay and BOKU payment gateways including method registration, payment, refund, and status sync. Developed caching and batch systems (e.g. exchange rate) using Spring Batch and Spring Cache.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "Global Payment Gateway API",
+      projectDesc:
+        "Built unified overseas payment APIs via Spring Cloud Gateway. Supported 1-time and recurring flows, routing, and filter logic. Collaborated with global providers (Alipay, EXIMBAY, Cybersource) for full-cycle payment integration.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "Alipay & Cybersource Integration",
+      projectDesc:
+        "Implemented authentication, recurring billing, refund, and merchant registration APIs for Alipay and Visa Cybersource. Delivered Hosted Checkout + REST API flows and maintained direct communication with payment providers.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "UnionPay Prepaid Ops",
+      projectDesc:
+        "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/Danal.png"),
+      projectName: "ELK-based Logging System",
+      projectDesc:
+        "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    }
   ],
   display: true
 };
@@ -320,6 +320,18 @@ const achievementSection = {
   title: emoji("Certifications & Awards 🏆"),
   subtitle: "Certifications and achievements",
   achievementsCards: [
+    {
+      title: "Certified Kubernetes Administrator (CKA)",
+      subtitle: "Verified by The Linux Foundation in 2025",
+      image: require("./assets/images/CKA.png"),
+      imageAlt: "CKA Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/5eed101a-762a-402c-ab20-c71f268d9636"
+        }
+      ]
+    },
     {
       title: "AWS Certified Solutions Architect – Associate",
       subtitle: "Verified by AWS in 2025",
@@ -333,52 +345,52 @@ const achievementSection = {
       ]
     },
     {
-          title: "SQLD (SQL Developer)",
-          subtitle: "Issued by Korea Data Agency (한국데이터산업진흥원) in 2022",
-          image: require("./assets/images/sqld.png"),
-          imageAlt: "SQLD Certificate",
-          footerLink: [
-            {
-              name: "More Info",
-              url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
-            }
-          ]
-    },
-    {
-              title: "Hyundai SPA (Speaking Proficiency Assessment) 46",
-              subtitle: "Issued by HMG in 2024",
-              image: require("./assets/images/HMC.png"),
-              imageAlt: "SQLD Certificate",
-              footerLink: [
-                {
-                  name: "More Info",
-                  url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
-                }
-              ]
-    },
-    {
-          title: "정보처리기사 (Engineer Information Processing)",
-          subtitle: "Issued by HRDK (한국산업인력공단) in 2019",
-          image: require("./assets/images/kr_cert.png"),
-          imageAlt: "정보처리기사 Certificate",
-          footerLink: [
-            {
-                name: "More Info",
-                url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
-            }
-          ]
-        },
+      title: "SQLD (SQL Developer)",
+      subtitle: "Issued by Korea Data Agency (한국데이터산업진흥원) in 2022",
+      image: require("./assets/images/sqld.png"),
+      imageAlt: "SQLD Certificate",
+      footerLink: [
         {
-          title: "OPIC - AL",
-          subtitle: "Issued by ACTFL / YBM in 2021",
-          image: require("./assets/images/opic.png"),
-          imageAlt: "OPIc Certificate",
-          footerLink: [
-            {
-                name: "More Info",
-                url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
-            }
-          ]
+          name: "More Info",
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+        }
+      ]
+    },
+    {
+      title: "Hyundai SPA (Speaking Proficiency Assessment) 46",
+      subtitle: "Issued by HMG in 2024",
+      image: require("./assets/images/HMC.png"),
+      imageAlt: "SQLD Certificate",
+      footerLink: [
+        {
+          name: "More Info",
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+        }
+      ]
+    },
+    {
+      title: "정보처리기사 (Engineer Information Processing)",
+      subtitle: "Issued by HRDK (한국산업인력공단) in 2019",
+      image: require("./assets/images/kr_cert.png"),
+      imageAlt: "정보처리기사 Certificate",
+      footerLink: [
+        {
+          name: "More Info",
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+        }
+      ]
+    },
+    {
+      title: "OPIC - AL",
+      subtitle: "Issued by ACTFL / YBM in 2021",
+      image: require("./assets/images/opic.png"),
+      imageAlt: "OPIc Certificate",
+      footerLink: [
+        {
+          name: "More Info",
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+        }
+      ]
     }
   ],
   display: true
