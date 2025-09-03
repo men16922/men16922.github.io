@@ -318,6 +318,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "Certified Kubernetes Application Developer (CKAD)",
+      subtitle: "Verified by The Linux Foundation in 2025",
+      image: require("./assets/images/CKAD.png"),
+      imageAlt: "CKAD Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/e4893029-3ec4-40fe-a5bd-8b5979200850"
+        }
+      ]
+    },
+    {
       title: "Certified Kubernetes Administrator (CKA)",
       subtitle: "Verified by The Linux Foundation in 2025",
       image: require("./assets/images/CKA.png"),
