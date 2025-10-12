@@ -318,6 +318,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "AWS Certified Developer - Associate",
+      subtitle: "Verified by AWS in 2025",
+      image: require("./assets/images/DVA.png"),
+      imageAlt: "DVA Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/earner/earned/badge/e580c0aa-cce4-4352-83c6-4eef9e96b2a0"
+        }
+      ]
+    },
+    {
       title: "Certified Kubernetes Application Developer (CKAD)",
       subtitle: "Verified by The Linux Foundation in 2025",
       image: require("./assets/images/CKAD.png"),
@@ -342,7 +354,7 @@ const achievementSection = {
       ]
     },
     {
-      title: "AWS Certified Solutions Architect – Associate",
+      title: "AWS Certified Solutions Architect - Associate",
       subtitle: "Verified by AWS in 2025",
       image: require("./assets/images/aws_cert.png"),
       imageAlt: "AWS Logo",
