@@ -52,18 +52,18 @@ const skillsSection = {
     emoji("⚡ Automate infrastructure using Terraform and GitHub Actions")
   ],
   softwareSkills: [
-    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
-    {skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf"},
-    {skillName: "Oracle", fontAwesomeClassname: "fas fa-circle"},
-    {skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "MongoDB", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "Redis", fontAwesomeClassname: "fas fa-memory"},
-    {skillName: "Kafka", fontAwesomeClassname: "fas fa-stream"},
-    {skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line"},
-    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
-    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
-    {skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired"},
-    {skillName: "AWS", fontAwesomeClassname: "fab fa-aws"}
+    { skillName: "Java", fontAwesomeClassname: "fab fa-java" },
+    { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
+    { skillName: "Oracle", fontAwesomeClassname: "fas fa-circle" },
+    { skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "MongoDB", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "Redis", fontAwesomeClassname: "fas fa-memory" },
+    { skillName: "Kafka", fontAwesomeClassname: "fas fa-stream" },
+    { skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line" },
+    { skillName: "Linux", fontAwesomeClassname: "fab fa-linux" },
+    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
+    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
+    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" }
   ],
   display: true
 };
@@ -71,15 +71,15 @@ const skillsSection = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    {Stack: "Java / Spring Boot", progressPercentage: "85%"},
-    {Stack: "Microservices Architecture (MSA)", progressPercentage: "80%"},
-    {Stack: "Site Reliable Engineering", progressPercentage: "75%"},
-    {Stack: "RDBMS", progressPercentage: "70%"},
-    {Stack: "System Architecture", progressPercentage: "75%"},
-    {Stack: "AWS / EKS", progressPercentage: "70%"},
-    {Stack: "Observability", progressPercentage: "60%"},
-    {Stack: "Redis", progressPercentage: "70%"},
-    {Stack: "kafka", progressPercentage: "70%"}
+    { Stack: "Java / Spring Boot", progressPercentage: "85%" },
+    { Stack: "Microservices Architecture (MSA)", progressPercentage: "80%" },
+    { Stack: "Site Reliable Engineering", progressPercentage: "75%" },
+    { Stack: "RDBMS", progressPercentage: "70%" },
+    { Stack: "System Architecture", progressPercentage: "75%" },
+    { Stack: "AWS / EKS", progressPercentage: "70%" },
+    { Stack: "Observability", progressPercentage: "60%" },
+    { Stack: "Redis", progressPercentage: "70%" },
+    { Stack: "kafka", progressPercentage: "70%" }
   ]
 };
 
@@ -153,6 +153,18 @@ const bigProjects = {
   title: "Key Projects",
   subtitle: "SIGNIFICANT WORK I'VE LED OR CONTRIBUTED TO",
   projects: [
+    {
+      image: require("./assets/images/brandy-ai.png"),
+      projectName: "Brandy - AI Branding Assistant",
+      projectDesc:
+        "Built an intelligent AI agent system that automates professional branding for small businesses using Amazon Bedrock. The system generates business names, signboard designs, and interior recommendations through a 7-agent serverless architecture. Implemented with AWS Lambda, API Gateway, DynamoDB, S3, and ECS Fargate. Features include Claude 4 Sonnet for reasoning, Titan Image Generator v2 for designs, async processing with polling, and comprehensive error handling with fallback algorithms.",
+      footerLink: [
+        {
+          name: "View on Devpost",
+          url: "https://devpost.com/software/brandy-ai-branding-assistant-for-signboards-interiors"
+        }
+      ]
+    },
     {
       image: require("./assets/images/hyundaiLogo.png"),
       projectName: "Global eMSP Platform (Hyundai AutoEver)",
