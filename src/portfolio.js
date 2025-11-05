@@ -17,11 +17,12 @@ const greeting = {
   username: "Byung Min Choi (Paul)",
   title: "Hi, I'm Byung Min Choi (Paul)",
   subTitle: `
-• Backend Engineer with 5+ years of experience building scalable microservices
-• Proficient in Java, Spring Boot, Kafka, Redis, and PostgreSQL
-• Cloud-native architect with production experience on AWS and Kubernetes (EKS)
-• Strong focus on DevOps practices: CI/CD, Infrastructure as Code (Terraform)
-• Passionate about system design, observability, and platform reliability
+• Backend Engineer specializing in cloud-native microservice architecture
+• 5+ years of hands-on experience with Java (Spring Boot), Kafka, Redis, and PostgreSQL
+• Proven expertise in designing and operating distributed systems on AWS and Kubernetes (EKS)
+• Experienced in DevOps automation: CI/CD pipelines, GitOps, and Infrastructure as Code
+• Focused on observability, reliability, and scalable backend system design
+• Passionate about bridging backend engineering with AI-driven cloud automation
   `,
   resumeLink: "https://www.notion.so/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
@@ -40,30 +41,42 @@ const socialMediaLinks = {
 };
 
 const skillsSection = {
-  title: "BACKEND/PLATFORM ENGINEER",
-  subTitle: "BACKEND ENGINEER FOCUSED ON CLOUD-NATIVE, SCALABLE SYSTEMS",
+  title: "BACKEND / PLATFORM ENGINEER",
+  subTitle: "Building Reliable, Cloud-Native Systems with Spring Boot and AWS",
   skills: [
     emoji(
-      "⚡ Develop scalable backend services with Java, Spring Boot, and microservices architecture"
+      "⚡ Design and develop scalable backend microservices using Java, Spring Boot, and RESTful APIs"
     ),
     emoji(
-      "⚡ Deploy and manage production-grade workloads on AWS + EKS EC2/Fargate"
+      "⚡ Deploy and operate resilient workloads on AWS and Kubernetes (EKS on EC2/Fargate)"
     ),
-    emoji("⚡ Automate infrastructure using Terraform and GitHub Actions")
+    emoji(
+      "⚡ Automate CI/CD pipelines and infrastructure provisioning with IaaC and GitHub Actions"
+    ),
+    emoji(
+      "⚡ Implement observability practices — metrics, logging, and tracing — for production reliability"
+    ),
+    emoji(
+      "⚡ Optimize system architecture and cost efficiency through cloud-native patterns"
+    )
   ],
   softwareSkills: [
-    { skillName: "Java", fontAwesomeClassname: "fab fa-java" },
-    { skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf" },
-    { skillName: "Oracle", fontAwesomeClassname: "fas fa-circle" },
-    { skillName: "MySQL/ PostgreSQL", fontAwesomeClassname: "fas fa-database" },
-    { skillName: "MongoDB", fontAwesomeClassname: "fas fa-database" },
-    { skillName: "Redis", fontAwesomeClassname: "fas fa-memory" },
-    { skillName: "Kafka", fontAwesomeClassname: "fas fa-stream" },
-    { skillName: "ELK Stack", fontAwesomeClassname: "fas fa-chart-line" },
-    { skillName: "Linux", fontAwesomeClassname: "fab fa-linux" },
-    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
-    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
-    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" }
+    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
+    {skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf"},
+    {skillName: "PostgreSQL / MySQL / Oracle", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "MongoDB", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "Redis", fontAwesomeClassname: "fas fa-memory"},
+    {skillName: "Kafka", fontAwesomeClassname: "fas fa-stream"},
+    {
+      skillName: "ELK Stack / OpenTelemetry",
+      fontAwesomeClassname: "fas fa-chart-line"
+    },
+    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
+    {skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired"},
+    {skillName: "AWS", fontAwesomeClassname: "fab fa-aws"},
+    {skillName: "CloudFormation", fontAwesomeClassname: "fas fa-code-branch"},
+    {skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github"},
+    {skillName: "React", fontAwesomeClassname: "fab fa-react"}
   ],
   display: true
 };
@@ -71,15 +84,15 @@ const skillsSection = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    { Stack: "Java / Spring Boot", progressPercentage: "85%" },
-    { Stack: "Microservices Architecture (MSA)", progressPercentage: "80%" },
-    { Stack: "Site Reliable Engineering", progressPercentage: "75%" },
-    { Stack: "RDBMS", progressPercentage: "70%" },
-    { Stack: "System Architecture", progressPercentage: "75%" },
-    { Stack: "AWS / EKS", progressPercentage: "70%" },
-    { Stack: "Observability", progressPercentage: "60%" },
-    { Stack: "Redis", progressPercentage: "70%" },
-    { Stack: "kafka", progressPercentage: "70%" }
+    {Stack: "Java / Spring Boot", progressPercentage: "90%"},
+    {Stack: "Microservices Architecture (MSA)", progressPercentage: "85%"},
+    {Stack: "AWS / EKS (Cloud-Native Ops)", progressPercentage: "80%"},
+    {Stack: "System Design & Architecture", progressPercentage: "80%"},
+    {Stack: "Site Reliability Engineering (SRE)", progressPercentage: "75%"},
+    {Stack: "Kafka / Event-Driven Systems", progressPercentage: "75%"},
+    {Stack: "Redis / Caching", progressPercentage: "70%"},
+    {Stack: "RDBMS / PostgreSQL & MySQL & Oracle", progressPercentage: "70%"},
+    {Stack: "Observability (ELK, OTEL)", progressPercentage: "70%"}
   ]
 };
 
@@ -155,9 +168,12 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/brandy-ai.png"),
-      projectName: "Brandy - AI Branding Assistant",
-      projectDesc:
-        "Built an intelligent AI agent system that automates professional branding for small businesses using Amazon Bedrock. The system generates business names, signboard designs, and interior recommendations through a 7-agent serverless architecture. Implemented with AWS Lambda, API Gateway, DynamoDB, S3, and ECS Fargate. Features include Claude 4 Sonnet for reasoning, Titan Image Generator v2 for designs, async processing with polling, and comprehensive error handling with fallback algorithms.",
+      projectName: "Brandy — AI Branding Assistant",
+      projectDesc: `
+Developed an intelligent multi-agent system that automates end-to-end branding for small businesses using Amazon Bedrock.
+Designed a serverless architecture with 7 Lambda agents orchestrated via Step Functions to generate business names, signboards, and interior concepts.
+Integrated Claude 4 Sonnet (reasoning), Titan Image Generator v2 (designs), DynamoDB (session TTL), and S3 for asset storage.
+Ensured resilience with async polling, fallback scoring, and workflow-level error recovery.`,
       footerLink: [
         {
           name: "View on Devpost",
@@ -167,9 +183,12 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/hyundaiLogo.png"),
-      projectName: "Global eMSP Platform (Hyundai AutoEver)",
-      projectDesc:
-        "Led backend architecture and implementation of Hyundai’s global EV charging platform. Built subscription, member, vehicle, and payment domains with microservice architecture. Integrated HMG ID (OAuth2.0) and HMG Pay (real-time billing), and deployed services on AWS EKS Fargate. As a Technical Architect, designed observability stack using ADOT Collector, CloudWatch, and X-Ray to enable tracing, metrics, and log correlation across Fargate workloads.",
+      projectName: "Global eMSP Platform — Hyundai AutoEver",
+      projectDesc: `
+Led backend architecture and domain design for Hyundai’s global EV charging platform (subscription, member, vehicle, payment).
+Integrated HMG ID (OAuth2.0) and HMG Pay (real-time billing) with MSA on AWS EKS Fargate.
+Established observability stack with ADOT Collector, CloudWatch, and X-Ray for distributed tracing and metrics correlation.
+Served as Technical Architect overseeing reliability, scalability, and release governance.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -180,8 +199,9 @@ const bigProjects = {
     {
       image: require("./assets/images/hyundaiLogo.png"),
       projectName: "Indonesia EV Infrastructure Design",
-      projectDesc:
-        "Proposed migration strategy to AMPECO platform for Indonesia EV charging market. Delivered architectural design covering subscription, home/public charging, and backend system transition. Delivered directly to Hyundai AutoEver Indonesia.",
+      projectDesc: `
+Proposed and delivered a system migration strategy for Hyundai AutoEver Indonesia to the AMPECO platform.
+Designed backend architecture covering subscription, home/public charging, and operational transition plans.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -192,8 +212,9 @@ const bigProjects = {
     {
       image: require("./assets/images/bithumb.png"),
       projectName: "Batch Monitoring Platform",
-      projectDesc:
-        "Developed a unified batch monitoring system covering critical services (FDS, trading, assets, AML). Integrated multi-DB sources (MySQL, Oracle) and provided Slack-based real-time alerts for missed, failed, or delayed batch executions.",
+      projectDesc: `
+Developed an integrated batch monitoring system across FDS, trading, and AML services.
+Aggregated multi-DB sources (MySQL, Oracle) and implemented Slack-based alerts for missed or delayed jobs.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -204,8 +225,9 @@ const bigProjects = {
     {
       image: require("./assets/images/bithumb.png"),
       projectName: "Kafka-based Log Alerting System",
-      projectDesc:
-        "Built a log monitoring system using AWS MSK (Kafka) to detect prefix-based error patterns and trigger alert notifications. Implemented custom alert DB with retry logic for fault tolerance.",
+      projectDesc: `
+Implemented real-time log alerting using AWS MSK (Kafka).
+Developed prefix-based error pattern detection and retryable alert delivery pipeline for high reliability.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -215,9 +237,10 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/bithumb.png"),
-      projectName: "SecretsManager Integration",
-      projectDesc:
-        "Migrated internal credential management to AWS Secrets Manager across AWS and IDC environments. Created a custom Spring Boot library supporting Spring 2.x to 3.x for VPC/region setting standardization.",
+      projectName: "Secrets Manager Integration",
+      projectDesc: `
+Migrated credential management from legacy storage to AWS Secrets Manager across hybrid (AWS + IDC) environments.
+Developed a custom Spring Boot library compatible with 2.x–3.x for standardized VPC and region configurations.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -228,8 +251,9 @@ const bigProjects = {
     {
       image: require("./assets/images/bithumb.png"),
       projectName: "Proxy Access Log Aggregation",
-      projectDesc:
-        "Implemented real-time access log collection and analysis from gateway proxy servers. Used Kafka + MongoDB TimeSeries for ingestion and MySQL for dashboard aggregation, providing host-level success rate metrics.",
+      projectDesc: `
+Built a log aggregation pipeline using Kafka and MongoDB TimeSeries for proxy access data.
+Delivered MySQL-based dashboards showing host-level metrics and success rates.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -239,9 +263,10 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/bithumb.png"),
-      projectName: "Monitoring Console Development",
-      projectDesc:
-        "Developed frontend React-based dashboard for alert settings (Kafka lag, batch jobs), and Spring Security-based OTP/IP login controls. Built modular UI using Antd + Tailwind with scope-aware access management.",
+      projectName: "Monitoring Console Dashboard",
+      projectDesc: `
+Developed React-based internal monitoring console with alert configuration for Kafka lag and batch jobs.
+Implemented Spring Security-based OTP/IP login and modular Ant Design + Tailwind UI components.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -251,9 +276,10 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/Danal.png"),
-      projectName: "Cafe24 PG Platform",
-      projectDesc:
-        "Developed payment, deposit, and shipping APIs for Cafe24 PG system. Delivered batch services for bulk invoice registration and status updates using Spring Boot, MyBatis, and Thymeleaf.",
+      projectName: "Cafe24 Payment Gateway Platform",
+      projectDesc: `
+Developed payment, deposit, and shipping APIs for the Cafe24 PG platform.
+Implemented batch services for bulk invoice registration using Spring Boot, MyBatis, and Thymeleaf.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -263,9 +289,10 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/Danal.png"),
-      projectName: "LG Pay & BOKU Simplified Payment",
-      projectDesc:
-        "Integrated LG Pay and BOKU payment gateways including method registration, payment, refund, and status sync. Developed caching and batch systems (e.g. exchange rate) using Spring Batch and Spring Cache.",
+      projectName: "LG Pay & BOKU Simplified Payments",
+      projectDesc: `
+Integrated LG Pay and BOKU payment gateways, including card registration, payment, and refund flows.
+Developed caching and batch systems (exchange rates, transaction sync) using Spring Batch and Spring Cache.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -276,8 +303,9 @@ const bigProjects = {
     {
       image: require("./assets/images/Danal.png"),
       projectName: "Global Payment Gateway API",
-      projectDesc:
-        "Built unified overseas payment APIs via Spring Cloud Gateway. Supported 1-time and recurring flows, routing, and filter logic. Collaborated with global providers (Alipay, EXIMBAY, Cybersource) for full-cycle payment integration.",
+      projectDesc: `
+Built unified international payment APIs using Spring Cloud Gateway.
+Supported one-time and recurring transactions, and collaborated with Alipay, EXIMBAY, and Cybersource for full-cycle integration.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -288,8 +316,9 @@ const bigProjects = {
     {
       image: require("./assets/images/Danal.png"),
       projectName: "Alipay & Cybersource Integration",
-      projectDesc:
-        "Implemented authentication, recurring billing, refund, and merchant registration APIs for Alipay and Visa Cybersource. Delivered Hosted Checkout + REST API flows and maintained direct communication with payment providers.",
+      projectDesc: `
+Implemented authentication, recurring billing, refund, and merchant onboarding APIs for Alipay and Visa Cybersource.
+Delivered both hosted checkout and REST-based payment flows.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -299,9 +328,10 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/Danal.png"),
-      projectName: "UnionPay Prepaid Ops",
-      projectDesc:
-        "Maintained and improved SMS-based and tokenless UnionPay prepaid payment service. Conducted API analysis, system design, and coordinated outsourced vendors.",
+      projectName: "UnionPay Prepaid Service",
+      projectDesc: `
+Maintained and enhanced UnionPay prepaid payment system (SMS-based, tokenless).
+Analyzed APIs, improved reliability, and coordinated with external vendors.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -312,8 +342,9 @@ const bigProjects = {
     {
       image: require("./assets/images/Danal.png"),
       projectName: "ELK-based Logging System",
-      projectDesc:
-        "Built centralized logging system for overseas payment flows using Filebeat, Logstash, Elasticsearch, and Kibana. Visualized metrics like hourly success/failure rate on custom dashboards.",
+      projectDesc: `
+Built centralized log management for overseas payment services using Filebeat, Logstash, Elasticsearch, and Kibana.
+Provided custom dashboards tracking success/failure metrics by time and region.`,
       footerLink: [
         {
           name: "More on Notion",
@@ -324,6 +355,7 @@ const bigProjects = {
   ],
   display: true
 };
+
 
 const achievementSection = {
   title: emoji("Certifications & Awards 🏆"),

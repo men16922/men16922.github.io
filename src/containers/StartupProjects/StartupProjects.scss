@@ -5,15 +5,6 @@
   width: 100%;
   padding: 2rem 0;
   overflow-x: hidden;
-  min-height: 200px; /* 디버깅용 최소 높이 */
-}
-
-/* 디버깅용 - 나중에 제거 */
-@media (max-width: 480px) {
-  .main#projects {
-    background-color: rgba(255, 0, 0, 0.1); /* 빨간색 배경으로 섹션 확인 */
-    border: 2px solid red;
-  }
 }
 
 .card-image {

@@ -48,7 +48,134 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
+
+/* 태블릿 */
+@media (max-width: 768px) {
+  .achievement-cards-div {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 0 0.75rem;
+  }
+}
+
+/* 모바일 - 큰 화면 */
+@media (max-width: 480px) {
+  .achievement-cards-div {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .certificate-card {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 200px;
+  }
+
+  .certificate-image-div {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.938rem;
+  }
+}
+
+/* 아이폰 SE 및 작은 모바일 */
+@media (max-width: 375px) {
+  .achievement-cards-div {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .certificate-card {
+    padding: 0.875rem;
+    margin: 0;
+  }
+
+  .card-image {
+    width: 180px;
+  }
+
+  .certificate-image-div {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1.188rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.4rem;
+  }
+}
+
+/* 매우 작은 화면 */
+@media (max-width: 320px) {
+  .achievement-cards-div {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0 0.25rem;
+  }
+
+  .certificate-card {
+    padding: 0.75rem;
+    margin: 0;
+  }
+
+  .card-image {
+    width: 150px;
+  }
+
+  .certificate-image-div {
+    height: 150px;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.813rem;
+    line-height: 1.3rem;
+  }
+
+  .certificate-card-footer span.certificate-tag {
+    font-size: 0.65rem;
+    padding: 0 0.5em;
+    margin: 0 0.25rem 0.25rem 0;
+  }
+}
+
+/* iOS Safari 특별 대응 */
+@supports (-webkit-touch-callout: none) {
+  .achievement-cards-div {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 414px) {
+    .achievement-cards-div {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
 .certificate-card-footer {
   display: flex;
   align-items: center;
