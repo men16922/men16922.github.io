@@ -41,42 +41,50 @@ const socialMediaLinks = {
 };
 
 const skillsSection = {
-  title: "BACKEND / PLATFORM ENGINEER",
-  subTitle: "Building Reliable, Cloud-Native Systems with Spring Boot and AWS",
+  title: "BACKEND · PLATFORM · AI ENGINEER",
+  subTitle: "Engineering Reliable, AI-Integrated Cloud-Native Systems on AWS and Kubernetes",
   skills: [
-    emoji(
-      "⚡ Design and develop scalable backend microservices using Java, Spring Boot, and RESTful APIs"
-    ),
-    emoji(
-      "⚡ Deploy and operate resilient workloads on AWS and Kubernetes (EKS on EC2/Fargate)"
-    ),
-    emoji(
-      "⚡ Automate CI/CD pipelines and infrastructure provisioning with IaaC and GitHub Actions"
-    ),
-    emoji(
-      "⚡ Implement observability practices — metrics, logging, and tracing — for production reliability"
-    ),
-    emoji(
-      "⚡ Optimize system architecture and cost efficiency through cloud-native patterns"
-    )
+    emoji("⚡ Design and develop distributed backend services using Java, Spring Boot, and microservice architecture"),
+    emoji("⚡ Deploy and operate production workloads on AWS and Kubernetes (EKS/ECS on EC2/Fargate)"),
+    emoji("⚡ Automate infrastructure and CI/CD pipelines with Terraform, AWS SAM, and GitHub Actions"),
+    emoji("⚡ Build and orchestrate serverless architectures — Lambda (multi-agent), API Gateway, DynamoDB, S3, Fargate"),
+    emoji("⚡ Implement observability stacks using OpenTelemetry (ADOT), Prometheus, Grafana, and CloudWatch/X-Ray"),
+    emoji("⚡ Integrate Generative AI workflows using AWS Bedrock and LangChain for agent-based automation"),
+    emoji("⚡ Utilize Claude Code and Kiro for AI-assisted development, design automation, and LLMOps experimentation"),
+    emoji("⚡ Optimize reliability, scalability, and cost through AI-driven automation and cloud-native patterns")
   ],
   softwareSkills: [
-    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
-    {skillName: "Spring Boot", fontAwesomeClassname: "fas fa-leaf"},
-    {skillName: "PostgreSQL / MySQL / Oracle", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "MongoDB", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "Redis", fontAwesomeClassname: "fas fa-memory"},
-    {skillName: "Kafka", fontAwesomeClassname: "fas fa-stream"},
-    {
-      skillName: "ELK Stack / OpenTelemetry",
-      fontAwesomeClassname: "fas fa-chart-line"
-    },
-    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
-    {skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired"},
-    {skillName: "AWS", fontAwesomeClassname: "fab fa-aws"},
-    {skillName: "CloudFormation", fontAwesomeClassname: "fas fa-code-branch"},
-    {skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github"},
-    {skillName: "React", fontAwesomeClassname: "fab fa-react"}
+    // Backend / Core
+    { skillName: "Java / SpringBoot", fontAwesomeClassname: "fab fa-java" },
+    { skillName: "Node.js / Express", fontAwesomeClassname: "fab fa-node" },
+    { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+
+    // AI / Automation
+    { skillName: "AWS Bedrock", fontAwesomeClassname: "fab fa-aws" },
+    { skillName: "Claude Code / Kiro", fontAwesomeClassname: "fas fa-brain" },
+    { skillName: "LangChain", fontAwesomeClassname: "fas fa-link" },
+    
+    // Cloud / DevOps
+    { skillName: "AWS (EKS, ECS, Lambda, Fargate)", fontAwesomeClassname: "fab fa-aws" },
+    { skillName: "AWS SAM / CDK/ CFN", fontAwesomeClassname: "fas fa-code-branch" },
+    { skillName: "GitHub Actions / Argo CD", fontAwesomeClassname: "fab fa-github" },
+    { skillName: "Docker / Kubernetes", fontAwesomeClassname: "fab fa-docker" },
+    { skillName: "Helm / Kustomize", fontAwesomeClassname: "fas fa-toolbox" },
+
+    // Observability
+    { skillName: "OpenTelemetry / ADOT", fontAwesomeClassname: "fas fa-chart-line" },
+    { skillName: "Prometheus / Grafana", fontAwesomeClassname: "fas fa-chart-area" },
+    { skillName: "CloudWatch / X-Ray", fontAwesomeClassname: "fas fa-eye" },
+    { skillName: "ELK / OpenSearch", fontAwesomeClassname: "fas fa-search" },
+
+    // Data / Messaging
+    { skillName: "Kafka", fontAwesomeClassname: "fas fa-stream" },
+    { skillName: "Redis / DynamoDB", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "PostgreSQL / MySQL / MongoDB", fontAwesomeClassname: "fas fa-database" },
+
+    // Frontend (Internal Tools)
+    { skillName: "React", fontAwesomeClassname: "fab fa-react" },
+    { skillName: "Streamlit", fontAwesomeClassname: "fas fa-chart-bar" }
   ],
   display: true
 };
@@ -84,15 +92,32 @@ const skillsSection = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    {Stack: "Java / Spring Boot", progressPercentage: "90%"},
-    {Stack: "Microservices Architecture (MSA)", progressPercentage: "85%"},
-    {Stack: "AWS / EKS (Cloud-Native Ops)", progressPercentage: "80%"},
-    {Stack: "System Design & Architecture", progressPercentage: "80%"},
-    {Stack: "Site Reliability Engineering (SRE)", progressPercentage: "75%"},
-    {Stack: "Kafka / Event-Driven Systems", progressPercentage: "75%"},
-    {Stack: "Redis / Caching", progressPercentage: "70%"},
-    {Stack: "RDBMS / PostgreSQL & MySQL & Oracle", progressPercentage: "70%"},
-    {Stack: "Observability (ELK, OTEL)", progressPercentage: "70%"}
+    // Core Backend
+    { Stack: "Java / Spring Boot", progressPercentage: "90%" },
+    { Stack: "System & Service Architecture (MSA / Event-Driven / SaaS)", progressPercentage: "85%" },
+    { Stack: "Distributed System Design & Scalability", progressPercentage: "80%" },
+    { Stack: "Python", progressPercentage: "55%" },
+    { Stack: "Node.js / Express", progressPercentage: "55%" },
+
+    // Cloud-Native Platform
+    { Stack: "AWS / EKS (Cloud-Native Operations)", progressPercentage: "80%" },
+    { Stack: "Infrastructure as Code (Terraform / AWS SAM / CDK)", progressPercentage: "80%" },
+    { Stack: "GitOps & CI/CD Automation (Argo CD / GitHub Actions)", progressPercentage: "80%" },
+    { Stack: "Serverless Architecture (Lambda, API Gateway, DynamoDB, Fargate)", progressPercentage: "75%" },
+
+    // Reliability & Observability
+    { Stack: "Site Reliability Engineering (SRE)", progressPercentage: "75%" },
+    { Stack: "Observability (OpenTelemetry / ADOT / Prometheus / ELK)", progressPercentage: "75%" },
+
+    // Messaging & Data Layer
+    { Stack: "Kafka / Event-Driven Systems", progressPercentage: "75%" },
+    { Stack: "Redis / Caching", progressPercentage: "70%" },
+    { Stack: "RDBMS / PostgreSQL & MySQL & Oracle", progressPercentage: "70%" },
+    { Stack: "NoSQL / DynamoDB / MongoDB", progressPercentage: "70%" },
+
+    // AI / Automation
+    { Stack: "LLM Integration (AWS Bedrock / Claude / LangChain)", progressPercentage: "70%" },
+    { Stack: "AI-Assisted Development (Claude Code / Kiro)", progressPercentage: "65%" }
   ]
 };
 
@@ -535,3 +560,4 @@ export {
   isHireable,
   resumeSection
 };
+
