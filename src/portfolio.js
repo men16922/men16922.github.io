@@ -36,6 +36,7 @@ const socialMediaLinks = {
   gitlab: "",
   facebook: "",
   medium: "https://medium.com/@men16922",
+  velog: "https://velog.io/@men16922/posts",
   stackoverflow: "",
   display: true
 };

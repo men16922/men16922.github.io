@@ -104,6 +104,18 @@ export default function socialMedia() {
         </a>
       ) : null}
 
+      {socialMediaLinks.velog ? (
+        <a
+          href={socialMediaLinks.velog}
+          className="icon-button velog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fas fa-blog"></i>
+          <span></span>
+        </a>
+      ) : null}
+
       {socialMediaLinks.stackoverflow ? (
         <a
           href={socialMediaLinks.stackoverflow}

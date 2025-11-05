@@ -56,6 +56,10 @@
   background-color: $medium;
 }
 
+.velog i {
+  background-color: $velog;
+}
+
 .stack-overflow i {
   background-color: $stackoverflow;
 }
@@ -78,7 +82,8 @@
 .instagram i:hover,
 .stack-overflow i:hover,
 .kaggle i:hover,
-.medium i:hover {
+.medium i:hover,
+.velog i:hover {
   background-color: $textColor;
 }
 
