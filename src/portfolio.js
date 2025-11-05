@@ -222,7 +222,8 @@ const techStack = {
       category: "AI & Automation",
       experience: [
         {
-          Stack: "LLM Integration (AWS Bedrock / Titan Image Generator / LangChain)",
+          Stack:
+            "LLM Integration (AWS Bedrock / Titan Image Generator / LangChain)",
           progressPercentage: "70%"
         },
         {
