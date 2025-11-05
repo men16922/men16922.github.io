@@ -1,6 +1,7 @@
 import React, {useState, createRef} from "react";
 import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
+import Collapsible from "../collapsible/Collapsible";
 
 export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
@@ -75,9 +76,16 @@ export default function ExperienceCard({cardInfo, isDark}) {
         >
           {cardInfo.desc}
         </p>
-        <ul>
-          <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
-        </ul>
+        {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
+          <Collapsible title="View Details" defaultOpen={false}>
+            <ul>
+              <GetDescBullets
+                descBullets={cardInfo.descBullets}
+                isDark={isDark}
+              />
+            </ul>
+          </Collapsible>
+        )}
       </div>
     </div>
   );

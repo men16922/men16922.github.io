@@ -1,5 +1,6 @@
 import React from "react";
 import "./AchievementCard.scss";
+import Collapsible from "../collapsible/Collapsible";
 
 export default function AchievementCard({cardInfo, isDark}) {
   function openUrlInNewTab(url, name) {
@@ -24,24 +25,26 @@ export default function AchievementCard({cardInfo, isDark}) {
         <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
           {cardInfo.title}
         </h5>
-        <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
-          {cardInfo.description}
-        </p>
-      </div>
-      <div className="certificate-card-footer">
-        {cardInfo.footer.map((v, i) => {
-          return (
-            <span
-              key={i}
-              className={
-                isDark ? "dark-mode certificate-tag" : "certificate-tag"
-              }
-              onClick={() => openUrlInNewTab(v.url, v.name)}
-            >
-              {v.name}
-            </span>
-          );
-        })}
+        <Collapsible title="View Details" defaultOpen={false}>
+          <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
+            {cardInfo.description}
+          </p>
+          <div className="certificate-card-footer">
+            {cardInfo.footer.map((v, i) => {
+              return (
+                <span
+                  key={i}
+                  className={
+                    isDark ? "dark-mode certificate-tag" : "certificate-tag"
+                  }
+                  onClick={() => openUrlInNewTab(v.url, v.name)}
+                >
+                  {v.name}
+                </span>
+              );
+            })}
+          </div>
+        </Collapsible>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import {skillsSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import Collapsible from "../../components/collapsible/Collapsible";
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
@@ -31,21 +32,25 @@ export default function Skills() {
               {skillsSection.subTitle}
             </p>
             <SoftwareSkill />
-            <div>
-              {skillsSection.skills.map((skills, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
-                    }
-                  >
-                    {skills}
-                  </p>
-                );
-              })}
+            <div style={{marginTop: "20px"}}>
+              <Collapsible title="View Skill Details" defaultOpen={false}>
+                <div>
+                  {skillsSection.skills.map((skills, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={
+                          isDark
+                            ? "dark-mode subTitle skills-text"
+                            : "subTitle skills-text"
+                        }
+                      >
+                        {skills}
+                      </p>
+                    );
+                  })}
+                </div>
+              </Collapsible>
             </div>
           </div>
         </Fade>

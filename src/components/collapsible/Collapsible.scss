@@ -1,0 +1,117 @@
+@import "../../_globalColor";
+
+.collapsible-container {
+  margin-bottom: 1rem;
+}
+
+.collapsible-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: 2px solid $lightBorder1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  color: $textColor;
+
+  &:hover {
+    background: rgba(85, 85, 85, 0.05);
+    border-color: $buttonColor;
+  }
+
+  &.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: $buttonColor;
+  }
+
+  .collapsible-title {
+    flex: 1;
+  }
+
+  .collapsible-icon {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    color: $textColor;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  border-left: 2px solid $lightBorder1;
+  border-right: 2px solid $lightBorder1;
+  border-bottom: 2px solid $lightBorder1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  &.open {
+    max-height: 10000px;
+    transition: max-height 0.8s ease-in;
+    border-color: $buttonColor;
+  }
+
+  .collapsible-content-inner {
+    padding: 1.5rem;
+  }
+}
+
+/* Dark mode support */
+.dark-mode {
+  .collapsible-header {
+    border-color: $lightBorder1;
+    color: $textColorDark;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: $buttonColor;
+    }
+
+    &.active {
+      border-color: $buttonColor;
+    }
+
+    .collapsible-icon {
+      color: $textColorDark;
+    }
+  }
+
+  .collapsible-content {
+    border-color: $lightBorder1;
+
+    &.open {
+      border-color: $buttonColor;
+    }
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .collapsible-header {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  .collapsible-content {
+    .collapsible-content-inner {
+      padding: 1rem;
+    }
+  }
+}
