@@ -544,7 +544,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: "https://www.credly.com/badges/your-cks-badge-id"
+          url: "https://www.credly.com/earner/earned/badge/02e14961-7d3b-4499-8966-ffd861b6de5e"
         }
       ]
     },
