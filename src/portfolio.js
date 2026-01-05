@@ -501,6 +501,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "Certified Kubernetes Security Specialist (CKS)",
+      subtitle: "Verified by The Linux Foundation in 2025",
+      image: require("./assets/images/CKS.png"),
+      imageAlt: "CKS Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/earner/earned/badge/02e14961-7d3b-4499-8966-ffd861b6de5e"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Developer - Associate",
       subtitle: "Verified by AWS in 2025",
       image: require("./assets/images/DVA.png"),
@@ -533,18 +545,6 @@ const achievementSection = {
         {
           name: "Certification",
           url: "https://www.credly.com/badges/5eed101a-762a-402c-ab20-c71f268d9636"
-        }
-      ]
-    },
-    {
-      title: "Certified Kubernetes Security Specialist (CKS)",
-      subtitle: "Verified by The Linux Foundation in 2025",
-      image: require("./assets/images/CKS.png"),
-      imageAlt: "CKS Logo",
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.credly.com/earner/earned/badge/02e14961-7d3b-4499-8966-ffd861b6de5e"
         }
       ]
     },
