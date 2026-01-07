@@ -408,8 +408,8 @@ Claude 4 Sonnet (추론), Titan Image Generator v2 (디자인), DynamoDB (세션
       ]
     },
     {
-      image: require("../assets/images/bithumb.jpg"),
-      projectName: "빗썸 자동매매 에이전트",
+      image: require("../assets/images/coin.jpeg"),
+      projectName: "코인 자동매매 에이전트",
       projectDesc: `
     빗썸 현물 시장을 자동으로 분석하고 거래하는 AI 트레이딩 시스템입니다.
     여러 AI 모델의 판단을 종합하고, 사전에 정의된 리스크 규칙을 통과한 경우에만 주문을 실행합니다.
