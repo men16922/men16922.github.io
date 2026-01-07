@@ -43,8 +43,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "B/E · 클라우드 · SRE 엔지니어",
-  subTitle:
-    "AWS & K8S 기반 클라우드 엔지니어링, Spring & Java B/E Core 개발",
+  subTitle: "AWS & K8S 기반 클라우드 엔지니어링, Spring & Java B/E Core 개발",
   skills: [
     emoji(
       "⚡ Java, Spring Boot, 마이크로서비스 아키텍처를 활용한 분산 백엔드 서비스 설계 및 개발"
@@ -185,8 +184,7 @@ const techStack = {
           progressPercentage: "80%"
         },
         {
-          Stack:
-            "서버리스 아키텍처 (Lambda, API Gateway, DynamoDB, Fargate)",
+          Stack: "서버리스 아키텍처 (Lambda, API Gateway, DynamoDB, Fargate)",
           progressPercentage: "75%"
         }
       ]
@@ -220,8 +218,7 @@ const techStack = {
       category: "AI & 자동화",
       experience: [
         {
-          Stack:
-            "LLM 통합 (AWS Bedrock / Titan Image Generator / LangChain)",
+          Stack: "LLM 통합 (AWS Bedrock / Titan Image Generator / LangChain)",
           progressPercentage: "70%"
         },
         {
@@ -315,8 +312,7 @@ const educationInfo = {
           logo: require("../assets/images/mlops.png"),
           subHeader: "MLOps · 모델 서빙",
           duration: "2025년 12월",
-          desc:
-            "MLflow + KServe 기반 모델 배포 및 서빙. CI/CD/CT 파이프라인 구성과 모니터링 실습"
+          desc: "MLflow + KServe 기반 모델 배포 및 서빙. CI/CD/CT 파이프라인 구성과 모니터링 실습"
         }
       ]
     },
@@ -328,8 +324,7 @@ const educationInfo = {
           logo: require("../assets/images/reinvent.jpeg"),
           subHeader: "글로벌 클라우드 컨퍼런스",
           duration: "2025년 12월",
-          desc:
-            "출장 교육 인원으로 선발되어 참가. Agentic AI(Strands, AgentCore), EKS, 클라우드 아키텍처 세션 수강"
+          desc: "출장 교육 인원으로 선발되어 참가. Agentic AI(Strands, AgentCore), EKS, 클라우드 아키텍처 세션 수강"
         },
         {
           schoolName: "DevTalk_Around_AI",
@@ -345,32 +340,28 @@ const educationInfo = {
           logo: require("../assets/images/aico.JPG"),
           subHeader: "AI 컨퍼런스",
           duration: "2025년 11월",
-          desc:
-            "Microsoft AI 및 Copilot 중심 세션 참석, 엔터프라이즈 AI 활용 사례 학습"
+          desc: "Microsoft AI 및 Copilot 중심 세션 참석, 엔터프라이즈 AI 활용 사례 학습"
         },
         {
           schoolName: "CNCF Community 2025",
           logo: require("../assets/images/cncf.png"),
           subHeader: "클라우드 네이티브 커뮤니티",
           duration: "2025년 9월",
-          desc:
-            "DevSecOps 및 Kubernetes 환경에서 MCP 기반 AI Agent 적용 사례 공유"
+          desc: "DevSecOps 및 Kubernetes 환경에서 MCP 기반 AI Agent 적용 사례 공유"
         },
         {
           schoolName: "DataDog Hands-on Workshop",
           logo: require("../assets/images/datadog.png"),
           subHeader: "Observability 실습",
           duration: "2025년 6월",
-          desc:
-            "Datadog 기반 메트릭·로그·트레이스 수집 및 장애 분석 실습"
+          desc: "Datadog 기반 메트릭·로그·트레이스 수집 및 장애 분석 실습"
         },
         {
           schoolName: "AWSKRUG 소모임",
           logo: require("../assets/images/awskrug.png"),
           subHeader: "AWS 기술 커뮤니티",
           duration: "2025년 6월 ~ 현재",
-          desc:
-            "AI Engineering, Container, Serverless, DevOps 소모임 지속 참여"
+          desc: "AI Engineering, Container, Serverless, DevOps 소모임 지속 참여"
         }
       ]
     },
@@ -391,7 +382,6 @@ const educationInfo = {
   ],
   display: true
 };
-
 
 const openSource = {
   showGithubProfile: "true",
@@ -748,8 +738,7 @@ const talkSection = {
   talks: [
     {
       title: "지식 기반",
-      subtitle:
-        "Notion  기술 아카이브: Java, Spring, DevOps, 시스템 설계",
+      subtitle: "Notion  기술 아카이브: Java, Spring, DevOps, 시스템 설계",
       slides_url:
         "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
       event_url:

@@ -29,9 +29,7 @@ const LanguageToggle = () => {
       aria-label="Toggle language"
       title={language === "en" ? "한국어로 전환" : "Switch to English"}
     >
-      <span className="language-text">
-        {language === "en" ? "KO" : "EN"}
-      </span>
+      <span className="language-text">{language === "en" ? "KO" : "EN"}</span>
     </button>
   );
 };

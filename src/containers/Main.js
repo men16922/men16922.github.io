@@ -44,13 +44,15 @@ const Main = () => {
     setIsDark(!isDark);
   };
 
-  const changeLanguage = (newLang) => {
+  const changeLanguage = newLang => {
     setLanguage(newLang);
   };
 
   return (
     <div className={isDark ? "dark-mode" : null}>
-      <LanguageProvider value={{language: language, changeLanguage: changeLanguage}}>
+      <LanguageProvider
+        value={{language: language, changeLanguage: changeLanguage}}
+      >
         <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
           {isShowingSplashAnimation && splashScreen.enabled ? (
             <SplashScreen />

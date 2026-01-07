@@ -8,7 +8,7 @@ export default function Education() {
     educationInfo.categories ? educationInfo.categories.map(() => true) : []
   );
 
-  const toggleCategory = (index) => {
+  const toggleCategory = index => {
     setExpandedCategories(prev => {
       const newState = [...prev];
       newState[index] = !newState[index];
@@ -28,11 +28,19 @@ export default function Education() {
                 onClick={() => toggleCategory(categoryIndex)}
               >
                 <h2 className="education-category-title">{category.title}</h2>
-                <span className={`education-category-icon ${expandedCategories[categoryIndex] ? 'expanded' : 'collapsed'}`}>
-                  {expandedCategories[categoryIndex] ? '−' : '+'}
+                <span
+                  className={`education-category-icon ${
+                    expandedCategories[categoryIndex] ? "expanded" : "collapsed"
+                  }`}
+                >
+                  {expandedCategories[categoryIndex] ? "−" : "+"}
                 </span>
               </div>
-              <div className={`education-card-container ${expandedCategories[categoryIndex] ? 'expanded' : 'collapsed'}`}>
+              <div
+                className={`education-card-container ${
+                  expandedCategories[categoryIndex] ? "expanded" : "collapsed"
+                }`}
+              >
                 {category.items.map((school, index) => (
                   <EducationCard key={index} school={school} />
                 ))}

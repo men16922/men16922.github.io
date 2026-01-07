@@ -319,8 +319,7 @@ const educationInfo = {
           logo: require("../assets/images/mlops.png"),
           subHeader: "MLOps · Model Serving",
           duration: "December 2025",
-          desc:
-            "Model deployment and serving using MLflow + KServe. Hands-on practice with CI/CD/CT pipeline configuration and monitoring"
+          desc: "Model deployment and serving using MLflow + KServe. Hands-on practice with CI/CD/CT pipeline configuration and monitoring"
         }
       ]
     },
@@ -332,16 +331,14 @@ const educationInfo = {
           logo: require("../assets/images/reinvent.jpeg"),
           subHeader: "Global Cloud Conference",
           duration: "December 2025",
-          desc:
-            "Selected as a company-sponsored attendee. Attended sessions on Agentic AI (Strands, AgentCore), EKS, and cloud architecture"
+          desc: "Selected as a company-sponsored attendee. Attended sessions on Agentic AI (Strands, AgentCore), EKS, and cloud architecture"
         },
         {
           schoolName: "DataDog Hands-on Workshop",
           logo: require("../assets/images/datadog.png"),
           subHeader: "Observability Workshop",
           duration: "June 2025",
-          desc:
-            "Hands-on practice with Datadog-based metrics, logs, trace collection, and incident analysis"
+          desc: "Hands-on practice with Datadog-based metrics, logs, trace collection, and incident analysis"
         }
       ]
     },

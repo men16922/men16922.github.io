@@ -4,7 +4,10 @@ import {useLocalStorage} from "./useLocalStorage";
 
 export const useLanguage = () => {
   const location = useLocation();
-  const [storedLang, setStoredLang] = useLocalStorage("preferredLanguage", "en");
+  const [storedLang, setStoredLang] = useLocalStorage(
+    "preferredLanguage",
+    "en"
+  );
 
   // Determine language from URL path
   const urlLang = location.pathname.startsWith("/kr") ? "ko" : "en";
