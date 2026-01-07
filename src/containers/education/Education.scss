@@ -17,10 +17,77 @@
   margin-bottom: 30px;
 }
 
+.education-category {
+  margin-bottom: 30px;
+}
+
+.education-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(55, 55, 55, 0.05);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.education-category-header:hover {
+  background-color: rgba(55, 55, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+.dark-mode .education-category-header {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .education-category-header:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .education-category-title,
+.dark-mode .education-category-icon {
+  color: #a475d6;
+}
+
+.education-category-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+  color: #55198b;
+}
+
+.education-category-icon {
+  font-size: 32px;
+  font-weight: 300;
+  color: #55198b;
+  transition: transform 0.3s ease;
+}
+
+.education-category-icon.expanded {
+  transform: rotate(0deg);
+}
+
+.education-category-icon.collapsed {
+  transform: rotate(0deg);
+}
+
 .education-card-container {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  max-height: 10000px;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 1;
+}
+
+.education-card-container.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
 }
 
 @media (max-width: 1380px) {
@@ -34,6 +101,12 @@
     font-size: 18px;
     text-align: center;
   }
+  .education-category-title {
+    font-size: 28px;
+  }
+  .education-category-icon {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -46,5 +119,17 @@
   }
   .education-text-subtitle {
     font-size: 16px;
+  }
+  .education-category-title {
+    font-size: 24px;
+  }
+  .education-category-icon {
+    font-size: 24px;
+  }
+  .education-category-header {
+    padding: 12px 15px;
+  }
+  .education-section {
+    width: 90%;
   }
 }

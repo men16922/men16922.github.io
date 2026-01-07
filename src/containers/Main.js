@@ -18,14 +18,15 @@ import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
-import {useLocalStorage} from "../hooks/useLocalStorage";
+import {LanguageProvider} from "../contexts/LanguageContext";
+import {useLanguage} from "../hooks/useLanguage";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useState(true);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
+  const [language, setLanguage] = useLanguage();
 
   useEffect(() => {
     if (splashScreen.enabled) {
@@ -43,32 +44,38 @@ const Main = () => {
     setIsDark(!isDark);
   };
 
+  const changeLanguage = (newLang) => {
+    setLanguage(newLang);
+  };
+
   return (
     <div className={isDark ? "dark-mode" : null}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
-        {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Education />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
-            <Footer />
-            <ScrollToTopButton />
-          </>
-        )}
-      </StyleProvider>
+      <LanguageProvider value={{language: language, changeLanguage: changeLanguage}}>
+        <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+          {isShowingSplashAnimation && splashScreen.enabled ? (
+            <SplashScreen />
+          ) : (
+            <>
+              <Header />
+              <Greeting />
+              <Skills />
+              <StackProgress />
+              <WorkExperience />
+              <Projects />
+              <StartupProject />
+              <Education />
+              <Achievement />
+              <Blogs />
+              <Talks />
+              <Twitter />
+              <Podcast />
+              <Profile />
+              <Footer />
+              <ScrollToTopButton />
+            </>
+          )}
+        </StyleProvider>
+      </LanguageProvider>
     </div>
   );
 };
