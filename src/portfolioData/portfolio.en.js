@@ -18,11 +18,11 @@ const greeting = {
   title: "Hi, I'm Byung Min Choi (Paul)",
   subTitle: `
 • Backend Engineer specializing in cloud-native microservice architecture
-• 5+ years of hands-on experience with Java (Spring Boot), Kafka, Redis, and PostgreSQL
+• 6+ years of hands-on experience with Java (Spring Boot), Kafka, Redis, and PostgreSQL
 • Proven expertise in designing and operating distributed systems on AWS and Kubernetes (EKS)
 • Experienced in DevOps automation: CI/CD pipelines, GitOps, and Infrastructure as Code
 • Focused on observability, reliability, and scalable backend system design
-• Passionate about bridging backend engineering with AI-driven cloud automation
+• Passionate about Agentic AI & Automation
   `,
   resumeLink: "https://www.notion.so/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
@@ -334,11 +334,41 @@ const educationInfo = {
           desc: "Selected as a company-sponsored attendee. Attended sessions on Agentic AI (Strands, AgentCore), EKS, and cloud architecture"
         },
         {
+          schoolName: "DevTalk_Around_AI",
+          logo: require("../assets/images/hyundaiLogo2.png"),
+          subHeader: "AI Technology Conference · Speaker",
+          duration: "December 2025",
+          desc:
+            "Participated as a speaker on the topic of screen development through Figma MCP + GitHub Copilot + IDE integration. " +
+            "Led GenAI Growth LAB and showcased ev-agent (EV charging coding agent) at the exhibition"
+        },
+        {
+          schoolName: "AICO Seoul 2025",
+          logo: require("../assets/images/aico.JPG"),
+          subHeader: "AI Conference",
+          duration: "November 2025",
+          desc: "Attended sessions focused on Microsoft AI and Copilot, learned about enterprise AI use cases"
+        },
+        {
+          schoolName: "CNCF Community 2025",
+          logo: require("../assets/images/cncf.png"),
+          subHeader: "Cloud Native Community",
+          duration: "September 2025",
+          desc: "Shared case studies of MCP-based AI Agent implementation in DevSecOps and Kubernetes environments"
+        },
+        {
           schoolName: "DataDog Hands-on Workshop",
           logo: require("../assets/images/datadog.png"),
           subHeader: "Observability Workshop",
           duration: "June 2025",
           desc: "Hands-on practice with Datadog-based metrics, logs, trace collection, and incident analysis"
+        },
+        {
+          schoolName: "AWSKRUG Community",
+          logo: require("../assets/images/awskrug.png"),
+          subHeader: "AWS Technical Community",
+          duration: "June 2025 ~ Present",
+          desc: "Continuous participation in AI Engineering, Container, Serverless, and DevOps meetups"
         }
       ]
     },
@@ -381,6 +411,20 @@ Ensured resilience with async polling, fallback scoring, and workflow-level erro
         {
           name: "View on Devpost",
           url: "https://devpost.com/software/brandy-ai-branding-assistant-for-signboards-interiors"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/coin.jpeg"),
+      projectName: "Coin Auto Trading Agent",
+      projectDesc: `
+    AI trading system that automatically analyzes and trades on the Bithumb spot market.
+    Aggregates judgments from multiple AI models and executes orders only when pre-defined risk rules are passed.
+    Separates auto trading (auto) and prediction-only (predict) modes`,
+      footerLink: [
+        {
+          name: "Github repo",
+          url: "https://github.com/men16922/coin-ai-system"
         }
       ]
     },
@@ -668,6 +712,18 @@ const achievementSection = {
         {
           name: "More Info",
           url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+        }
+      ]
+    },
+    {
+      title: "Hyundai AutoEver Tech Dashboard - Grand Prize",
+      subtitle: "2025.06",
+      image: require("../assets/images/hyundaiLogo2.png"),
+      imageAlt: "Hyundai AutoEver Award",
+      footerLink: [
+        {
+          name: "More Info",
+          url: "#"
         }
       ]
     }
