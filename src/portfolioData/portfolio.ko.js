@@ -601,8 +601,20 @@ const achievementSection = {
   subtitle: "Achievement",
   achievementsCards: [
     {
+      title: "AWS Certified AI Practitioner",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/ai-practitioner.png"),
+      imageAlt: "AIF Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/earner/earned/badge/d54e935d-199c-4d93-88ec-6daf64827a53"
+        }
+      ]
+    },
+    {
       title: "Certified Kubernetes Security Specialist (CKS)",
-      subtitle: "The Linux Foundation에서 2025년 인증",
+      subtitle: "The Linux Foundation에서 2026년 인증",
       image: require("../assets/images/CKS.png"),
       imageAlt: "CKS Logo",
       footerLink: [
