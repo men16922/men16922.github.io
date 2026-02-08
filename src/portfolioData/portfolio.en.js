@@ -24,7 +24,7 @@ const greeting = {
 • Focused on observability, reliability, and scalable backend system design
 • Passionate about Agentic AI & Automation
   `,
-  resumeLink: "https://www.notion.so/0dab080e9ccf490a8391be50fa01448f",
+  resumeLink: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
 };
 
@@ -608,6 +608,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "AWS Certified CloudOps Engineer - Associate",
+      subtitle: "Verified by AWS in 2026",
+      image: require("../assets/images/COA.png"),
+      imageAlt: "AIF Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/earner/earned/badge/492da4e2-a907-4122-968d-94a2735f02a8"
+        }
+      ]
+    },
+    {
       title: "AWS Certified AI Practitioner",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/ai-practitioner.png"),
@@ -687,7 +699,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "More Info",
-          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f"
         }
       ]
     },
@@ -699,7 +711,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "More Info",
-          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f"
         }
       ]
     },
@@ -735,7 +747,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "More Info",
-          url: "#"
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
         }
       ]
     }

@@ -18,7 +18,7 @@ const greeting = {
   title: "안녕하세요, 최병민입니다",
   subTitle: `
 • 클라우드 마이크로서비스 아키텍처를 전문으로 하는 백엔드 엔지니어
-• Java (Spring Boot), Kafka, Redis, PostgreSQL 6년 이상의 실무 경험
+• Java (Spring Boot), Kafka, Redis, RDB 6년 이상의 실무 경험
 • AWS와 Kubernetes (EKS) 기반 분산 시스템 설계 및 운영 전문가
 • DevOps 자동화 경험: CI/CD 파이프라인, GitOps, Infrastructure as Code
 • 관찰 가능성(Observability), 안정성, 확장 가능한 백엔드 시스템 설계에 집중
@@ -601,6 +601,18 @@ const achievementSection = {
   subtitle: "Achievement",
   achievementsCards: [
     {
+      title: "AWS Certified CloudOps Engineer - Associate",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/COA.png"),
+      imageAlt: "COA Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/earner/earned/badge/492da4e2-a907-4122-968d-94a2735f02a8"
+        }
+      ]
+    },
+    {
       title: "AWS Certified AI Practitioner",
       subtitle: "AWS에서 2026년 인증",
       image: require("../assets/images/ai-practitioner.png"),
@@ -680,7 +692,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "더보기",
-          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f"
         }
       ]
     },
@@ -692,7 +704,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "더보기",
-          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f"
         }
       ]
     },
@@ -728,7 +740,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "더보기",
-          url: "#"
+          url: "https://atlantic-andesaurus-8b9.notion.site/d5759f0a36b24bf48c9bc2d2d8590ade"
         }
       ]
     }
