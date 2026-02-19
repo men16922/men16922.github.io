@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.56472ad0.css",
-    "main.js": "/static/js/main.2b8bf6cb.js",
+    "main.js": "/static/js/main.8ada9a19.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
@@ -12,6 +12,7 @@
     "static/media/global.jpg": "/static/media/global.14015e4de2384343f061.jpg",
     "static/media/bigdata.jpg": "/static/media/bigdata.6410f3ea64f6a6fa0fb0.jpg",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/GCP_ACE.png": "/static/media/GCP_ACE.d6f4effe4070ea921d84.png",
     "static/media/kr_cert.png": "/static/media/kr_cert.5ef79d097531cb481167.png",
     "static/media/opic.png": "/static/media/opic.7f9083aeaca42886b8cb.png",
     "static/media/awskrug.png": "/static/media/awskrug.5fad9ecfac9d1381ae7e.png",
@@ -34,7 +35,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.56472ad0.css.map": "/static/css/main.56472ad0.css.map",
-    "main.2b8bf6cb.js.map": "/static/js/main.2b8bf6cb.js.map",
+    "main.8ada9a19.js.map": "/static/js/main.8ada9a19.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -42,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.56472ad0.css",
-    "static/js/main.2b8bf6cb.js"
+    "static/js/main.8ada9a19.js"
   ]
 }
