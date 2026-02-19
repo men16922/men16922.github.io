@@ -601,6 +601,18 @@ const achievementSection = {
   subtitle: "Achievement",
   achievementsCards: [
     {
+      title: "Google Cloud Associate Cloud Engineer",
+      subtitle: "Google에서 2026년 인증",
+      image: require("../assets/images/GCP_ACE.png"),
+      imageAlt: "ACE Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/c325bfa7-8ca3-46af-b131-be8e76bb1726"
+        }
+      ]
+    },
+    {
       title: "AWS Certified CloudOps Engineer - Associate",
       subtitle: "AWS에서 2026년 인증",
       image: require("../assets/images/COA.png"),

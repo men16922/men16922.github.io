@@ -608,6 +608,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "Google Cloud Associate Cloud Engineer",
+      subtitle: "Verified by Google in 2026",
+      image: require("../assets/images/GCP_ACE.png"),
+      imageAlt: "ACE Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/c325bfa7-8ca3-46af-b131-be8e76bb1726"
+        }
+      ]
+    },
+    {
       title: "AWS Certified CloudOps Engineer - Associate",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/COA.png"),
