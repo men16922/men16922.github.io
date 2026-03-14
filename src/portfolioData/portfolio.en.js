@@ -23,6 +23,7 @@ const greeting = {
 • Experienced in DevOps automation: CI/CD pipelines, GitOps, and Infrastructure as Code
 • Focused on observability, reliability, and scalable backend system design
 • Passionate about Agentic AI & Automation
+• Conference speaker on AI-assisted development and cloud-native architecture (AWS re:Invent 2025, DevTalk_Around_AI)
   `,
   resumeLink: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
@@ -44,7 +45,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "BACKEND · PLATFORM · AI ENGINEER",
   subTitle:
-    "Engineering Reliable, AI-Integrated Cloud-Native Systems on AWS and Kubernetes",
+    "Engineering Reliable, AI-Integrated Cloud-Native Systems on AWS, GCP, and Kubernetes",
   skills: [
     emoji(
       "⚡ Design and develop distributed backend services using Java, Spring Boot, and microservice architecture"
@@ -88,7 +89,11 @@ const skillsSection = {
           fontAwesomeClassname: "fab fa-aws"
         },
         {
-          skillName: "AWS SAM / CDK/ CFN",
+          skillName: "GCP (GKE, Cloud Run, BigQuery)",
+          fontAwesomeClassname: "fab fa-google"
+        },
+        {
+          skillName: "AWS SAM / CDK / CFN",
           fontAwesomeClassname: "fas fa-code-branch"
         },
         {
@@ -180,6 +185,10 @@ const techStack = {
           progressPercentage: "80%"
         },
         {
+          Stack: "GCP / GKE (Associate Cloud Engineer)",
+          progressPercentage: "65%"
+        },
+        {
           Stack: "Infrastructure as Code (Terraform / AWS SAM / CDK)",
           progressPercentage: "80%"
         },
@@ -228,6 +237,10 @@ const techStack = {
           progressPercentage: "70%"
         },
         {
+          Stack: "Agentic AI & DevOps Automation (Multi-Agent / Step Functions)",
+          progressPercentage: "70%"
+        },
+        {
           Stack: "AI-Assisted Development (Claude Code / Kiro)",
           progressPercentage: "65%"
         }
@@ -244,13 +257,15 @@ const workExperiences = {
       company: "Hyundai AutoEver",
       companylogo: require("../assets/images/hyundaiLogo2.png"),
       date: "2023 – Present",
-      desc: "Led backend architecture for Hyundai’s global EV charging platform (eMSP), including Indonesia deployment and unified global app.",
+      desc: "Led backend architecture for Hyundai's global EV charging platform (eMSP), including Indonesia deployment and unified global app.",
       descBullets: [
         "Designed subscription/payment/vehicle/member services with Spring Boot & Kafka",
         "Integrated OAuth2 (HMG ID 2.0) and HMG Pay 2.0 recurring billing",
         "Built BFF/BFI gateways and deployed services on AWS EKS Fargate",
         "Streamed domain events to MongoDB for analytics via Eventuate Tram",
-        "Owned observability and CI/CD pipeline design"
+        "Owned observability and CI/CD pipeline design",
+        "Designed and implemented EV DevOps Agent PoC — GenAI-powered operations automation using AWS Bedrock and multi-agent Lambda architecture on Step Functions",
+        "Selected as company-sponsored representative to AWS re:Invent 2025; presented HMG cloud architecture recap covering Agentic AI, EKS, and cloud-native patterns"
       ]
     },
     {
@@ -327,11 +342,11 @@ const educationInfo = {
       title: "Conference",
       items: [
         {
-          schoolName: "AWS re:Invent 2025",
+          schoolName: "AWS re:Invent 2025 — HMG Recap Session",
           logo: require("../assets/images/reinvent.jpeg"),
-          subHeader: "Global Cloud Conference",
+          subHeader: "Global Cloud Conference · Speaker",
           duration: "December 2025",
-          desc: "Selected as a company-sponsored attendee. Attended sessions on Agentic AI (Strands, AgentCore), EKS, and cloud architecture"
+          desc: "Selected as company-sponsored attendee and recap session speaker. Presented HMG cloud architecture findings covering Agentic AI (Strands), and cloud-native patterns adopted in Hyundai's global EV platform."
         },
         {
           schoolName: "DevTalk_Around_AI",
@@ -399,6 +414,19 @@ const bigProjects = {
   title: "Key Projects",
   subtitle: "SIGNIFICANT WORK I'VE LED OR CONTRIBUTED TO",
   projects: [
+        {
+      image: require("../assets/images/hyundaiLogo.png"),
+      projectName: "EV DevOps Agent — GenAI Operations Automation PoC",
+      projectDesc: `
+Built a GenAI-powered DevOps automation agent on AWS for EV charging platform operations.
+Used Strands Agents and AWS Lambda to automate incident triage, runbook execution, and alert correlation.`,
+      footerLink: [
+        {
+          name: "More on Notion",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
     {
       image: require("../assets/images/brandy-ai.png"),
       projectName: "Brandy — AI Branding Assistant",
@@ -418,9 +446,9 @@ Ensured resilience with async polling, fallback scoring, and workflow-level erro
       image: require("../assets/images/coin.jpeg"),
       projectName: "Coin Auto Trading Agent",
       projectDesc: `
-    AI trading system that automatically analyzes and trades on the Bithumb spot market.
-    Aggregates judgments from multiple AI models and executes orders only when pre-defined risk rules are passed.
-    Separates auto trading (auto) and prediction-only (predict) modes`,
+AI trading system that automatically analyzes and trades on the Bithumb spot market.
+Aggregates judgments from multiple AI models and executes orders only when pre-defined risk rules are passed.
+Separates auto trading (auto) and prediction-only (predict) modes`,
       footerLink: [
         {
           name: "Github repo",
@@ -432,7 +460,7 @@ Ensured resilience with async polling, fallback scoring, and workflow-level erro
       image: require("../assets/images/hyundaiLogo.png"),
       projectName: "Global eMSP Platform — Hyundai AutoEver",
       projectDesc: `
-Led backend architecture and domain design for Hyundai’s global EV charging platform (subscription, member, vehicle, payment).
+Led backend architecture and domain design for Hyundai's global EV charging platform (subscription, member, vehicle, payment).
 Integrated HMG ID (OAuth2.0) and HMG Pay (real-time billing) with MSA on AWS EKS Fargate.
 Established observability stack with ADOT Collector, CloudWatch, and X-Ray for distributed tracing and metrics correlation.
 Served as Technical Architect overseeing reliability, scalability, and release governance.`,
@@ -623,7 +651,7 @@ const achievementSection = {
       title: "AWS Certified CloudOps Engineer - Associate",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/COA.png"),
-      imageAlt: "AIF Logo",
+      imageAlt: "COA Logo",
       footerLink: [
         {
           name: "Certification",
@@ -719,7 +747,7 @@ const achievementSection = {
       title: "Hyundai SPA (Speaking Proficiency Assessment) 46",
       subtitle: "Issued by HMG in 2024",
       image: require("../assets/images/HMC.png"),
-      imageAlt: "SQLD Certificate",
+      imageAlt: "HMG SPA Certificate",
       footerLink: [
         {
           name: "More Info",
@@ -777,7 +805,7 @@ const blogSection = {
 
 const talkSection = {
   title: "Studies",
-  subtitle: emoji("Engineering, Architecture, DevOps – Curated by Me"),
+  subtitle: emoji("Speaking, Engineering, Architecture, DevOps – Curated by Me"),
   talks: [
     {
       title: "Engineering Knowledge Base",

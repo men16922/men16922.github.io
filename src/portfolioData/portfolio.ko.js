@@ -23,6 +23,7 @@ const greeting = {
 • DevOps 자동화 경험: CI/CD 파이프라인, GitOps, Infrastructure as Code
 • 관찰 가능성(Observability), 안정성, 확장 가능한 백엔드 시스템 설계에 집중
 • Agentic AI & Automation에 대한 열정
+• AI 보조 개발과 클라우드 네이티브 아키텍처를 주제로 한 컨퍼런스 발표 경험 (AWS re:Invent 2025, DevTalk_Around_AI)
   `,
   resumeLink: "https://www.notion.so/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
@@ -42,8 +43,9 @@ const socialMediaLinks = {
 };
 
 const skillsSection = {
-  title: "B/E · 클라우드 · SRE 엔지니어",
-  subTitle: "AWS & K8S 기반 클라우드 엔지니어링, Spring & Java B/E Core 개발",
+  title: "BACKEND · PLATFORM · AI ENGINEER",
+  subTitle:
+    "AWS, GCP, Kubernetes 기반의 신뢰할 수 있는 AI 통합 클라우드 네이티브 시스템을 엔지니어링합니다",
   skills: [
     emoji(
       "⚡ Java, Spring Boot, 마이크로서비스 아키텍처를 활용한 분산 백엔드 서비스 설계 및 개발"
@@ -80,11 +82,15 @@ const skillsSection = {
       category: "클라우드 & DevOps",
       skills: [
         {
-          skillName: "AWS (EKS, Lambda, Fargate)",
+          skillName: "AWS (EKS, ECS, Lambda, Fargate)",
           fontAwesomeClassname: "fab fa-aws"
         },
         {
-          skillName: "AWS SAM / CDK/ CFN",
+          skillName: "GCP (GKE, Cloud Run, BigQuery)",
+          fontAwesomeClassname: "fab fa-google"
+        },
+        {
+          skillName: "AWS SAM / CDK / CFN",
           fontAwesomeClassname: "fas fa-code-branch"
         },
         {
@@ -120,7 +126,7 @@ const skillsSection = {
           skillName: "Prometheus / Grafana",
           fontAwesomeClassname: "fas fa-chart-area"
         },
-        {skillName: "CloudWatch", fontAwesomeClassname: "fas fa-eye"},
+        {skillName: "CloudWatch / X-Ray", fontAwesomeClassname: "fas fa-eye"},
         {skillName: "ELK / OpenSearch", fontAwesomeClassname: "fas fa-search"}
       ]
     },
@@ -176,6 +182,10 @@ const techStack = {
           progressPercentage: "80%"
         },
         {
+          Stack: "GCP / GKE (Associate Cloud Engineer)",
+          progressPercentage: "65%"
+        },
+        {
           Stack: "Infrastructure as Code (Terraform / AWS SAM / CDK)",
           progressPercentage: "80%"
         },
@@ -222,6 +232,10 @@ const techStack = {
           progressPercentage: "70%"
         },
         {
+          Stack: "Agentic AI & DevOps 자동화 (Strands Agents / AWS Lambda)",
+          progressPercentage: "70%"
+        },
+        {
           Stack: "AI 지원 개발 (Claude Code / Kiro)",
           progressPercentage: "65%"
         }
@@ -238,12 +252,15 @@ const workExperiences = {
       company: "현대오토에버",
       companylogo: require("../assets/images/hyundaiLogo2.png"),
       date: "2023 – 현재",
-      desc: "현대자동차 글로벌 전기차 충전 플랫폼 개발",
+      desc: "인도네시아 배포와 글로벌 통합 앱을 포함한 현대자동차 글로벌 전기차 충전 플랫폼(eMSP)의 백엔드 아키텍처를 주도했습니다.",
       descBullets: [
         "Spring Boot & Kafka 기반 구독/결제/차량/회원 서비스 설계",
-        "OAuth2 (HMG ID 2.0) 인증/인가",
-        "권역별 AWS 퍼블릭클라우드 구성 (북미, 유럽, 국내)",
-        "Observabiity 및 CI/CD 파이프라인 설계"
+        "OAuth2 (HMG ID 2.0) 및 HMG Pay 2.0 정기 결제 연동",
+        "BFF/BFI 게이트웨이 구축 및 AWS EKS Fargate 환경 배포",
+        "Eventuate Tram 기반 도메인 이벤트를 MongoDB로 적재해 분석 파이프라인 구성",
+        "Observability 및 CI/CD 파이프라인 설계 주도",
+        "AWS 기반 EV DevOps Agent PoC 설계 및 구현 - Strands Agents와 AWS Lambda를 활용해 장애 원인 분석 자동화",
+        "AWS re:Invent 2025 회사 대표 참가자로 선발되어 Agentic AI, EKS, 클라우드 네이티브 패턴 기반 HMG 클라우드 아키텍처 리캡 세션 발표"
       ]
     },
     {
@@ -320,11 +337,11 @@ const educationInfo = {
       title: "컨퍼런스",
       items: [
         {
-          schoolName: "AWS re:Invent 2025",
+          schoolName: "AWS re:Invent 2025 - HMG 리캡 세션",
           logo: require("../assets/images/reinvent.jpeg"),
-          subHeader: "글로벌 클라우드 컨퍼런스",
+          subHeader: "글로벌 클라우드 컨퍼런스 · 발표",
           duration: "2025년 12월",
-          desc: "출장 교육 인원으로 선발되어 참가. Agentic AI(Strands, AgentCore), EKS, 클라우드 아키텍처 세션 수강"
+          desc: "회사 지원 참가자이자 리캡 세션 발표자로 선발. 현대차 그룹 글로벌 EV 플랫폼에 적용 가능한 Agentic AI(Strands), 클라우드 네이티브 아키텍처 인사이트를 발표"
         },
         {
           schoolName: "DevTalk_Around_AI",
@@ -390,8 +407,21 @@ const openSource = {
 
 const bigProjects = {
   title: "주요 프로젝트",
-  subtitle: "주요 작업",
+  subtitle: "주도했거나 핵심적으로 기여한 주요 프로젝트",
   projects: [
+    {
+      image: require("../assets/images/hyundaiLogo.png"),
+      projectName: "EV DevOps Agent - GenAI 운영 자동화 PoC",
+      projectDesc: `
+AWS 기반 전기차 충전 플랫폼 운영을 위한 GenAI 기반 DevOps 자동화 에이전트를 구축.
+Strands Agents와 AWS Lambda를 활용해 장애 원인 분석 보고서 알림`,
+      footerLink: [
+        {
+          name: "Notion에서 더보기",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
     {
       image: require("../assets/images/brandy-ai.png"),
       projectName: "Brandy — AI 브랜딩 어시스턴트",
@@ -427,8 +457,8 @@ Claude 4 Sonnet (추론), Titan Image Generator v2 (디자인), DynamoDB (세션
       projectDesc: `
 현대자동차 글로벌 전기차 충전 플랫폼(구독 상품, 회원, 차량, 결제)의 백엔드 아키텍처 및 도메인 설계 주도.
 AWS EKS Fargate 기반 MSA에 HMG ID (OAuth2.0) 및 HMG Pay (실시간 빌링) 통합.
-ADOT Collector, CloudWatch, Pinpoint를 사용한 분산 추적 및 메트릭 Observability 스택 구축.
-글로벌 인프라 구성을 위한 Technical Architect 역할 수행.`,
+ADOT Collector, CloudWatch, X-Ray를 사용한 분산 추적 및 메트릭 Observability 스택 구축.
+안정성, 확장성, 릴리스 거버넌스를 총괄하는 Technical Architect 역할 수행.`,
       footerLink: [
         {
           name: "Notion에서 더보기",
