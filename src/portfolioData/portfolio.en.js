@@ -636,6 +636,18 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
+      title: "Google Cloud Generative AI Leader",
+      subtitle: "Verified by Google in 2026",
+      image: require("../assets/images/GenAI_Leader.png"),
+      imageAlt: "GenAI Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/c131644d-c698-4155-9801-f950421736a8/public_url"
+        }
+      ]
+    },
+    {
       title: "Google Cloud Associate Cloud Engineer",
       subtitle: "Verified by Google in 2026",
       image: require("../assets/images/GCP_ACE.png"),
@@ -655,7 +667,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: "https://www.credly.com/earner/earned/badge/492da4e2-a907-4122-968d-94a2735f02a8"
+          url: "https://www.credly.com/badges/492da4e2-a907-4122-968d-94a2735f02a8"
         }
       ]
     },
@@ -667,7 +679,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: "https://www.credly.com/earner/earned/badge/d54e935d-199c-4d93-88ec-6daf64827a53"
+          url: "https://www.credly.com/badges/d54e935d-199c-4d93-88ec-6daf64827a53"
         }
       ]
     },
@@ -679,7 +691,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: "https://www.credly.com/earner/earned/badge/02e14961-7d3b-4499-8966-ffd861b6de5e"
+          url: "https://www.credly.com/badges/02e14961-7d3b-4499-8966-ffd861b6de5e"
         }
       ]
     },
@@ -691,7 +703,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: "https://www.credly.com/earner/earned/badge/e580c0aa-cce4-4352-83c6-4eef9e96b2a0"
+          url: "https://www.credly.com/badges/e580c0aa-cce4-4352-83c6-4eef9e96b2a0"
         }
       ]
     },
