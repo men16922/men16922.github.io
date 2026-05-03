@@ -636,7 +636,7 @@ const achievementSection = {
   subtitle: "Certifications and achievements",
   achievementsCards: [
     {
-      title: "WS Certified CloudOps Engineer - Professional",
+      title: "AWS Certified CloudOps Engineer - Professional",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/SAP.png"),
       imageAlt: "GenAI Logo",
