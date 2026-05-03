@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.56472ad0.css",
-    "main.js": "/static/js/main.317cfda1.js",
+    "main.js": "/static/js/main.5df91941.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
@@ -22,6 +22,7 @@
     "static/media/aws_cert.png": "/static/media/aws_cert.dbac4be7505b78f7a4e4.png",
     "static/media/hyundaiLogo2.png": "/static/media/hyundaiLogo2.87ba74d079cdcba3e900.png",
     "static/media/GenAI_Leader.png": "/static/media/GenAI_Leader.6e523c4280a3ec1a77b9.png",
+    "static/media/SAP.png": "/static/media/SAP.d2af85ee369870e9d173.png",
     "static/media/DVA.png": "/static/media/DVA.e57555d245800533d77c.png",
     "static/media/aws.jpeg": "/static/media/aws.80057988158d214e6fb0.jpeg",
     "static/media/coin.jpeg": "/static/media/coin.9591fcf6a813a2a1606d.jpeg",
@@ -36,7 +37,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.56472ad0.css.map": "/static/css/main.56472ad0.css.map",
-    "main.317cfda1.js.map": "/static/js/main.317cfda1.js.map",
+    "main.5df91941.js.map": "/static/js/main.5df91941.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -44,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.56472ad0.css",
-    "static/js/main.317cfda1.js"
+    "static/js/main.5df91941.js"
   ]
 }
