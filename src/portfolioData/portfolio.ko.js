@@ -631,6 +631,18 @@ const achievementSection = {
   subtitle: "Achievement",
   achievementsCards: [
     {
+      title: "WS Certified CloudOps Engineer - Professional",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/SAP.png"),
+      imageAlt: "GenAI Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/6f5c6fa5-7250-437f-90cc-11ba2db5d902"
+        }
+      ]
+    },
+    {
       title: "Google Cloud Generative AI Leader",
       subtitle: "Google에서 2026년 인증",
       image: require("../assets/images/GenAI_Leader.png"),
