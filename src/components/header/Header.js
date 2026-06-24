@@ -18,6 +18,8 @@ import {
 
 function Header() {
   const {isDark} = useContext(StyleContext);
+  const isKoreanRoute = window.location.pathname.startsWith("/kr");
+  const articlesPath = isKoreanRoute ? "/kr/articles" : "/articles";
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
@@ -46,17 +48,17 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills">Home</a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience">Experience</a>
             </li>
           )}
           {viewProjects && (
             <li>
-              <a href="#projects">Key Projects</a>
+              <a href="#projects">Projects</a>
             </li>
           )}
           {viewOpenSource && (
@@ -66,17 +68,17 @@ function Header() {
           )}
           {viewAchievement && (
             <li>
-              <a href="#achievements">Achievements</a>
+              <a href="#achievements">Certifications</a>
             </li>
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href={articlesPath}>Articles</a>
             </li>
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a href="#talks">Community</a>
             </li>
           )}
           {viewResume && (

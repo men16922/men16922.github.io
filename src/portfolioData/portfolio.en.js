@@ -1,5 +1,6 @@
 // Customized developerFolio config for Byung Min Choi
 
+import {articleChannels} from "../content/articles";
 import emoji from "react-easy-emoji";
 import splashAnimation from "../assets/lottie/splashAnimation";
 
@@ -17,12 +18,10 @@ const greeting = {
   username: "Byung Min Choi (Paul)",
   title: "Hi, I'm Byung Min Choi (Paul)",
   subTitle: `
-• Backend Engineer specializing in cloud-native microservice architecture
-• 6+ years of hands-on experience with Java (Spring Boot), Kafka, Redis, and PostgreSQL
-• Proven expertise in designing and operating distributed systems on AWS and Kubernetes (EKS)
-• Experienced in DevOps automation: CI/CD pipelines, GitOps, and Infrastructure as Code
-• Focused on observability, reliability, and scalable backend system design
-• Passionate about Agentic AI & Automation
+• Backend Engineer building reliable distributed systems with Java, Spring Boot, Kafka, Redis, and PostgreSQL
+• Cloud Architect with hands-on AWS, Kubernetes, serverless, observability, and platform automation experience
+• AI Agent Builder focused on Bedrock, multi-agent workflows, DevOps automation, and practical engineering productivity
+• Building one technical hub for recruiters, engineering leaders, AWS Community, and hackathon judges
 • Conference speaker on AI-assisted development and cloud-native architecture (AWS re:Invent 2025, DevTalk_Around_AI)
   `,
   resumeLink: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f",
@@ -43,9 +42,9 @@ const socialMediaLinks = {
 };
 
 const skillsSection = {
-  title: "BACKEND · PLATFORM · AI ENGINEER",
+  title: "BACKEND · CLOUD · AI AGENT",
   subTitle:
-    "Engineering Reliable, AI-Integrated Cloud-Native Systems on AWS, GCP, and Kubernetes",
+    "Designing and building distributed backend systems, cloud architecture, and AI agent workflows",
   skills: [
     emoji(
       "⚡ Design and develop distributed backend services using Java, Spring Boot, and microservice architecture"
@@ -411,219 +410,88 @@ const openSource = {
 };
 
 const bigProjects = {
-  title: "Key Projects",
-  subtitle: "SIGNIFICANT WORK I'VE LED OR CONTRIBUTED TO",
+  title: "Projects",
+  subtitle:
+    "Representative projects and platform work that define my technical brand",
   projects: [
-        {
-      image: require("../assets/images/hyundaiLogo.png"),
-      projectName: "EV DevOps Agent — GenAI Operations Automation PoC",
+    {
+      image: require("../assets/images/aws.png"),
+      projectName: "SlackOps — AI DevOps Agent",
       projectDesc: `
-Built a GenAI-powered DevOps automation agent on AWS for EV charging platform operations.
-Used Strands Agents and AWS Lambda to automate incident triage, runbook execution, and alert correlation.`,
+Problem: operational alerts are noisy and slow to triage in chat-driven workflows.
+Architecture: Slack + AWS + agent workflows for incident understanding, action routing, and response acceleration.
+Tech Stack: AWS, Lambda, Bedrock, GitHub Actions, observability tooling.
+Artifacts: GitHub source, portfolio case-study positioning, and hackathon/community narrative.`,
       footerLink: [
         {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+          name: "GitHub",
+          url: "https://github.com/men16922/slackops-devops-agent"
+        },
+        {
+          name: "Related Articles",
+          url: "https://medium.com/@men16922"
         }
       ]
     },
     {
       image: require("../assets/images/brandy-ai.png"),
-      projectName: "Brandy — AI Branding Assistant",
+      projectName: "Hackathon Builds — Brandy and Applied GenAI Prototypes",
       projectDesc: `
-Developed an intelligent multi-agent system that automates end-to-end branding for small businesses using Amazon Bedrock.
-Designed a serverless architecture with 7 Lambda agents orchestrated via Step Functions to generate business names, signboards, and interior concepts.
-Integrated Claude 4 Sonnet (reasoning), Titan Image Generator v2 (designs), DynamoDB (session TTL), and S3 for asset storage.
-Ensured resilience with async polling, fallback scoring, and workflow-level error recovery.`,
+Problem: demonstrate fast end-to-end product execution under hackathon constraints.
+Architecture: serverless multi-agent workflows with orchestration, async polling, and resilient fallbacks.
+Tech Stack: Amazon Bedrock, Step Functions, Lambda, DynamoDB, S3.
+Artifacts: public Devpost entry plus future portfolio write-ups and demo positioning.`,
       footerLink: [
         {
-          name: "View on Devpost",
+          name: "Demo / Devpost",
           url: "https://devpost.com/software/brandy-ai-branding-assistant-for-signboards-interiors"
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/men16922/brandy-serverless"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/hyundaiLogo.png"),
+      projectName: "AWS Incident Agent — EV DevOps Agent",
+      projectDesc: `
+Problem: EV charging platform incidents need faster analysis and more repeatable operational responses.
+Architecture: AWS-native agent workflow for alert correlation, runbook execution, and cause-analysis reporting.
+Tech Stack: AWS Lambda, Step Functions, Bedrock, observability integrations.
+Artifacts: enterprise PoC, presentation narrative, and portfolio flagship architecture story.`,
+      footerLink: [
+        {
+          name: "Architecture Notes",
+          url: "https://builder.aws.com/community/%40cbm?tab=badges"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/hyundaiLogo.png"),
+      projectName: "Global eMSP Platform",
+      projectDesc: `
+Problem: build a scalable global EV charging backend across subscription, member, vehicle, and payment domains.
+Architecture: MSA on AWS EKS Fargate with domain events, BFF/BFI gateways, and observability stack.
+Tech Stack: Spring Boot, Kafka, MongoDB, ADOT, CloudWatch, X-Ray.
+Artifacts: flagship professional experience for recruiter and technical reviewer evaluation.`,
+      footerLink: [
+        {
+          name: "Related Articles",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
         }
       ]
     },
     {
       image: require("../assets/images/coin.jpeg"),
-      projectName: "Coin Auto Trading Agent",
+      projectName: "Applied AI Systems",
       projectDesc: `
-AI trading system that automatically analyzes and trades on the Bithumb spot market.
-Aggregates judgments from multiple AI models and executes orders only when pre-defined risk rules are passed.
-Separates auto trading (auto) and prediction-only (predict) modes`,
+Includes AI trading experimentation, ML/MLOps practice, and smaller applied systems that reinforce breadth across AI, automation, and data workflows.
+This bucket supports the technical brand by showing consistent execution beyond the flagship portfolio pieces.`,
       footerLink: [
         {
-          name: "Github repo",
+          name: "GitHub",
           url: "https://github.com/men16922/coin-ai-system"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/hyundaiLogo.png"),
-      projectName: "Global eMSP Platform — Hyundai AutoEver",
-      projectDesc: `
-Led backend architecture and domain design for Hyundai's global EV charging platform (subscription, member, vehicle, payment).
-Integrated HMG ID (OAuth2.0) and HMG Pay (real-time billing) with MSA on AWS EKS Fargate.
-Established observability stack with ADOT Collector, CloudWatch, and X-Ray for distributed tracing and metrics correlation.
-Served as Technical Architect overseeing reliability, scalability, and release governance.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/hyundaiLogo.png"),
-      projectName: "Indonesia EV Infrastructure Design",
-      projectDesc: `
-Proposed and delivered a system migration strategy for Hyundai AutoEver Indonesia to the AMPECO platform.
-Designed backend architecture covering subscription, home/public charging, and operational transition plans.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/bithumb.png"),
-      projectName: "Batch Monitoring Platform",
-      projectDesc: `
-Developed an integrated batch monitoring system across FDS, trading, and AML services.
-Aggregated multi-DB sources (MySQL, Oracle) and implemented Slack-based alerts for missed or delayed jobs.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/bithumb.png"),
-      projectName: "Kafka-based Log Alerting System",
-      projectDesc: `
-Implemented real-time log alerting using AWS MSK (Kafka).
-Developed prefix-based error pattern detection and retryable alert delivery pipeline for high reliability.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/bithumb.png"),
-      projectName: "Secrets Manager Integration",
-      projectDesc: `
-Migrated credential management from legacy storage to AWS Secrets Manager across hybrid (AWS + IDC) environments.
-Developed a custom Spring Boot library compatible with 2.x–3.x for standardized VPC and region configurations.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/bithumb.png"),
-      projectName: "Proxy Access Log Aggregation",
-      projectDesc: `
-Built a log aggregation pipeline using Kafka and MongoDB TimeSeries for proxy access data.
-Delivered MySQL-based dashboards showing host-level metrics and success rates.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/bithumb.png"),
-      projectName: "Monitoring Console Dashboard",
-      projectDesc: `
-Developed React-based internal monitoring console with alert configuration for Kafka lag and batch jobs.
-Implemented Spring Security-based OTP/IP login and modular Ant Design + Tailwind UI components.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "Cafe24 Payment Gateway Platform",
-      projectDesc: `
-Developed payment, deposit, and shipping APIs for the Cafe24 PG platform.
-Implemented batch services for bulk invoice registration using Spring Boot, MyBatis, and Thymeleaf.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "LG Pay & BOKU Simplified Payments",
-      projectDesc: `
-Integrated LG Pay and BOKU payment gateways, including card registration, payment, and refund flows.
-Developed caching and batch systems (exchange rates, transaction sync) using Spring Batch and Spring Cache.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "Global Payment Gateway API",
-      projectDesc: `
-Built unified international payment APIs using Spring Cloud Gateway.
-Supported one-time and recurring transactions, and collaborated with Alipay, EXIMBAY, and Cybersource for full-cycle integration.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "Alipay & Cybersource Integration",
-      projectDesc: `
-Implemented authentication, recurring billing, refund, and merchant onboarding APIs for Alipay and Visa Cybersource.
-Delivered both hosted checkout and REST-based payment flows.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "UnionPay Prepaid Service",
-      projectDesc: `
-Maintained and enhanced UnionPay prepaid payment system (SMS-based, tokenless).
-Analyzed APIs, improved reliability, and coordinated with external vendors.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/Danal.png"),
-      projectName: "ELK-based Logging System",
-      projectDesc: `
-Built centralized log management for overseas payment services using Filebeat, Logstash, Elasticsearch, and Kibana.
-Provided custom dashboards tracking success/failure metrics by time and region.`,
-      footerLink: [
-        {
-          name: "More on Notion",
-          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
         }
       ]
     }
@@ -632,8 +500,8 @@ Provided custom dashboards tracking success/failure metrics by time and region.`
 };
 
 const achievementSection = {
-  title: emoji("Certifications & Awards 🏆"),
-  subtitle: "Certifications and achievements",
+  title: emoji("Certifications 🏆"),
+  subtitle: "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
     {
       title: "AWS Certified CloudOps Engineer - Professional",
@@ -820,27 +688,56 @@ const achievementSection = {
 };
 
 const blogSection = {
-  title: "Technical Writings",
-  subtitle: "A few articles I've written about backend systems and DevOps",
-  displayMediumBlogs: "true",
-  blogs: [],
-  display: false
+  title: "Articles",
+  subtitle:
+    "All writing channels are aggregated here. GitHub MDX is the primary blog, Medium is for global reach, Velog is maintained lightly, and platform community posts stay native to AWS/GCP/Azure.",
+  displayMediumBlogs: "false",
+  blogs: articleChannels.en,
+  display: true
 };
 
 const talkSection = {
-  title: "Studies",
-  subtitle: emoji("Speaking, Engineering, Architecture, DevOps – Curated by Me"),
+  title: "Hackathons, Speaking & Community",
+  subtitle: emoji(
+    "Community presence, conference speaking, and competitive builds that strengthen the portfolio hub"
+  ),
   talks: [
     {
-      title: "Engineering Knowledge Base",
+      title: "AWS Community Builder",
       subtitle:
-        "Notion-based technical archive: Java, Spring, DevOps, System Design",
+        "Public AWS builder profile and community-facing technical presence.",
+      slides_url:
+        "https://builder.aws.com/community/%40cbm?tab=badges",
+      event_url:
+        "https://www.linkedin.com/in/paul-choi-99a192244/",
+      primaryLabel: "Profile",
+      secondaryLabel: "LinkedIn",
+      date: "Ongoing",
+      location: "AWS Community"
+    },
+    {
+      title: "Hackathon Portfolio",
+      subtitle:
+        "A single surface for hackathon participation, demos, build logs, and results including AWS and GenAI-focused builds.",
+      slides_url:
+        "https://devpost.com/software/brandy-ai-branding-assistant-for-signboards-interiors",
+      event_url: "https://github.com/men16922/slackops-devops-agent",
+      primaryLabel: "Demo",
+      secondaryLabel: "Code",
+      date: "Ongoing",
+      location: "Hackathons"
+    },
+    {
+      title: "Speaking & Technical Recaps",
+      subtitle:
+        "Conference speaking and engineering recap materials spanning AI-assisted development and cloud-native architecture.",
       slides_url:
         "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
-      event_url:
-        "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e",
+      event_url: "https://velog.io/@men16922/posts",
+      primaryLabel: "Archive",
+      secondaryLabel: "Posts",
       date: "Ongoing",
-      location: "Notion Workspace"
+      location: "Community & Events"
     }
   ],
   display: true

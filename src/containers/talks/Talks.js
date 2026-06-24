@@ -33,6 +33,8 @@ export default function Talks() {
                   subtitle: talk.subtitle,
                   slides_url: talk.slides_url,
                   event_url: talk.event_url,
+                  primaryLabel: talk.primaryLabel,
+                  secondaryLabel: talk.secondaryLabel,
                   image: talk.image,
                   isDark
                 }}

@@ -2,6 +2,9 @@ import React from "react";
 import "./TalkCard.scss";
 
 export default function TalkCard({talkDetails}) {
+  const primaryLabel = talkDetails.primaryLabel || "View";
+  const secondaryLabel = talkDetails.secondaryLabel || "Open";
+
   return (
     <div>
       <div className="container">
@@ -16,10 +19,10 @@ export default function TalkCard({talkDetails}) {
 
           <div className="card-footer-button-div">
             <a href={talkDetails.slides_url} target="_" className="talk-button">
-              Slides
+              {primaryLabel}
             </a>
             <a href={talkDetails.event_url} target="_" className="talk-button">
-              Event
+              {secondaryLabel}
             </a>
           </div>
         </div>
