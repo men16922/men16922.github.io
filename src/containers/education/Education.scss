@@ -1,13 +1,19 @@
+@import "../../_globalColor";
+
 .education-heading {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: $titleColor;
 }
 
 .education-section {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 20px 0px;
+  width: 100%;
+  max-width: 1080px;
+  padding: 20px 24px;
   margin: 0px auto;
   margin-top: 2rem;
 }
@@ -25,21 +31,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background-color: rgba(55, 55, 55, 0.05);
-  border-radius: 10px;
+  padding: 14px 20px;
+  background-color: $lightBackground3;
+  border: 1px solid $lightBorder1;
+  border-radius: $radius-md;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   user-select: none;
 }
 
 .education-category-header:hover {
-  background-color: rgba(55, 55, 55, 0.1);
-  transform: translateY(-2px);
+  box-shadow: $elevation-1;
 }
 
 .dark-mode .education-category-header {
   background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .dark-mode .education-category-header:hover {
@@ -48,20 +55,21 @@
 
 .dark-mode .education-category-title,
 .dark-mode .education-category-icon {
-  color: #a475d6;
+  color: #8ab4f8;
 }
 
 .education-category-title {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
+  letter-spacing: -0.02em;
   margin: 0;
-  color: #55198b;
+  color: $titleColor;
 }
 
 .education-category-icon {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 300;
-  color: #55198b;
+  color: $subTitle;
   transition: transform 0.3s ease;
 }
 

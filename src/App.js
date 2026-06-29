@@ -3,7 +3,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.scss";
 import Main from "./containers/Main";
 import ArticlesPage from "./containers/articles/ArticlesPage";
-import ArticleDetailPage from "./containers/articles/ArticleDetailPage";
 
 function App() {
   return (
@@ -12,10 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/articles/:slug" element={<ArticleDetailPage />} />
           <Route path="/kr/*" element={<Main />} />
           <Route path="/kr/articles" element={<ArticlesPage />} />
-          <Route path="/kr/articles/:slug" element={<ArticleDetailPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -25,3 +25,7 @@ yarn-error.log*
 #user generated content
 public/profile.json
 public/blogs.json
+scripts/overnight/logs/
+scripts/overnight/STOP
+scripts/overnight/DONE
+docs/test/history/*-overnight-review-checklist.md

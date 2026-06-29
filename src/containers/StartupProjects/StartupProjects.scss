@@ -73,9 +73,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem 1rem;
-  padding: 0 1rem;
+  padding: 0 24px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 

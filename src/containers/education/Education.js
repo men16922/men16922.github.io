@@ -5,7 +5,9 @@ import {educationInfo} from "../../portfolio";
 
 export default function Education() {
   const [expandedCategories, setExpandedCategories] = useState(
-    educationInfo.categories ? educationInfo.categories.map(() => true) : []
+    educationInfo.categories
+      ? educationInfo.categories.map((_, i) => i === 0)
+      : []
   );
 
   const toggleCategory = index => {

@@ -1,16 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {greeting} from "../../portfolio";
-import {articlePlatforms, getArticlesByLang} from "../../content/articles";
+import {getPlatforms, getArticlesByPlatform} from "../../content/articles";
 import "./ArticlesPage.scss";
 
-function ArticleListItem({post, hubPath, formatDate}) {
-  const content = (
-    <>
-      <div className="articles-list-source">
-        <span>{post.source || "GitHub Blog"}</span>
-        <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-      </div>
+function ArticleListItem({post}) {
+  return (
+    <a
+      className="articles-list-item"
+      href={post.url}
+      target="_blank"
+      rel="noreferrer"
+    >
       <div className="articles-list-copy">
         <h2>{post.title}</h2>
         <p>{post.excerpt}</p>
@@ -19,52 +20,30 @@ function ArticleListItem({post, hubPath, formatDate}) {
         </span>
       </div>
       <span className="articles-list-arrow" aria-hidden="true">
-        {post.externalUrl ? "↗" : "→"}
+        ↗
       </span>
-    </>
-  );
-
-  if (post.externalUrl) {
-    return (
-      <a
-        className="articles-list-item"
-        href={post.externalUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <Link className="articles-list-item" to={`${hubPath}/${post.slug}`}>
-      {content}
-    </Link>
+    </a>
   );
 }
 
 export default function ArticlesPage() {
   const isKoreanRoute = window.location.pathname.startsWith("/kr");
   const homePath = isKoreanRoute ? "/kr" : "/";
-  const hubPath = isKoreanRoute ? "/kr/articles" : "/articles";
   const lang = isKoreanRoute ? "ko" : "en";
-  const posts = getArticlesByLang(lang);
-  const platforms = articlePlatforms[lang];
+  const platforms = getPlatforms(lang);
 
   const copy = isKoreanRoute
     ? {
         home: "홈",
         projects: "프로젝트",
-        articles: "기술 글",
+        articles: "Articles",
         language: "EN",
         languagePath: "/articles",
-        title: "기술 글",
-        description: "백엔드, 클라우드, AI Agent의 설계와 구현을 다룹니다.",
-        platformsTitle: "외부 아티클 및 커뮤니티",
-        platformsDescription:
-          "외부 플랫폼에 발행한 독점 아티클과 커뮤니티 프로필을 연결합니다.",
-        placeholder: "링크 입력 예정"
+        title: "Articles",
+        description:
+          "Backend/Cloud/AI 관심사에 대하여 작성한 글을 플랫폼별로 모았습니다.",
+        empty: "아직 등록된 글이 없습니다.",
+        visit: "방문"
       }
     : {
         home: "Home",
@@ -74,19 +53,31 @@ export default function ArticlesPage() {
         languagePath: "/kr/articles",
         title: "Technical articles",
         description:
-          "Notes on backend systems, cloud architecture, and AI agents.",
-        platformsTitle: "External articles and communities",
-        platformsDescription:
-          "Exclusive articles and community profiles published outside this site.",
-        placeholder: "Link placeholder"
+          "Writing on backend, cloud, and AI agents — organized by the platform each post lives on.",
+        empty: "No posts here yet.",
+        visit: "Visit"
       };
 
-  const formatDate = date =>
-    new Intl.DateTimeFormat(isKoreanRoute ? "ko-KR" : "en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    }).format(new Date(`${date}T00:00:00`));
+  // Default to the first platform that actually has posts; else the first tab.
+  const firstWithPosts = platforms.find(
+    p => getArticlesByPlatform(p.key).length > 0
+  );
+  const [activeKey, setActiveKey] = useState(
+    (firstWithPosts || platforms[0] || {}).key
+  );
+  const [page, setPage] = useState(1);
+
+  const activeChannel =
+    platforms.find(p => p.key === activeKey) || platforms[0];
+  const posts = activeChannel ? getArticlesByPlatform(activeChannel.key) : [];
+
+  const PAGE_SIZE = 3;
+  const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const pagePosts = posts.slice(
+    (safePage - 1) * PAGE_SIZE,
+    safePage * PAGE_SIZE
+  );
 
   return (
     <div className="articles-page">
@@ -110,63 +101,102 @@ export default function ArticlesPage() {
           <p>{copy.description}</p>
         </header>
 
-        <main className="articles-index">
-          {posts.map(post => (
-            <ArticleListItem
-              key={`${post.source}-${post.slug}`}
-              post={post}
-              hubPath={hubPath}
-              formatDate={formatDate}
-            />
-          ))}
-        </main>
+        <div className="articles-tabs" role="tablist" aria-label="Platforms">
+          {platforms.map(platform => {
+            const count = getArticlesByPlatform(platform.key).length;
+            return (
+              <button
+                key={platform.key}
+                type="button"
+                role="tab"
+                aria-selected={platform.key === activeKey}
+                className={
+                  platform.key === activeKey
+                    ? "articles-tab is-active"
+                    : "articles-tab"
+                }
+                onClick={() => {
+                  setActiveKey(platform.key);
+                  setPage(1);
+                }}
+              >
+                {platform.title}
+                {count > 0 && (
+                  <span className="articles-tab-count">{count}</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
 
-        <section
-          className="articles-platforms"
-          aria-labelledby="platforms-title"
-        >
-          <div className="articles-platforms-header">
-            <h2 id="platforms-title">{copy.platformsTitle}</h2>
-            <p>{copy.platformsDescription}</p>
+        {activeChannel && (
+          <div className="articles-tab-meta">
+            <p>{activeChannel.description}</p>
+            <a href={activeChannel.url} target="_blank" rel="noreferrer">
+              {copy.visit} {activeChannel.title} ↗
+            </a>
           </div>
-          <div className="articles-platform-grid">
-            {platforms.map(platform => {
-              const content = (
-                <>
-                  <span className="articles-platform-mark" aria-hidden="true">
-                    {platform.mark}
-                  </span>
-                  <div>
-                    <h3>{platform.title}</h3>
-                    <p>{platform.type}</p>
-                  </div>
-                  <span className="articles-platform-status">
-                    {platform.url ? "↗" : copy.placeholder}
-                  </span>
-                </>
-              );
+        )}
 
-              return platform.url ? (
+        <main className="articles-index">
+          {posts.length > 0 ? (
+            pagePosts.map(post => (
+              <ArticleListItem key={post.url} post={post} />
+            ))
+          ) : (
+            <div className="articles-empty">
+              <p>{copy.empty}</p>
+              {activeChannel && (
                 <a
-                  key={platform.title}
-                  className="articles-platform-card"
-                  href={platform.url}
+                  href={activeChannel.url}
                   target="_blank"
                   rel="noreferrer"
+                  className="articles-empty-link"
                 >
-                  {content}
+                  {copy.visit} {activeChannel.title} ↗
                 </a>
-              ) : (
-                <div
-                  key={platform.title}
-                  className="articles-platform-card is-placeholder"
-                >
-                  {content}
-                </div>
-              );
-            })}
-          </div>
-        </section>
+              )}
+            </div>
+          )}
+        </main>
+
+        {totalPages > 1 && (
+          <nav className="articles-pagination" aria-label="Pagination">
+            <button
+              type="button"
+              className="articles-page-btn"
+              disabled={safePage === 1}
+              onClick={() => setPage(safePage - 1)}
+              aria-label="Previous page"
+            >
+              ‹
+            </button>
+            {Array.from({length: totalPages}, (_, i) => i + 1).map(n => (
+              <button
+                key={n}
+                type="button"
+                className={
+                  n === safePage
+                    ? "articles-page-btn is-active"
+                    : "articles-page-btn"
+                }
+                aria-current={n === safePage ? "page" : undefined}
+                onClick={() => setPage(n)}
+              >
+                {n}
+              </button>
+            ))}
+            <button
+              type="button"
+              className="articles-page-btn"
+              disabled={safePage === totalPages}
+              onClick={() => setPage(safePage + 1)}
+              aria-label="Next page"
+            >
+              ›
+            </button>
+          </nav>
+        )}
       </div>
     </div>
   );

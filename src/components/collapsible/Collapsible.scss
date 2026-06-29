@@ -10,25 +10,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: transparent;
-  border: 2px solid $lightBorder1;
-  border-radius: 8px;
+  background: $lightBackground1;
+  border: 1px solid $lightBorder1;
+  border-radius: $radius-md;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 1.05rem;
+  font-weight: 500;
   text-align: left;
   color: $textColor;
 
   &:hover {
-    background: rgba(85, 85, 85, 0.05);
-    border-color: $buttonColor;
+    background: $lightBackground3;
+    box-shadow: $elevation-1;
   }
 
   &.active {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-color: $buttonColor;
+    color: $buttonColor;
   }
 
   .collapsible-title {
@@ -56,11 +57,11 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
-  border-left: 2px solid $lightBorder1;
-  border-right: 2px solid $lightBorder1;
-  border-bottom: 2px solid $lightBorder1;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-left: 1px solid $lightBorder1;
+  border-right: 1px solid $lightBorder1;
+  border-bottom: 1px solid $lightBorder1;
+  border-bottom-left-radius: $radius-md;
+  border-bottom-right-radius: $radius-md;
 
   &.open {
     max-height: 10000px;
@@ -76,16 +77,18 @@
 /* Dark mode support */
 .dark-mode {
   .collapsible-header {
-    border-color: $lightBorder1;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
     color: $textColorDark;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: $buttonColor;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
     }
 
     &.active {
       border-color: $buttonColor;
+      color: #8ab4f8;
     }
 
     .collapsible-icon {
@@ -94,7 +97,7 @@
   }
 
   .collapsible-content {
-    border-color: $lightBorder1;
+    border-color: rgba(255, 255, 255, 0.12);
 
     &.open {
       border-color: $buttonColor;

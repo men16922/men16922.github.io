@@ -1,3 +1,5 @@
+@import "../../_globalColor";
+
 .experience-cards-div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -5,14 +7,18 @@
 }
 
 .experience-heading {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: $titleColor;
 }
 
 .experience-container {
   display: flex;
-  width: 50%;
-  padding: 20px 10px;
+  width: 100%;
+  max-width: 1080px;
+  padding: 20px 24px;
   margin: 0px auto;
   margin-top: 2rem;
 }

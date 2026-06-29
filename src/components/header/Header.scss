@@ -16,6 +16,10 @@
   color: $textColorDark !important;
 }
 
+.dark-menu .logo-name {
+  color: $textColorDark !important;
+}
+
 .dark-menu li a:hover {
   background-color: $buttonColor !important;
 }
@@ -23,8 +27,9 @@
 .header {
   background-color: $lightBackground1;
   max-width: 100%;
-  padding: 15px 20px;
+  padding: 14px 24px;
   margin: 0px auto;
+  border-bottom: 1px solid $lightBorder1;
 }
 
 .header ul {
@@ -40,12 +45,20 @@
 
 .header li a {
   display: block;
-  padding: 15px 20px;
-  color: $textColor;
+  padding: 10px 14px;
+  color: $subTitle;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: $radius-sm;
   text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.header li a:hover,
+.header li a:hover {
+  color: $buttonColor;
+  background-color: $headerHoverBG;
+}
+
 .header .menu-btn:hover {
   background-color: $headerHoverBG;
 }
@@ -54,18 +67,16 @@
   display: block;
   flex: none;
   float: left;
-  font-size: 1.5em;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 6px;
   line-height: normal;
 }
 
 .header .logo-name {
-  font-family: "Playfair Display";
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
+  color: $titleColor;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /* menu */

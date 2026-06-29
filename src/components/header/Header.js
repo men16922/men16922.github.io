@@ -11,9 +11,7 @@ import {
   openSource,
   bigProjects,
   blogSection,
-  talkSection,
-  achievementSection,
-  resumeSection
+  achievementSection
 } from "../../portfolio";
 
 function Header() {
@@ -26,23 +24,15 @@ function Header() {
   const viewProjects = bigProjects.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
-  const viewResume = resumeSection.display;
 
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
+        <label className="menu-icon" htmlFor="menu-btn">
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
@@ -74,16 +64,6 @@ function Header() {
           {viewBlog && (
             <li>
               <a href={articlesPath}>Articles</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Community</a>
-            </li>
-          )}
-          {viewResume && (
-            <li>
-              <a href="#resume">Resume</a>
             </li>
           )}
           <li>

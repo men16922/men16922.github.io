@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import "./Talks.scss";
-import TalkCard from "../../components/talkCard/TalkCard";
+import Button from "../../components/button/Button";
 import {talkSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
@@ -10,6 +10,10 @@ export default function Talks() {
   if (!talkSection.display) {
     return null;
   }
+  const isKoreanRoute = window.location.pathname.startsWith("/kr");
+  const articlesPath = isKoreanRoute ? "/kr/articles" : "/articles";
+  const ctaText = "Articles";
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="talks">
@@ -24,23 +28,7 @@ export default function Talks() {
           >
             {talkSection.subtitle}
           </p>
-          {talkSection.talks.map((talk, i) => {
-            return (
-              <TalkCard
-                key={i}
-                talkDetails={{
-                  title: talk.title,
-                  subtitle: talk.subtitle,
-                  slides_url: talk.slides_url,
-                  event_url: talk.event_url,
-                  primaryLabel: talk.primaryLabel,
-                  secondaryLabel: talk.secondaryLabel,
-                  image: talk.image,
-                  isDark
-                }}
-              />
-            );
-          })}
+          <Button text={ctaText} className="talk-cta" href={articlesPath} />
         </div>
       </div>
     </Fade>

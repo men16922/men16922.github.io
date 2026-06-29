@@ -21,6 +21,27 @@ export default function Achievement() {
     return null;
   }
 
+  // Group certifications into categories (inferred from the title).
+  const CATEGORY_ORDER = ["AWS", "Kubernetes", "Google Cloud", "misc"];
+  const CATEGORY_LABEL = {
+    AWS: "AWS",
+    Kubernetes: "Kubernetes",
+    "Google Cloud": "Google Cloud",
+    misc: "Etc"
+  };
+  const categoryOf = title => {
+    if (/AWS/i.test(title)) return "AWS";
+    if (/Kubernetes/i.test(title)) return "Kubernetes";
+    if (/Google/i.test(title)) return "Google Cloud";
+    return "misc";
+  };
+  const grouped = {};
+  achievementSection.achievementsCards.forEach(card => {
+    const key = categoryOf(card.title);
+    (grouped[key] = grouped[key] || []).push(card);
+  });
+  const orderedCategories = CATEGORY_ORDER.filter(key => grouped[key]);
+
   const content = (
     <div className="main" id="achievements">
       <div className="achievement-main-div">
@@ -44,23 +65,34 @@ export default function Achievement() {
             {achievementSection.subtitle}
           </p>
         </div>
-        <div className="achievement-cards-div">
-          {achievementSection.achievementsCards.map((card, i) => {
-            return (
-              <AchievementCard
-                key={i}
-                isDark={isDark}
-                cardInfo={{
-                  title: card.title,
-                  description: card.subtitle,
-                  image: card.image,
-                  imageAlt: card.imageAlt,
-                  footer: card.footerLink
-                }}
-              />
-            );
-          })}
-        </div>
+        {orderedCategories.map(key => (
+          <div className="achievement-category" key={key}>
+            <h2
+              className={
+                isDark
+                  ? "dark-mode achievement-category-title"
+                  : "achievement-category-title"
+              }
+            >
+              {CATEGORY_LABEL[key]}
+            </h2>
+            <div className="achievement-cards-div">
+              {grouped[key].map((card, i) => (
+                <AchievementCard
+                  key={i}
+                  isDark={isDark}
+                  cardInfo={{
+                    title: card.title,
+                    description: card.subtitle,
+                    image: card.image,
+                    imageAlt: card.imageAlt,
+                    footer: card.footerLink
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -22,7 +22,10 @@ body {
 }
 body {
   margin: 0;
-  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  font-family: "Roboto", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 23px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -21,17 +21,15 @@ const greeting = {
 • Backend Engineer building reliable distributed systems with Java, Spring Boot, Kafka, Redis, and PostgreSQL
 • Cloud Architect with hands-on AWS, Kubernetes, serverless, observability, and platform automation experience
 • AI Agent Builder focused on Bedrock, multi-agent workflows, DevOps automation, and practical engineering productivity
-• Building one technical hub for recruiters, engineering leaders, AWS Community, and hackathon judges
-• Conference speaker on AI-assisted development and cloud-native architecture (AWS re:Invent 2025, DevTalk_Around_AI)
   `,
-  resumeLink: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f",
+  resumeLink:
+    "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f",
   displayGreeting: true
 };
 
 const socialMediaLinks = {
   github: "https://github.com/men16922",
-  linkedin:
-    "www.linkedin.com/in/paul-choi-99a192244/",
+  linkedin: "www.linkedin.com/in/paul-choi-99a192244/",
   gmail: "men16922@gmail.com",
   gitlab: "",
   facebook: "",
@@ -236,7 +234,8 @@ const techStack = {
           progressPercentage: "70%"
         },
         {
-          Stack: "Agentic AI & DevOps Automation (Multi-Agent / Step Functions)",
+          Stack:
+            "Agentic AI & DevOps Automation (Multi-Agent / Step Functions)",
           progressPercentage: "70%"
         },
         {
@@ -256,7 +255,7 @@ const workExperiences = {
       company: "Hyundai AutoEver",
       companylogo: require("../assets/images/hyundaiLogo2.png"),
       date: "2023 – Present",
-      desc: "Led backend architecture for Hyundai's global EV charging platform (eMSP), including Indonesia deployment and unified global app.",
+      desc: "Led backend architecture for Hyundai's global EV charging platform (eMSP), including the unified global app.",
       descBullets: [
         "Designed subscription/payment/vehicle/member services with Spring Boot & Kafka",
         "Integrated OAuth2 (HMG ID 2.0) and HMG Pay 2.0 recurring billing",
@@ -320,20 +319,50 @@ const educationInfo = {
             "Developed web-based ERP projects using Spring Framework"
         },
         {
-          schoolName: "AWS Cloud & Platform Engineering Training",
-          logo: require("../assets/images/aws.jpeg"),
-          subHeader: "AWS Cloud · SRE · DevOps Advanced Training",
-          duration: "June 2025 - September 2025",
-          desc:
-            "Completed Cloud Operations on AWS, Developing on AWS, EKS, Migration, and Advanced Architecting courses. " +
-            "Hands-on practice with Serverless, Lambda, API Gateway, DynamoDB, EKS Auto Mode, Observability, and cost optimization"
-        },
-        {
           schoolName: "MLOps Pipeline Implementation Workshop",
           logo: require("../assets/images/mlops.png"),
           subHeader: "MLOps · Model Serving",
           duration: "December 2025",
           desc: "Model deployment and serving using MLflow + KServe. Hands-on practice with CI/CD/CT pipeline configuration and monitoring"
+        }
+      ]
+    },
+    {
+      title: "AWS Workshops",
+      items: [
+        {
+          schoolName: "Architecting & Operations on AWS",
+          logo: require("../assets/images/aws.png"),
+          subHeader: "AWS Workshops · Jam",
+          duration: "2025",
+          desc:
+            "Cloud Operations on AWS + JAM Operations, Advanced Architecting on AWS with AWS Jam, " +
+            "and the AWS development & operations productivity workshop."
+        },
+        {
+          schoolName: "Developing & Data on AWS",
+          logo: require("../assets/images/aws.png"),
+          subHeader: "AWS Workshops",
+          duration: "2025",
+          desc:
+            "Developing on AWS, Build Modern Applications with AWS NoSQL Databases, " +
+            "Data Engineering on AWS, and AWS Technical Essentials."
+        },
+        {
+          schoolName: "Containers & Migration on AWS",
+          logo: require("../assets/images/aws.png"),
+          subHeader: "AWS Workshops",
+          duration: "2025",
+          desc:
+            "Running Containers on Amazon Elastic Kubernetes Service, Migrating to AWS, " +
+            "and AWS Migration Essentials."
+        },
+        {
+          schoolName: "Agentic AI on AWS",
+          logo: require("../assets/images/aws.png"),
+          subHeader: "AWS Workshops · Bedrock",
+          duration: "2025",
+          desc: "Agentic AI Foundations and Building Agentic AI with Amazon Bedrock AgentCore."
         }
       ]
     },
@@ -355,27 +384,6 @@ const educationInfo = {
           desc:
             "Participated as a speaker on the topic of screen development through Figma MCP + GitHub Copilot + IDE integration. " +
             "Led GenAI Growth LAB and showcased ev-agent (EV charging coding agent) at the exhibition"
-        },
-        {
-          schoolName: "AICO Seoul 2025",
-          logo: require("../assets/images/aico.JPG"),
-          subHeader: "AI Conference",
-          duration: "November 2025",
-          desc: "Attended sessions focused on Microsoft AI and Copilot, learned about enterprise AI use cases"
-        },
-        {
-          schoolName: "CNCF Community 2025",
-          logo: require("../assets/images/cncf.png"),
-          subHeader: "Cloud Native Community",
-          duration: "September 2025",
-          desc: "Shared case studies of MCP-based AI Agent implementation in DevSecOps and Kubernetes environments"
-        },
-        {
-          schoolName: "DataDog Hands-on Workshop",
-          logo: require("../assets/images/datadog.png"),
-          subHeader: "Observability Workshop",
-          duration: "June 2025",
-          desc: "Hands-on practice with Datadog-based metrics, logs, trace collection, and incident analysis"
         },
         {
           schoolName: "AWSKRUG Community",
@@ -415,32 +423,66 @@ const bigProjects = {
     "Representative projects and platform work that define my technical brand",
   projects: [
     {
-      image: require("../assets/images/aws.png"),
-      projectName: "SlackOps — AI DevOps Agent",
+      image: require("../assets/images/mythos.png"),
+      projectName: "Project Mythos",
       projectDesc: `
-Problem: operational alerts are noisy and slow to triage in chat-driven workflows.
-Architecture: Slack + AWS + agent workflows for incident understanding, action routing, and response acceleration.
-Tech Stack: AWS, Lambda, Bedrock, GitHub Actions, observability tooling.
-Artifacts: GitHub source, portfolio case-study positioning, and hackathon/community narrative.`,
+A single-player sci-fi, loop-based TRPG/CRPG where AI-generated narrative and combat let you build out your own world.`,
       footerLink: [
         {
           name: "GitHub",
-          url: "https://github.com/men16922/slackops-devops-agent"
-        },
-        {
-          name: "Related Articles",
-          url: "https://medium.com/@men16922"
+          url: "https://github.com/men16922/MythOS"
         }
       ]
     },
     {
-      image: require("../assets/images/brandy-ai.png"),
+      image: require("../assets/images/nexxa.png"),
+      projectName: "Nexxa",
+      projectDesc: `
+A self-learning autonomous AI dev agent: a Builder → Reviewer → Verifier loop that learns from its own failures so it stops repeating mistakes.`,
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/men16922/Nexxa"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/gcp.png"),
+      projectName: "EV Charging Agent — Google Cloud",
+      projectDesc: `
+An explainable EV-charging agent on Google Cloud — Gemini reasoning, BigQuery analytics, and hybrid routing.`,
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/men16922/EV-Charge-Agent"
+        },
+        {
+          name: "Related Articles",
+          url: "https://medium.com/@men16922/building-an-explainable-ev-charging-agent-on-google-cloud-gemini-bigquery-and-hybrid-routing-6c84ff5d95c2"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/aws.png"),
+      projectName: "SlackOps — AI DevOps Agent",
+      projectDesc: `
+A Slack-native AI DevOps agent on AWS that turns noisy alerts into context, routes actions, and speeds up incident response.`,
+      footerLink: [
+        {
+          name: "Demo / Devpost",
+          url: "https://devpost.com/software/slackops-one-agent-two-control-planes?ref_content=my-projects-tab&ref_feature=my_projects"
+        },
+        {
+          name: "Related Articles",
+          url: "https://builder.aws.com/content/3FXdExAw4SeFqYwNKMfK7Qo1xBf/building-a-safe-event-driven-devops-agent-with-aws-lambda-and-amazon-dynamodb"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/aws.png"),
       projectName: "Hackathon Builds — Brandy and Applied GenAI Prototypes",
       projectDesc: `
-Problem: demonstrate fast end-to-end product execution under hackathon constraints.
-Architecture: serverless multi-agent workflows with orchestration, async polling, and resilient fallbacks.
-Tech Stack: Amazon Bedrock, Step Functions, Lambda, DynamoDB, S3.
-Artifacts: public Devpost entry plus future portfolio write-ups and demo positioning.`,
+Fast end-to-end serverless multi-agent prototypes (Brandy + applied GenAI) on Amazon Bedrock and Step Functions.`,
       footerLink: [
         {
           name: "Demo / Devpost",
@@ -456,14 +498,11 @@ Artifacts: public Devpost entry plus future portfolio write-ups and demo positio
       image: require("../assets/images/hyundaiLogo.png"),
       projectName: "AWS Incident Agent — EV DevOps Agent",
       projectDesc: `
-Problem: EV charging platform incidents need faster analysis and more repeatable operational responses.
-Architecture: AWS-native agent workflow for alert correlation, runbook execution, and cause-analysis reporting.
-Tech Stack: AWS Lambda, Step Functions, Bedrock, observability integrations.
-Artifacts: enterprise PoC, presentation narrative, and portfolio flagship architecture story.`,
+An AWS-native incident agent for EV-charging ops — alert correlation, runbook execution, and cause analysis.`,
       footerLink: [
         {
-          name: "Architecture Notes",
-          url: "https://builder.aws.com/community/%40cbm?tab=badges"
+          name: "Notion Article",
+          url: "https://atlantic-andesaurus-8b9.notion.site/9a5c8aaf868f436eaf1c035404335a5e"
         }
       ]
     },
@@ -471,10 +510,7 @@ Artifacts: enterprise PoC, presentation narrative, and portfolio flagship archit
       image: require("../assets/images/hyundaiLogo.png"),
       projectName: "Global eMSP Platform",
       projectDesc: `
-Problem: build a scalable global EV charging backend across subscription, member, vehicle, and payment domains.
-Architecture: MSA on AWS EKS Fargate with domain events, BFF/BFI gateways, and observability stack.
-Tech Stack: Spring Boot, Kafka, MongoDB, ADOT, CloudWatch, X-Ray.
-Artifacts: flagship professional experience for recruiter and technical reviewer evaluation.`,
+A global EV-charging backend (subscription, member, vehicle, payment) on AWS EKS Fargate MSA with Kafka and observability.`,
       footerLink: [
         {
           name: "Related Articles",
@@ -483,15 +519,26 @@ Artifacts: flagship professional experience for recruiter and technical reviewer
       ]
     },
     {
-      image: require("../assets/images/coin.jpeg"),
-      projectName: "Applied AI Systems",
+      image: require("../assets/images/bithumb.png"),
+      projectName: "Bithumb — Exchange Reliability & SRE",
       projectDesc: `
-Includes AI trading experimentation, ML/MLOps practice, and smaller applied systems that reinforce breadth across AI, automation, and data workflows.
-This bucket supports the technical brand by showing consistent execution beyond the flagship portfolio pieces.`,
+SRE for a high-volume crypto exchange — Kafka-based alerting, consistency dashboards, and a postmortem-driven reliability culture.`,
       footerLink: [
         {
-          name: "GitHub",
-          url: "https://github.com/men16922/coin-ai-system"
+          name: "Related Articles",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
+        }
+      ]
+    },
+    {
+      image: require("../assets/images/Danal.png"),
+      projectName: "Danal — Payment Platform APIs",
+      projectDesc: `
+Global/domestic payment & simplified-payment integrations on Spring Boot (Cafe24, LG Pay, Alipay, BOKU, EXIMBAY).`,
+      footerLink: [
+        {
+          name: "Related Articles",
+          url: "https://atlantic-andesaurus-8b9.notion.site/0dab080e9ccf490a8391be50fa01448f?pvs=4"
         }
       ]
     }
@@ -501,7 +548,8 @@ This bucket supports the technical brand by showing consistent execution beyond 
 
 const achievementSection = {
   title: emoji("Certifications 🏆"),
-  subtitle: "Cloud, Kubernetes, and engineering credentials that support the brand story",
+  subtitle:
+    "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
     {
       title: "AWS Certified CloudOps Engineer - Professional",
@@ -706,10 +754,8 @@ const talkSection = {
       title: "AWS Community Builder",
       subtitle:
         "Public AWS builder profile and community-facing technical presence.",
-      slides_url:
-        "https://builder.aws.com/community/%40cbm?tab=badges",
-      event_url:
-        "https://www.linkedin.com/in/paul-choi-99a192244/",
+      slides_url: "https://builder.aws.com/community/%40cbm?tab=badges",
+      event_url: "https://www.linkedin.com/in/paul-choi-99a192244/",
       primaryLabel: "Profile",
       secondaryLabel: "LinkedIn",
       date: "Ongoing",

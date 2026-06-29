@@ -3,17 +3,17 @@ Certain colors are used for different and multiply types of elements.
 For greater control over colors visit each components .scss file. */
 
 // button colors
-$buttonColor: #55198b;
-$buttonHover: #8c43ce;
-$topButtonHover: #000;
+$buttonColor: #1a73e8;
+$buttonHover: #1765cc;
+$topButtonHover: #174ea6;
 
 // text colors light theme
-$titleColor: #000000;
-$textColor: #000000;
-$subTitle: #868e96;
-$cardSubtitle: #666666;
-$talkCardSubTitle: #7f8287;
-$blogCardTitleColor: #262626;
+$titleColor: #202124;
+$textColor: #202124;
+$subTitle: #5f6368;
+$cardSubtitle: #5f6368;
+$talkCardSubTitle: #5f6368;
+$blogCardTitleColor: #202124;
 
 // text color dark theme
 $textColorDark: #ffffff;
@@ -28,12 +28,12 @@ $githubRepoCardColor: rgb(88, 96, 105);
 $githubRepoCardRepoCardStatsColor: rgb(106, 115, 125);
 $githubRepoCardRepoNameColor: rgb(36, 41, 46);
 $githubProfileCardLocationTS: #ffebcd;
-$githubProfileCardBorder: #6c63ff;
+$githubProfileCardBorder: #1a73e8;
 
 // light background colors
 $lightBackground1: #fff;
 $lightBackground2: rgb(255, 255, 255);
-$lightBackground3: #f5f2f4;
+$lightBackground3: #f8f9fa;
 $blogCardContainerColor: #586069;
 // dark background colors
 $darkBackground: #171c28;
@@ -49,18 +49,18 @@ $darkBoxShadow2: #ffffff;
 
 // linear gradients
 $experienceCardBlurredDivLG: linear-gradient(
-  rgba(0, 0, 0, 0.4),
-  rgba(0, 0, 0, 0.2)
+  rgba(26, 115, 232, 0.55),
+  rgba(26, 115, 232, 0.35)
 );
 $experienceCardBannerLG: linear-gradient(
-  rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.5)
+  rgba(26, 115, 232, 0.85),
+  rgba(26, 115, 232, 0.65)
 );
 
 // borders
-$progressBarBackground: rgb(243, 239, 239);
-$lightBorder1: rgba(211, 211, 211, 0.397);
-$educationCardBorder: #a9a7f9;
+$progressBarBackground: #f1f3f4;
+$lightBorder1: #dadce0;
+$educationCardBorder: #dadce0;
 
 // hovers
 $achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.2);
@@ -69,13 +69,21 @@ $headerHoverBG: #f4f4f4;
 $contactDetailHoverTS: #b5b5b5;
 
 // misc backgrounds
-$progressBarSpanBG: #aaa5ff;
+$progressBarSpanBG: #8ab4f8;
 $iconBackground: #333;
 $appHeaderBG: #282c34;
 
 // misc colors
-$skillsColor: #645beb;
+$skillsColor: #1a73e8;
 $appLink: #09d3ac;
+
+// material shape + elevation (Google style)
+$radius-sm: 8px;
+$radius-md: 12px;
+$elevation-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+  0 1px 3px 1px rgba(60, 64, 67, 0.15);
+$elevation-2: 0 1px 3px 0 rgba(60, 64, 67, 0.3),
+  0 4px 8px 3px rgba(60, 64, 67, 0.15);
 
 // social media icons
 $faceBook: #3b5998;
