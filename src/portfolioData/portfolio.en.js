@@ -552,6 +552,19 @@ const achievementSection = {
     "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
     {
+      title: "AWS Certified Machine Learning Engineer - Associate",
+      subtitle: "Verified by AWS in 2026",
+      image:
+        "https://images.credly.com/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png",
+      imageAlt: "AWS Machine Learning Engineer Associate badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/4fbea66b-2c5e-457a-bc7a-dee634aab044/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified CloudOps Engineer - Professional",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/SAP.png"),

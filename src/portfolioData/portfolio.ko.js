@@ -543,6 +543,19 @@ const achievementSection = {
   subtitle: "기술 브랜드를 뒷받침하는 클라우드·쿠버네티스·엔지니어링 자격",
   achievementsCards: [
     {
+      title: "AWS Certified Machine Learning Engineer - Associate",
+      subtitle: "AWS에서 2026년 인증",
+      image:
+        "https://images.credly.com/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png",
+      imageAlt: "AWS Machine Learning Engineer Associate badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://www.credly.com/badges/4fbea66b-2c5e-457a-bc7a-dee634aab044/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified CloudOps Engineer - Professional",
       subtitle: "AWS에서 2026년 인증",
       image: require("../assets/images/SAP.png"),
