@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.359e5954.css",
-    "main.js": "/static/js/main.827b4af8.js",
+    "main.js": "/static/js/main.dd8886c4.js",
     "static/css/64.1631bd5b.chunk.css": "/static/css/64.1631bd5b.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.fafd3974.chunk.css": "/static/css/769.fafd3974.chunk.css",
     "static/js/769.bd57ed0e.chunk.js": "/static/js/769.bd57ed0e.chunk.js",
     "static/media/profile.jpg": "/static/media/profile.07e019bb2f61689ba20c.jpg",
     "static/media/nexxa.png": "/static/media/nexxa.e0830f45529e24196457.png",
-    "static/media/mythos.png": "/static/media/mythos.705e9194a5b0bcbf6153.png",
+    "static/media/mythos.png": "/static/media/mythos.5a912dac9401fad34e48.png",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/global.jpg": "/static/media/global.14015e4de2384343f061.jpg",
     "static/media/bigdata.jpg": "/static/media/bigdata.6410f3ea64f6a6fa0fb0.jpg",
@@ -35,7 +35,7 @@
     "static/media/ai-practitioner.png": "/static/media/ai-practitioner.9ce34c95ad7a16154905.png",
     "index.html": "/index.html",
     "main.359e5954.css.map": "/static/css/main.359e5954.css.map",
-    "main.827b4af8.js.map": "/static/js/main.827b4af8.js.map",
+    "main.dd8886c4.js.map": "/static/js/main.dd8886c4.js.map",
     "64.1631bd5b.chunk.css.map": "/static/css/64.1631bd5b.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.fafd3974.chunk.css.map": "/static/css/769.fafd3974.chunk.css.map",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.359e5954.css",
-    "static/js/main.827b4af8.js"
+    "static/js/main.dd8886c4.js"
   ]
 }
