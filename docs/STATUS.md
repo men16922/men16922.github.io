@@ -1,12 +1,13 @@
 # Status
 
-Last Updated: 2026-06-29
+Last Updated: 2026-07-05
 
 ## Current Baseline
 
 React 16 / CRA portfolio site, deployed to GitHub Pages. `make check` is green: 1 render-smoke test
 (`src/App.test.js`) passes offline in jsdom. Overnight harness installed and wired (gate=`make check`,
-runner resolves to plugin v0.7.0, permission boundary set). No app-behavior changes made during install.
+runner resolves to plugin v0.7.0, permission boundary set). The EN/KO certification data now includes
+AWS Certified Machine Learning Engineer - Associate with its public Credly verification link.
 
 ## Active Focus
 
