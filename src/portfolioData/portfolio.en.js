@@ -565,7 +565,7 @@ const achievementSection = {
       ]
     },
     {
-      title: "AWS Certified CloudOps Engineer - Professional",
+      title: "AWS Certified Solution Architect - Professional",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/SAP.png"),
       imageAlt: "GenAI Logo",
