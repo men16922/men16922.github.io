@@ -173,6 +173,15 @@ export const articles = [
     category: "AI Agents · DevOps",
     readTime: "7 min read",
     url: "https://builder.aws.com/content/3FXdExAw4SeFqYwNKMfK7Qo1xBf/building-a-safe-event-driven-devops-agent-with-aws-lambda-and-amazon-dynamodb"
+  },
+  // ---- Notion ----
+  {
+    platform: "notion",
+    title: "Qwen Kubernetes",
+    excerpt: "Notes on serving Qwen models on Kubernetes.",
+    category: "LLM · Kubernetes",
+    readTime: "5 min read",
+    url: "https://atlantic-andesaurus-8b9.notion.site/Qwen-Kubernetes-3a94c2420ac4801cbe99e36c16ed90fd?pvs=74"
   }
 ];
 
