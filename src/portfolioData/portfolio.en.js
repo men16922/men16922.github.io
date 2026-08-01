@@ -324,6 +324,13 @@ const educationInfo = {
           subHeader: "MLOps · Model Serving",
           duration: "December 2025",
           desc: "Model deployment and serving using MLflow + KServe. Hands-on practice with CI/CD/CT pipeline configuration and monitoring"
+        },
+        {
+          schoolName: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
+          logo: require("../assets/images/hack2skill.png"),
+          subHeader: "Google Cloud · Hack2skill Academy",
+          duration: "2026",
+          desc: "Completed hands-on learning focused on building real-world AI solutions powered by data, analytics, and intelligent systems on Google Cloud"
         }
       ]
     },
@@ -551,6 +558,18 @@ const achievementSection = {
   subtitle:
     "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
+      subtitle: "Verified by Google Cloud & Hack2skill in 2026",
+      image: require("../assets/images/hack2skill.png"),
+      imageAlt: "Google Cloud Gen AI Academy Badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://certificate.hack2skill.com/claim/a456641f61acd74437af622e9a741c2a77d9f81e021ac1ed1fd8be95e84b071e"
+        }
+      ]
+    },
     {
       title: "AWS Certified Machine Learning Engineer - Associate",
       subtitle: "Verified by AWS in 2026",

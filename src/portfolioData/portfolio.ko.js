@@ -317,6 +317,13 @@ const educationInfo = {
           subHeader: "MLOps · 모델 서빙",
           duration: "2025년 12월",
           desc: "MLflow + KServe 기반 모델 배포 및 서빙. CI/CD/CT 파이프라인 구성과 모니터링 실습"
+        },
+        {
+          schoolName: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
+          logo: require("../assets/images/hack2skill.png"),
+          subHeader: "Google Cloud · Hack2skill 아카데미",
+          duration: "2026년",
+          desc: "Google Cloud 기반의 데이터, 분석 및 지능형 시스템을 활용한 실무 Generative AI 솔루션 구축 실습 수료"
         }
       ]
     },
@@ -542,6 +549,18 @@ const achievementSection = {
   title: emoji("Certifications 🏆"),
   subtitle: "기술 브랜드를 뒷받침하는 클라우드·쿠버네티스·엔지니어링 자격",
   achievementsCards: [
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
+      subtitle: "Google Cloud & Hack2skill에서 2026년 인증",
+      image: require("../assets/images/hack2skill.png"),
+      imageAlt: "Google Cloud Gen AI Academy Badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://certificate.hack2skill.com/claim/a456641f61acd74437af622e9a741c2a77d9f81e021ac1ed1fd8be95e84b071e"
+        }
+      ]
+    },
     {
       title: "AWS Certified Machine Learning Engineer - Associate",
       subtitle: "AWS에서 2026년 인증",

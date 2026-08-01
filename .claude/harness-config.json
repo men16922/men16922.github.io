@@ -13,7 +13,7 @@
   "archive_dir": "docs/archive",
   "gate": "make check",
   "smoke": "make smoke-local",
-  "budgets": { "brief": 60, "status": 120, "plan": 120, "log": 120 },
+  "budgets": {"brief": 60, "status": 120, "plan": 120, "log": 120},
   "engine": "claude",
   "engine_choices": ["claude", "codex", "opencode", "agy"]
 }
