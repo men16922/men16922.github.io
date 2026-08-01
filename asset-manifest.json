@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.359e5954.css",
-    "main.js": "/static/js/main.23ad49dc.js",
+    "main.js": "/static/js/main.0e2db715.js",
     "static/css/64.1631bd5b.chunk.css": "/static/css/64.1631bd5b.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.fafd3974.chunk.css": "/static/css/769.fafd3974.chunk.css",
@@ -23,6 +23,7 @@
     "static/media/hyundaiLogo2.png": "/static/media/hyundaiLogo2.87ba74d079cdcba3e900.png",
     "static/media/GenAI_Leader.png": "/static/media/GenAI_Leader.6e523c4280a3ec1a77b9.png",
     "static/media/SAP.png": "/static/media/SAP.d2af85ee369870e9d173.png",
+    "static/media/hack2skill.png": "/static/media/hack2skill.dac2e75f8c7a668a3da9.png",
     "static/media/DVA.png": "/static/media/DVA.e57555d245800533d77c.png",
     "static/media/sqld.png": "/static/media/sqld.6623ebd535adb37473bc.png",
     "static/media/hyundaiLogo.png": "/static/media/hyundaiLogo.aa6a974e39b0c4555714.png",
@@ -35,7 +36,7 @@
     "static/media/ai-practitioner.png": "/static/media/ai-practitioner.9ce34c95ad7a16154905.png",
     "index.html": "/index.html",
     "main.359e5954.css.map": "/static/css/main.359e5954.css.map",
-    "main.23ad49dc.js.map": "/static/js/main.23ad49dc.js.map",
+    "main.0e2db715.js.map": "/static/js/main.0e2db715.js.map",
     "64.1631bd5b.chunk.css.map": "/static/css/64.1631bd5b.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.fafd3974.chunk.css.map": "/static/css/769.fafd3974.chunk.css.map",
@@ -43,6 +44,6 @@
   },
   "entrypoints": [
     "static/css/main.359e5954.css",
-    "static/js/main.23ad49dc.js"
+    "static/js/main.0e2db715.js"
   ]
 }
