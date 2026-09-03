@@ -337,7 +337,7 @@ const educationInfo = {
           logo: require("../assets/images/hack2skill.png"),
           subHeader: "Google Cloud · Hack2skill Academy",
           duration: "2026",
-          desc: "Completed hands-on learning focused on building real-world AI solutions powered by data, analytics, and intelligent systems on Google Cloud"
+          desc: "Completed hands-on learning focused on accelerating AI with Cloud Run - building, deploying, and orchestrating intelligent systems on Google Cloud"
         }
       ]
     },
