@@ -324,6 +324,13 @@ const educationInfo = {
           subHeader: "Google Cloud · Hack2skill 아카데미",
           duration: "2026년",
           desc: "Google Cloud 기반의 데이터, 분석 및 지능형 시스템을 활용한 실무 Generative AI 솔루션 구축 실습 수료"
+        },
+        {
+          schoolName: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3",
+          logo: require("../assets/images/hack2skill.png"),
+          subHeader: "Google Cloud · Hack2skill 아카데미",
+          duration: "2026년",
+          desc: "Google Cloud 기반의 데이터, 분석 및 지능형 시스템을 활용한 실무 Generative AI 솔루션 구축 실습 수료"
         }
       ]
     },
@@ -549,6 +556,18 @@ const achievementSection = {
   title: emoji("Certifications 🏆"),
   subtitle: "기술 브랜드를 뒷받침하는 클라우드·쿠버네티스·엔지니어링 자격",
   achievementsCards: [
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3",
+      subtitle: "Google Cloud & Hack2skill에서 2026년 인증",
+      image: require("../assets/images/hack2skill.png"),
+      imageAlt: "Google Cloud Gen AI Academy Badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://certificate.hack2skill.com/claim/a702cc678f81f3ab81940a343a5e17c79fea779e582226cdf1c2920a3312998a"
+        }
+      ]
+    },
     {
       title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
       subtitle: "Google Cloud & Hack2skill에서 2026년 인증",

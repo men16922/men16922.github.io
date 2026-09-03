@@ -331,6 +331,13 @@ const educationInfo = {
           subHeader: "Google Cloud · Hack2skill Academy",
           duration: "2026",
           desc: "Completed hands-on learning focused on building real-world AI solutions powered by data, analytics, and intelligent systems on Google Cloud"
+        },
+        {
+          schoolName: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3",
+          logo: require("../assets/images/hack2skill.png"),
+          subHeader: "Google Cloud · Hack2skill Academy",
+          duration: "2026",
+          desc: "Completed hands-on learning focused on building real-world AI solutions powered by data, analytics, and intelligent systems on Google Cloud"
         }
       ]
     },
@@ -558,6 +565,18 @@ const achievementSection = {
   subtitle:
     "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3",
+      subtitle: "Verified by Google Cloud & Hack2skill in 2026",
+      image: require("../assets/images/hack2skill.png"),
+      imageAlt: "Google Cloud Gen AI Academy Badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://certificate.hack2skill.com/claim/a702cc678f81f3ab81940a343a5e17c79fea779e582226cdf1c2920a3312998a"
+        }
+      ]
+    },
     {
       title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 2",
       subtitle: "Verified by Google Cloud & Hack2skill in 2026",
