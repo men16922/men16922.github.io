@@ -581,6 +581,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Generative AI Developer - Professional",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/AIP.png"),
+      imageAlt: "AWS Certified Generative AI Developer Professional badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://www.credly.com/badges/9f6a8c4a-02ad-4862-8adf-dd7f4951ad1f/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Machine Learning Engineer - Associate",
       subtitle: "AWS에서 2026년 인증",
       image:

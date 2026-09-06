@@ -590,6 +590,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Generative AI Developer - Professional",
+      subtitle: "Verified by AWS in 2026",
+      image: require("../assets/images/AIP.png"),
+      imageAlt: "AWS Certified Generative AI Developer Professional badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/9f6a8c4a-02ad-4862-8adf-dd7f4951ad1f/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Machine Learning Engineer - Associate",
       subtitle: "Verified by AWS in 2026",
       image:
