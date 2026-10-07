@@ -581,6 +581,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Security - Specialty",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/SCS.png"),
+      imageAlt: "AWS Certified Security Specialty badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://www.credly.com/badges/27811c67-cae9-4589-af16-d1fef657bdb9/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Generative AI Developer - Professional",
       subtitle: "AWS에서 2026년 인증",
       image: require("../assets/images/AIP.png"),

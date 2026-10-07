@@ -590,6 +590,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Security - Specialty",
+      subtitle: "Verified by AWS in 2026",
+      image: require("../assets/images/SCS.png"),
+      imageAlt: "AWS Certified Security Specialty badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/27811c67-cae9-4589-af16-d1fef657bdb9/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Generative AI Developer - Professional",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/AIP.png"),
