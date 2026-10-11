@@ -1,17 +1,14 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {greeting} from "../../portfolio";
 import {getPlatforms, getArticlesByPlatform} from "../../content/articles";
+import ArticlesTopbar from "./ArticlesTopbar";
 import "./ArticlesPage.scss";
 
+const isInternal = url => typeof url === "string" && url.startsWith("/");
+
 function ArticleListItem({post}) {
-  return (
-    <a
-      className="articles-list-item"
-      href={post.url}
-      target="_blank"
-      rel="noreferrer"
-    >
+  const body = (
+    <>
       <div className="articles-list-copy">
         <h2>{post.title}</h2>
         <p>{post.excerpt}</p>
@@ -20,8 +17,23 @@ function ArticleListItem({post}) {
         </span>
       </div>
       <span className="articles-list-arrow" aria-hidden="true">
-        ↗
+        {isInternal(post.url) ? "→" : "↗"}
       </span>
+    </>
+  );
+  // posts published on this site open in place; external posts in a new tab
+  return isInternal(post.url) ? (
+    <Link className="articles-list-item" to={post.url}>
+      {body}
+    </Link>
+  ) : (
+    <a
+      className="articles-list-item"
+      href={post.url}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {body}
     </a>
   );
 }
@@ -60,7 +72,7 @@ export default function ArticlesPage() {
 
   // Default to the first platform that actually has posts; else the first tab.
   const firstWithPosts = platforms.find(
-    p => getArticlesByPlatform(p.key).length > 0
+    p => getArticlesByPlatform(p.key, lang).length > 0
   );
   const [activeKey, setActiveKey] = useState(
     (firstWithPosts || platforms[0] || {}).key
@@ -69,7 +81,9 @@ export default function ArticlesPage() {
 
   const activeChannel =
     platforms.find(p => p.key === activeKey) || platforms[0];
-  const posts = activeChannel ? getArticlesByPlatform(activeChannel.key) : [];
+  const posts = activeChannel
+    ? getArticlesByPlatform(activeChannel.key, lang)
+    : [];
 
   const PAGE_SIZE = 3;
   const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
@@ -80,21 +94,9 @@ export default function ArticlesPage() {
   );
 
   return (
-    <div className="articles-page">
+    <div className="articles-page" lang={lang}>
       <div className="articles-shell">
-        <nav className="articles-topbar" aria-label="Article navigation">
-          <Link to={homePath} className="articles-brand">
-            {greeting.username}
-          </Link>
-          <div className="articles-nav-links">
-            <Link to={homePath}>{copy.home}</Link>
-            <Link to={`${homePath}#projects`}>{copy.projects}</Link>
-            <span aria-current="page">{copy.articles}</span>
-            <Link className="articles-language" to={copy.languagePath}>
-              {copy.language}
-            </Link>
-          </div>
-        </nav>
+        <ArticlesTopbar copy={copy} homePath={homePath} />
 
         <header className="articles-hero">
           <h1>{copy.title}</h1>
@@ -103,7 +105,7 @@ export default function ArticlesPage() {
 
         <div className="articles-tabs" role="tablist" aria-label="Platforms">
           {platforms.map(platform => {
-            const count = getArticlesByPlatform(platform.key).length;
+            const count = getArticlesByPlatform(platform.key, lang).length;
             return (
               <button
                 key={platform.key}
@@ -132,9 +134,11 @@ export default function ArticlesPage() {
         {activeChannel && (
           <div className="articles-tab-meta">
             <p>{activeChannel.description}</p>
-            <a href={activeChannel.url} target="_blank" rel="noreferrer">
-              {copy.visit} {activeChannel.title} ↗
-            </a>
+            {!isInternal(activeChannel.url) && (
+              <a href={activeChannel.url} target="_blank" rel="noreferrer">
+                {copy.visit} {activeChannel.title} ↗
+              </a>
+            )}
           </div>
         )}
 

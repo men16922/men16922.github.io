@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+// Korean breaks between words, not inside them
+.articles-page[lang="ko"] {
+  word-break: keep-all;
+}
+
 .articles-shell {
   width: 100%;
   max-width: 1040px;

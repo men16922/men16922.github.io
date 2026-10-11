@@ -1,11 +1,21 @@
-// Articles are not self-hosted. Each platform is a tab; each article title links
-// out to its external page. `articleChannels` defines the tabs (labels/landing
-// URLs, localized for the UI language); `articles` holds the per-post entries
-// grouped by `platform` key. Posts are shown on both the EN and KO routes — only
-// the surrounding UI copy changes by language.
+// Each platform is a tab. Most articles link out to their external page; the
+// "portfolio" channel holds posts published on this site itself (markdown in
+// public/posts/<slug>/<lang>.md, rendered at /articles/<slug> and
+// /kr/articles/<slug>). `articleChannels` defines the tabs (labels/landing URLs,
+// localized for the UI language); `articles` holds the per-post entries grouped
+// by `platform` key. Posts without a `lang` are shown on both the EN and KO
+// routes; posts with one only on that language's route.
 
 export const articleChannels = {
   en: [
+    {
+      key: "portfolio",
+      title: "Portfolio",
+      description:
+        "Long-form write-ups published on this site, in English and Korean.",
+      url: "/articles",
+      tag: "Self-hosted"
+    },
     {
       key: "medium",
       title: "Medium",
@@ -46,6 +56,13 @@ export const articleChannels = {
   ],
   ko: [
     {
+      key: "portfolio",
+      title: "Portfolio",
+      description: "이 포트폴리오에 직접 발행한 글입니다.",
+      url: "/kr/articles",
+      tag: "Self-hosted"
+    },
+    {
       key: "medium",
       title: "Medium",
       description: "Global 채널",
@@ -85,6 +102,33 @@ export const articleChannels = {
 
 // `platform` matches an `articleChannels[].key`. `url` is the external post.
 export const articles = [
+  // ---- Portfolio (published on this site) ----
+  {
+    platform: "portfolio",
+    lang: "en",
+    slug: "tether",
+    title: "Fix the simulator, not the policy",
+    excerpt:
+      "How Tether uses NVIDIA Nemotron on Nebius Token Factory and NVIDIA Newton to find the physics a simulator gets wrong, and to say how sure it is.",
+    category: "Physical AI · Simulation",
+    readTime: "15 min read",
+    date: "2026-10-11",
+    url: "/articles/tether",
+    source: "/posts/tether/en.md"
+  },
+  {
+    platform: "portfolio",
+    lang: "ko",
+    slug: "tether",
+    title: "정책 대신 시뮬레이터를 고치기",
+    excerpt:
+      "Tether가 Nebius Token Factory의 NVIDIA Nemotron과 NVIDIA Newton으로 시뮬레이터가 틀린 물리를 찾아내고, 그 답을 얼마나 확신하는지까지 말하는 방법.",
+    category: "Physical AI · 시뮬레이션",
+    readTime: "13분",
+    date: "2026-10-11",
+    url: "/kr/articles/tether",
+    source: "/posts/tether/ko.md"
+  },
   // ---- Medium ----
   {
     platform: "medium",
@@ -185,8 +229,26 @@ export const articles = [
   }
 ];
 
-export function getArticlesByPlatform(platformKey) {
-  return articles.filter(article => article.platform === platformKey);
+export function getArticlesByPlatform(platformKey, lang) {
+  return articles.filter(
+    article =>
+      article.platform === platformKey &&
+      (!article.lang || !lang || article.lang === lang)
+  );
+}
+
+// A post published on this site, in the given language.
+export function getPost(slug, lang) {
+  return articles.find(
+    article => article.slug === slug && article.lang === lang
+  );
+}
+
+// The same post in the other language, if it exists.
+export function getTranslation(post) {
+  return articles.find(
+    article => article.slug === post.slug && article.lang !== post.lang
+  );
 }
 
 // Tab list for the UI language (labels/descriptions localized; same platforms).
