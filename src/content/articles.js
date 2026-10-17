@@ -107,12 +107,13 @@ export const articles = [
     platform: "portfolio",
     lang: "en",
     slug: "tether",
-    title: "Fix the simulator, not the policy",
+    title: "Fix the Simulator, Not the Policy",
     excerpt:
       "How Tether uses NVIDIA Nemotron on Nebius Token Factory and NVIDIA Newton to find the physics a simulator gets wrong, and to say how sure it is.",
     category: "Physical AI · Simulation",
     readTime: "15 min read",
     date: "2026-10-11",
+    updated: "2026-10-18",
     url: "/articles/tether",
     source: "/posts/tether/en.md"
   },
@@ -126,6 +127,7 @@ export const articles = [
     category: "Physical AI · 시뮬레이션",
     readTime: "13분",
     date: "2026-10-11",
+    updated: "2026-10-18",
     url: "/kr/articles/tether",
     source: "/posts/tether/ko.md"
   },

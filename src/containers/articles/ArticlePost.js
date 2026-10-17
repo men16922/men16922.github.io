@@ -30,7 +30,8 @@ export default function ArticlePost() {
         back: "← 글 목록",
         loading: "불러오는 중…",
         failed: "글을 불러오지 못했습니다.",
-        missing: "찾는 글이 없습니다."
+        missing: "찾는 글이 없습니다.",
+        updated: "수정"
       }
     : {
         home: "Home",
@@ -41,7 +42,8 @@ export default function ArticlePost() {
         back: "← All articles",
         loading: "Loading…",
         failed: "This article could not be loaded.",
-        missing: "No article here."
+        missing: "No article here.",
+        updated: "Updated"
       };
 
   useEffect(() => {
@@ -92,6 +94,7 @@ export default function ArticlePost() {
             <>
               <p className="post-meta">
                 {post.date} · {post.category} · {post.readTime}
+                {post.updated && ` · ${copy.updated} ${post.updated}`}
               </p>
               {failed && <p className="post-status">{copy.failed}</p>}
               {!failed && html === null && (
