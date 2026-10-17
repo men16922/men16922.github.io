@@ -1,54 +1,68 @@
-# Fix the simulator, not the policy
+# Fix the Simulator, Not the Policy
 
-*How Tether uses NVIDIA Nemotron on Nebius Token Factory and NVIDIA Newton to find the physics a simulator gets wrong, and to say how sure it is.*
+_How Tether uses NVIDIA Nemotron on Nebius Token Factory and NVIDIA Newton to find the physics a simulator gets wrong, and to say how sure it is._
 
 ![Tether](/posts/tether/img/cover.jpg)
 
-**Live demo:** https://tether-454741001655.us-central1.run.app (Studio at `/studio`) · **Code (Apache-2.0):** https://github.com/men16922/tether
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+**Live demo:** https://tether-454741001655.us-central1.run.app (Studio at `/studio`) · **Code (Apache-2.0):** https://github.com/men16922/tether · **Demo video (2:29):** https://youtu.be/cwXWt8HeNeg
 
 Built for the Nebius × NVIDIA Global AI Hackathon, Physical AI track.
 
+Tether estimates the physics gap of a pushing task from video or logs, shows where measurements are missing, and provides the next experiment and a verifiable setup.
+
+Start with a robot or factory pushing task: video or log → calibrated friction → prediction on pushes withheld from the fit. On public real EV-RealPhys data, the leave-one-push-out median stop error is 9.5–26.2 cm for logs and 2.5–10.8 cm for retained video tracks; one-push cracker video is not evaluable. This uses dataset calibration and mocap-assisted video inputs, not an independent phone-only test. The detailed conditions and per-object results are below.
+
 ---
 
-## A policy that is 98% right in the simulator
+## A Policy That Is 98% Right in the Simulator
 
-A braking controller is trained in simulation until it stops at the line nearly every time. On the real road it overshoots. Nothing is wrong with the controller. The road is wet from about 8.6 m onward, and nobody told the simulator.
+A robot pushing controller is trained in simulation until the box stops at the line nearly every time. A hidden Newton simulation with different surface physics exposes overshoot. The driving example below applies the same simplified sliding model at a different scale; it is not a real-road validation.
 
 This is the Sim2Real gap, and the usual fixes are slow or blunt:
 
 - **By hand:** watch the failures, guess a cause, edit the simulator, retrain, and repeat. Each cycle takes days, and a tuning script only adjusts the parameters someone thought of in advance.
-- **Domain randomization (DR):** randomize the physics widely and hope the policy becomes robust. In our tests, wide DR trained policies that were mediocre everywhere, scoring 0–38% in the hidden real world.
+- **Domain randomization (DR):** randomize the physics widely and hope the policy becomes robust. In our tests, wide DR trained policies that were mediocre everywhere, scoring 0–38% in the hidden simulation world.
 
 Tether takes a third route. It **measures** what is different, gives each value an interval it has checked, and only then retrains, randomizing over what the data still allows.
 
 ![Same policy, different physics](/posts/tether/img/gap.jpg)
 
-## One physics family, three industries
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+## One Physics Family, Three Industries
 
 We picked one problem and found it in three industries: something is launched toward a target and slides to a stop.
 
-| Domain | Scene | What Tether finds |
-|---|---|---|
-| Robot manipulation | an arm pushes a box onto a line | table friction, a wet patch, arm strength, camera tilt |
-| Autonomous vehicles | a car brakes to a stop line | tire-road friction, a wet or icy section, speed control, camera pitch |
-| Factory inspection | a pusher slides a part to a camera | part-rail friction, an oily section, pusher strength, camera tilt |
+_Data origin: Conceptual domain mapping, not measured results / 업무 개념 대응표._
 
-The equation underneath is the same: stop distance = v² / (2μg). A braking car with locked or ABS-limited wheels is Coulomb sliding, just like a box on a table.
+| Domain              | Scene                              | What Tether finds                                                     |
+| ------------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| Robot manipulation  | an arm pushes a box onto a line    | table friction, a wet patch, arm strength, camera tilt                |
+| Autonomous vehicles | a car brakes to a stop line        | tire-road friction, a wet or icy section, speed control, camera pitch |
+| Factory inspection  | a pusher slides a part to a camera | part-rail friction, an oily section, pusher strength, camera tilt     |
+
+The equation underneath is the same: stop distance = v² / (2μg). A braking car with locked or ABS-limited wheels is Coulomb sliding, like a box on a table.
 
 To run all three on one engine, driving uses Froude similarity. Lengths are scaled by 25, speeds by 5, and friction is unchanged, so v²/(2μg) holds at both scales. The fit runs at table scale; the pages and exports show full-size metres.
 
-## Architecture at a glance
+## Architecture at a Glance
 
 ![Tether pipeline](/posts/tether/img/pipeline-en.png)
 
+_Figure origin: Architecture schematic / 구조 설명도; not a measurement._
+
 - **Physics, rendering and checks:** NVIDIA Newton (Warp, on CPU). It renders the synthetic videos, replays every measured run, and hosts the parallel training worlds.
-- **Reasoning:** NVIDIA Nemotron 3 Super (`nvidia/nemotron-3-super-120b-a12b`) on Nebius Token Factory, via the OpenAI-compatible API with tool calling. The same agent also runs as an NVIDIA NeMo Agent Toolkit workflow (`nat run`, `nat serve`).
+- **Reasoning:** NVIDIA Nemotron 3 Super (`nvidia/nemotron-3-super-120b-a12b`) on Nebius Token Factory, through the OpenAI-compatible API with tool calling. The same agent also runs as an NVIDIA NeMo Agent Toolkit workflow (`nat run`, `nat serve`).
 - **Server and front end:** FastAPI with Server-Sent Events, and a no-build front end (three.js for the 3D replay). It is deployed on Google Cloud Run.
 - **Optional eyes:** NVIDIA Cosmos Reason 2 8B, run locally through llama.cpp, as a second opinion on whether an object slid or tipped.
 
 The rule that shaped everything else: **the language model chooses structures and experiments; least squares computes every number.** We arrived at it the hard way. More on that below.
 
-## Step 1. Measure: a camera from a sheet of paper
+The current Studio follows three steps: **Choose data → What we found → Use it**. It starts with a plain-language answer; measurement details, the agent notebook, parameter intervals and retraining each have their own topic view.
+
+## Step 1. Measure: A Camera From a Sheet of Paper
 
 Studio accepts a phone or roadside video, or the log a robot, car or pusher already writes. For video, the only calibration is a rectangle of known size in view: an A4 sheet on a table, or a painted box on the road.
 
@@ -61,7 +75,9 @@ On Newton-rendered video, slides come out within 1 mm and launch speeds within 0
 
 ![Measuring the runs in Studio](/posts/tether/img/measure.jpg)
 
-## Step 2. Diagnose: Nemotron as a tool-using scientist
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+## Step 2. Diagnose: Nemotron as a Tool-Using Scientist
 
 Token Factory exposes an OpenAI-compatible endpoint, so the client is ordinary:
 
@@ -90,7 +106,7 @@ TOOLS = [
 
 A model structure is a choice among a few effects: global friction, actuator gain, a region of different friction (where it starts and its friction), camera offset and pitch, and lens distortion.
 
-### Why the LLM does not pick numbers
+### Why the LLM Does Not Pick Numbers
 
 Our first agent asked Nemotron to propose parameter values and refine them. It never converged. It kept adjusting numbers and never committed. Splitting the job fixed that:
 
@@ -98,7 +114,7 @@ Our first agent asked Nemotron to propose parameter values and refine them. It n
 - `fit_hypothesis` fits those fields by least squares against every measurement: stop positions, launch motion and perception.
 - Nemotron reads the residuals and decides what to try next.
 
-### Telling the agent what is still unexplained
+### Telling the Agent What Is Still Unexplained
 
 The second failure was subtler. Stop distance depends on gain² / μ, so a model can match every stop by trading friction against actuator strength while getting the launch speeds wrong. Nemotron did exactly that.
 
@@ -114,7 +130,7 @@ if perception_rms > 0.003:
     warn.append("perceived target distances not explained: try camera_pitch_deg or lens_k")
 ```
 
-### What a session looks like
+### What a Session Looks Like
 
 Here are the roadside braking example's agent steps, in the full-size units the notebook shows:
 
@@ -131,7 +147,7 @@ commit          two-region friction model
 
 A session takes 5–32 Nemotron calls depending on the data (22 for this one), and about 40 s on the live server.
 
-### A cross-check that can overrule the agent
+### A Cross-Check That Can Overrule the Agent
 
 After the agent commits, a plain library search fits every structure in a fixed library and keeps the one with the lowest misfit, preferring fewer parameters on ties. If the agent's model leaves evidence unexplained and a library structure explains the data clearly better, the library structure wins, and the page says so.
 
@@ -139,9 +155,11 @@ A friction region the agent adds must also beat the plain model by more than the
 
 ![The agent's notebook in Studio](/posts/tether/img/notebook.jpg)
 
-## Step 3. Calibrate: intervals we checked
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
 
-Every value comes with a 90% interval from a bootstrap. Our first version resampled only the runs, and its video intervals excluded the truth. Tracking and scale errors are systematic: they are shared by every run, so resampling runs cannot see them.
+## Step 3. Calibrate: Intervals We Checked
+
+With enough data, fitted values come with 90% bootstrap intervals; a single usable push has no interval. Our first version resampled only the runs, and its video intervals excluded the truth. Tracking and scale errors are systematic: they are shared by every run, so resampling runs cannot see them.
 
 Each bootstrap replicate now also redraws a systematic error: sheet scale ±1%, tracked speed ±1.5%, and stop ±3 mm.
 
@@ -151,11 +169,15 @@ We measured whether the intervals hold:
 - **That term was tuned on those worlds,** so we checked it on fresh worlds from a different engine (MuJoCo, error model frozen): 88% of 120 values.
 - **The six Studio examples:** 21 of 22 hidden values fall inside their intervals. The miss is an oily section estimated to start at 0.291 m (truth 0.300 m); its interval stops 0.1 mm short.
 
+These are measured results for the stated experiments, not a coverage guarantee. The reliability indicator is a diagnostic policy; six usable pushes is a product threshold, and shared measurement bias can still pass the checks.
+
 A pattern check then looks for what the model still misses after subtracting it: deceleration that changes with speed, or along the surface. It replaced a size threshold that flagged 23 of 24 healthy worlds. On MuJoCo worlds with speed-dependent friction, it reports "depends on speed" in 24 of 24.
 
 ![The calibrated simulator](/posts/tether/img/calibrated.jpg)
 
-### The next experiment
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+### The Next Experiment
 
 Where the plausible models still disagree, Studio says so and names the runs that would settle it. The roadside example shows why that matters:
 
@@ -166,7 +188,9 @@ On a benchmark of 50 hidden worlds, reaching 95% success takes 5.76 runs with th
 
 ![Next experiment cards](/posts/tether/img/next-experiment.jpg)
 
-## Step 4. Retrain in parallel NVIDIA Newton worlds
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+## Step 4. Retrain in Parallel NVIDIA Newton Worlds
 
 The same learner trains a policy three ways:
 
@@ -190,36 +214,44 @@ def k(body_q: wp.array(dtype=wp.transform), bodies: wp.array(dtype=int), shapes:
 
 Hidden-world success, 24 targets:
 
-| Example | Current sim | Wide DR | Tether's ranges |
-|---|---|---|---|
-| Vehicle braking log | 42% | 0% | **100%** |
-| Robot phone video | 0% | 13% | **100%** |
-| Robot log | 63% | 0% | **100%** |
-| Pusher log | 0% | 38% | **100%** |
-| Roadside video | 29% | 8% | **96%** |
-| Short pushes only | 0% | 25% | **46%** |
+_Data origin: Newton synthetic; quoted recorded experiment / Newton 합성, 기존 기록 인용._
+
+| Example             | Current sim | Wide DR | Tether's ranges |
+| ------------------- | ----------- | ------- | --------------- |
+| Vehicle braking log | 42%         | 0%      | **100%**        |
+| Robot phone video   | 0%          | 13%     | **100%**        |
+| Robot log           | 63%         | 0%      | **100%**        |
+| Pusher log          | 0%          | 38%     | **100%**        |
+| Roadside video      | 29%         | 8%      | **96%**         |
+| Short pushes only   | 0%          | 25%     | **46%**         |
 
 The last row stays low for an honest reason: that log never measured the far table, and Studio says so before you train. The current simulator is confidently wrong; wide DR is mediocre everywhere.
 
 ![Policies retrained in parallel Newton worlds](/posts/tether/img/retrain.jpg)
 
-## Step 5. Verify in Newton, then export
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
 
-Before export, every measured run is replayed in the full Newton engine, from its own start and with its own launch, once with the exported physics and once with your current simulator.
+## Step 5. Verify in Newton, Then Export
 
-With the exported physics, the rms stop error is 4–8 mm on the four table-scale examples, where the uncalibrated simulators are off by 3–25 cm. On the two driving examples at full size, it is 18–27 cm, against 1.1–2.7 m. This is a self-consistency check of the export, since the examples were generated by Newton; the independent checks come in the next section.
+Before export, Tether reads calibration.json, checks the constants of newton_calibration.py without executing its code, and launches a separate Newton process. With at least six usable pushes, roughly the first 80% is used for calibration and the remaining pushes are withheld. With fewer pushes, the result is explicitly labelled a replay of data used for the fit.
+
+On these Newton synthetic examples, the new held-out RMS is 0.6–1.45 cm at table scale and 19.8–44.8 cm for the two full-scale driving examples. This validates exported-file execution and prediction in the engine that generated the examples; public real-data prediction is reported separately. The screenshot below is the earlier fit-replay interface, retained as a historical illustration.
 
 ![Verified in NVIDIA Newton](/posts/tether/img/verify.jpg)
+
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
 
 The export is written for the tools people already use:
 
 - **NVIDIA Newton:** `ShapeConfig` friction and the friction region.
-- **Isaac Lab:** an `EventTermCfg` whose randomization ranges are the measured 90% intervals. Instead of randomizing over a guess, you randomize over what the data still allows.
+- **Isaac Lab:** an `EventTermCfg` that fixes the table material and randomizes the object so average-combined dynamic friction spans the measured interval (with a clamp caveat). Per-variable ranges are not joint bootstrap draws; format checked against a stand-in, not executed here. Instead of randomizing over a guess, you randomize over what the data still allows.
 - **CARLA 0.9.16 (driving):** tire friction scaled by measured/simulated μ, a `static.trigger.friction` box over the wet section, and a braking-distance check. We checked this script against CARLA's documented API with a stand-in module, not inside CARLA itself.
 
 ![Export to CARLA](/posts/tether/img/export-carla.jpg)
 
-## Does it hold up outside its own simulator?
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+## Does It Hold Up Outside Its Own Simulator?
 
 Fitting data that Newton generated, with a Newton-family model, is only a consistency check. So we tested three ways the data could come from somewhere else.
 
@@ -227,12 +259,16 @@ Fitting data that Newton generated, with a Newton-family model, is only a consis
 
 ![Hidden worlds from a different engine](/posts/tether/img/cross-engine.jpg)
 
-| Hidden world (MuJoCo) | Current sim | Best-width DR | DR over the true distribution* | **Tether** |
-|---|---|---|---|---|
-| In-menu effects | 9% | 12% | 25% | **89%** |
-| + speed-dependent friction | 10% | 12% | 26% | **83%** |
-| + a second friction region | 10% | 13% | 25% | **83%** |
-| + a 1.5–3° tilt | 8% | 9% | 26% | **90%** |
+_Figure origin: MuJoCo synthetic benchmark / MuJoCo 합성 데이터의 벤치마크 결과._
+
+_Data origin: MuJoCo synthetic; recorded experiment / MuJoCo 합성, 기존 실험 기록._
+
+| Hidden world (MuJoCo)      | Current sim | Best-width DR | DR over the true distribution\* | **Tether** |
+| -------------------------- | ----------- | ------------- | ------------------------------- | ---------- |
+| In-menu effects            | 9%          | 12%           | 25%                             | **89%**    |
+| + speed-dependent friction | 10%         | 12%           | 26%                             | **83%**    |
+| + a second friction region | 10%         | 13%           | 25%                             | **83%**    |
+| + a 1.5–3° tilt            | 8%          | 9%            | 26%                             | **90%**    |
 
 \* An oracle no user could build. Tether is at least as good as the best DR in 94 of 96 worlds. On held-out runs, stop error is 1.6–2.0 cm against 18–30 cm for the current simulator.
 
@@ -240,21 +276,53 @@ Fitting data that Newton generated, with a Newton-family model, is only a consis
 
 ![Real objects](/posts/tether/img/real-objects.jpg)
 
-Four of five objects land within ±0.05 of the tilt test on both the log path and the video path. Mean error is 0.019 for the log and 0.029 for the video, against 0.082 for the paper's own estimator on the same sequences. The cracker box misses on every path. On real data the intervals are too narrow: they contain the tilt-test value for only 3 of 5 objects (log) and 2 of 5 (video).
+_Figure origin: Public real EV-RealPhys / 공개 실측. Friction values quoted; protocols differ; see inputs below._
 
-This benchmark also changed Tether. The dataset's clock pairs 240 Hz poses with 60 Hz images, so launch speeds read off a few frames can be 20–30% off. The fit now reads the whole shape of each slide, meaning how long it takes to stop, and that pins friction anyway.
+Four of five objects land within ±0.05 of the tilt test on both the log path and the video path. Mean error is 0.019 for the log and 0.029 for the video. The cracker box misses on every path. On real data the intervals are too narrow: they contain the tilt-test value for only 3 of 5 objects (log) and 2 of 4 evaluable video cases (one-push interval unavailable).
+
+Reference only: the paper reports mean error 0.082 (median 0.025) under a **different protocol: RGB-D online tracking and filtering**; this is not a same-input baseline.
+
+Inputs and exclusions: the video path uses the **dataset camera calibration**, a **tracking start projected from the mocap rest position**, and **object centre height from mocap**. It is not an independent phone-only test. Of 45 video tracks, 25 are retained and **20/45 excluded** (4 jumps, 8 backward tracks, 8 stopping too soon). The log path retains 45/45. No tilt-test friction enters either fit.
+
+_Data origin: Public EV-RealPhys measurements; matched training inputs / 공개 실측 EV-RealPhys, 동일 학습 입력 비교._
+
+| Input path | Tether μ MAE (matched training) | Quadratic μ median MAE | Quadratic μ mean MAE |
+| ---------- | ------------------------------- | ---------------------- | -------------------- |
+| log        | 0.019                           | 0.018                  | 0.019                |
+| video      | 0.029                           | 0.037                  | 0.034                |
+
+Same common training pool, release initialisation and exclusions for all three methods. One mustard-video push has too few moving frames for a positive quadratic fit; it is excluded from ALL methods’ training for this comparison (6 of 7 usable). Full-data Tether friction estimates in the preceding table remain separate. Held-out targets stay in the evaluation; eligibility is applied to the other training pushes only. These five-object results do not establish an accuracy advantage.
+
+| Object / path           | Held-out pushes | Tether stop median / p90 (cm) | Quadratic median (cm) | Quadratic mean (cm) |
+| ----------------------- | --------------- | ----------------------------- | --------------------- | ------------------- |
+| mug / log               | 10              | 11.0 / 54.5                   | 13.1 / 51.8           | 13.3 / 56.7         |
+| mug / video             | 8               | 8.2 / 34.0                    | 11.2 / 37.7           | 7.9 / 33.7          |
+| mustard bottle / log    | 10              | 13.0 / 40.2                   | 13.7 / 55.4           | 13.3 / 57.6         |
+| mustard bottle / video  | 7               | 2.5 / 6.1                     | 2.4 / 6.7             | 2.9 / 6.6           |
+| bleach cleanser / log   | 10              | 9.5 / 39.3                    | 9.5 / 38.4            | 9.3 / 41.0          |
+| bleach cleanser / video | 5               | 10.8 / 53.1                   | 10.4 / 63.6           | 12.8 / 65.8         |
+| pitcher / log           | 10              | 11.2 / 25.8                   | 13.2 / 28.1           | 11.9 / 25.6         |
+| pitcher / video         | 4               | 5.3 / 38.1                    | 9.8 / 29.7            | 7.3 / 34.9          |
+| cracker box / log       | 5               | 26.2 / 29.7                   | 25.7 / 28.8           | 25.8 / 29.5         |
+| cracker box / video     | 0               | not evaluable (one push)      | —                     | —                   |
+
+Leave-one-push-out: remove the held-out push first, form a common eligible training pool, select the structure and fit, then predict from the held-out measured launch speed alone. Held-out stop/track never enters training or its eligibility filter. Prediction errors are distinct from friction-estimation errors and still include launch-speed/tracking limits. No LLM calls are used.
+
+This benchmark also changed Tether. The source reports synchronized poses and images downsampled to 30 Hz; release segmentation and tracking can still affect measured launch speeds. The fit now reads the whole shape of each slide, meaning how long it takes to stop, and that pins friction anyway.
 
 **Which friction law?** On 52 public slow-motion clips of real slides (IDPP), the tracker follows 45. Constant deceleration, the Coulomb sliding Tether fits, explains each slide with a median R² of 0.9985, and it is the best of three laws on 36 of 45. Without a size reference or a known frame rate, though, the friction value itself is not identifiable. That is why Studio asks for a reference rectangle and the frame rate.
 
-## Is the LLM actually needed?
+## Is the LLM Actually Needed?
 
 We benchmarked the agent against simpler methods on hidden Newton worlds (Gap-Bench, on the live demo's [Benchmark](https://tether-454741001655.us-central1.run.app/benchmark) page), with 15 worlds per tier, reporting mean hidden-world success:
 
-| Tier | Nominal sim | DR | Rule-based | System ID | **Nemotron agent** |
-|---|---|---|---|---|---|
-| Closed (known parameters) | 46% | 0% | 100% | 100% | 100% |
-| Open (friction region or lens) | 39% | 6% | 83% | 100% | 100% |
-| Compound (region + lens + one more) | 22% | 14% | 54% | 97% | 96% |
+_Data origin: Newton synthetic; quoted recorded experiment / Newton 합성, 기존 기록 인용._
+
+| Tier                                | Nominal sim | DR  | Rule-based | System ID | **Nemotron agent** |
+| ----------------------------------- | ----------- | --- | ---------- | --------- | ------------------ |
+| Closed (known parameters)           | 46%         | 0%  | 100%       | 100%      | 100%               |
+| Open (friction region or lens)      | 39%         | 6%  | 83%        | 100%      | 100%               |
+| Compound (region + lens + one more) | 22%         | 14% | 54%        | 97%       | 96%                |
 
 The honest reading:
 
@@ -265,21 +333,29 @@ The honest reading:
 
 We also ran the Nemotron family on the open and compound tiers, with only 6 worlds each, so read this as a rough ranking. Super scored 100% and 99%, 3.5 Lightning 100% and 95% (and was the cheapest), Ultra 100% and 83%, and Nano 97% and 53%. Bigger was not better.
 
+A separate 35-case Studio comparison withholds the last ~20% of pushes before any model call: 24 in-menu MuJoCo worlds, six Newton examples and five public EV-RealPhys log objects. Mean case-median stop error is 3.027 cm for offline structure search and 3.018 cm for Nemotron, with or without the cross-check. The paired difference is -0.0096 cm (case-bootstrap 95% interval [-0.0288, 0.0000]), so this does not establish an accuracy advantage. All 35 cases completed, with zero failures and zero cross-check overrules.
+
+Exact fitted field-set matches were 29/30 for offline search and 3/30 for the agent; this metric checks free-variable choices, not recovered parameter values. The agent often adds lens freedom or ends with a smaller fitted set.
+
+Reported tokens × API prices total $0.3060624 under the approved cumulative $0.40 cap; this is not an invoice/balance check. Full live latency is retained for 23 fresh cases (median 14.03 s, p90 18.41 s); nine older cases lack it and three resumed cases have continuation timing only. Experiments are queued rather than physically executed, and user comprehension has not been tested. The contribution remains model review, explanations and next-experiment guidance.
+
 ## Ask Tether
 
-Studio has a chat panel that answers questions about your own session in English or Korean. It also runs on Nemotron via Token Factory, grounded in the session's numbers. Asked "Which number should I trust least, and why?" about a robot log, it named the camera-tilt estimate, whose interval spans about 8°, the widest of all the parameters, and suggested what extra runs would narrow it.
+Studio has a chat panel that answers questions about your own session in English or Korean. It also runs on Nemotron through Token Factory, grounded in the session's numbers. Asked "Which number should I trust least, and why?" about a robot log, it named the camera-tilt estimate, whose interval spans about 8°, the widest of all the parameters, and suggested what extra runs would narrow it.
 
 ![Ask Tether](/posts/tether/img/ask.jpg)
 
-## Lessons that cost us a day each
+_Figure origin: Newton synthetic recorded demo / Newton 합성 데이터의 기록 화면; not independent phone footage._
+
+## Lessons That Cost Us a Day Each
 
 - **Never trust n ≤ 6.** At 6 worlds per tier the LLM agent beat system ID 99% to 93%; at 15 worlds it was 96% to 97%.
 - **SciPy's default Nelder–Mead simplex** steps 5% of the starting value, and 0.00025 when the start is 0, so camera pitch and lens terms starting at 0 never moved. Pass `initial_simplex` with per-field steps.
 - **A friction region that starts with the same friction as the rest is flat in its start position,** so the fit never moves it. Use multiple starts at 0.6× and 1.4×.
 - **Judge tipping by peak tilt.** A cube that rolls twice and ends upright looks untipped if you only check its final pose.
-- **On small objects, help Cosmos.** At about 10 px wide, raw clips gave 17–33% tip recall. Tracked 448 px crops with a per-frame "tilted?" question reached 88% on slid vs tipped, so Cosmos stays a second opinion.
+- **On small objects, help Cosmos.** At about 10 px wide, raw clips gave 17–33% tip recall. Tracked 448 px crops with a per-frame "tilted?" question reached 88% at telling slid from tipped, so Cosmos stays a second opinion.
 
-## Shipping it on a near-zero budget
+## Shipping It on a Near-Zero Budget
 
 The live demo runs on Google Cloud Run, built from the committed files (`git archive HEAD`), so `.env` and local runs never leave the machine. The API key lives in Secret Manager. Three settings matter:
 
@@ -287,25 +363,27 @@ The live demo runs on Google Cloud Run, built from the committed files (`git arc
 - **Scale to zero** when nobody is visiting. The first visit after an idle spell takes about 15 s.
 - **`--no-cpu-throttling`,** because retraining keeps running between the page's polls. It takes about 170 s there, against about 36 s on a laptop, since Warp on CPU is single-threaded.
 
-The 122 tests run offline: they replay recorded Nemotron sessions, so CI needs no network and spends no credits. `make prove` recomputes the headline numbers offline.
+The local gate passed 148 tests on October 18, 2026. The tests run offline: they replay recorded Nemotron sessions, so CI needs no network and spends no credits. `make prove` recomputes the headline numbers offline.
 
-## What it cannot do yet
+## What It Cannot Do Yet
 
-- Most results use simulated data, from Newton and MuJoCo, so the truth can be revealed. Real-object results come from a public benchmark; our own phone recording with a reference sheet is not in the results yet.
+- Submission uses Newton synthetic samples to demonstrate the application flow and public EV-RealPhys results for real-object measurement evidence. The public video evaluation uses dataset calibration and mocap-assisted inputs. Independent phone + A4 validation is deferred until after submission and remains unperformed. MuJoCo provides the separate-engine evaluation.
 - On real data, the intervals are too narrow.
 - The physics is one family: launched, sliding to a stop. There is no grasping, steering or lane changing.
 - The CARLA export has not run inside CARLA. GR00T is not used.
 
-## Try it
+## Try It
 
 Open the [live Studio](https://tether-454741001655.us-central1.run.app/studio):
 
-1. Pick a field, such as **Autonomous vehicles**, press **Open an example**, and choose **Roadside camera: braking to a stop line**.
-2. Press **Track pushes**, then read Nemotron's **Agent notebook**.
-3. Under **Simulate your own**, hide the physics yourself, then press **Reveal the hidden physics** to see whether Tether found it.
+1. **Choose data:** select **Robot manipulation**, then **Phone video: a box on a table**. This is a Newton-rendered synthetic example; tracking and analysis start automatically.
+2. **What we found:** read the plain-language summary, compare estimates with the hidden answer, then open **Go deeper** for **How we measured**, **The AI's notebook**, **Every number**, or **Retrain test**.
+3. **Use it:** choose the target tool and download the configuration or report. Use the Newton check to distinguish evaluation on withheld pushes from a replay of the fitted data.
+
+To create a new test, choose **Make a virtual one in NVIDIA Newton** and set the hidden physics. Newton generates a video or log; Tether receives the measurements without those settings, and **Reveal the hidden physics** lets you compare afterward. For an uploaded video, check the reference corners in **How we measured** and press **Track pushes** to start analysis.
 
 Code, tests and the proof script are at https://github.com/men16922/tether.
 
 ---
 
-*Real-object footage: EV-RealPhys (Kandukuri, Strecke, Stueckler 2023, Max Planck Institute), CC BY-SA 4.0. Real slide clips: IDPP, Apache-2.0. Tether is an independent hackathon project, not affiliated with or endorsed by NVIDIA or Nebius.*
+_Real-object footage: EV-RealPhys (Kandukuri, Strecke, Stueckler 2023, Max Planck Institute), CC BY-SA 4.0. Real slide clips: IDPP, Apache-2.0. Tether is an independent hackathon project, not affiliated with or endorsed by NVIDIA or Nebius._
