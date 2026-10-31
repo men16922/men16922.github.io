@@ -106,6 +106,33 @@ export const articles = [
   {
     platform: "portfolio",
     lang: "en",
+    slug: "endeavor",
+    title:
+      "Flower Endeavor 1.0 Early Access Review: Benchmarking 5 Coding AI Agents",
+    excerpt:
+      "Comparing paid Big-Tech cloud models (GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon), the self-hostable frontier model Flower Endeavor 1.0, and free local Mac models (Qwen) across 41 real-world backend runs.",
+    category: "AI Agents · Benchmarks",
+    readTime: "8 min read",
+    date: "2026-11-01",
+    url: "/articles/endeavor",
+    source: "/posts/endeavor/en.md"
+  },
+  {
+    platform: "portfolio",
+    lang: "ko",
+    slug: "endeavor",
+    title: "Flower Endeavor 1.0 얼리 액세스 실사용 후기",
+    excerpt:
+      "유료 빅테크 클라우드 AI(GPT-6 Astra · Claude Opus 5.5 · Gemini 4 Argon), 사내 서버에 직접 설치(셀프 호스팅) 가능한 Flower Endeavor 1.0, 내 맥북 무료 로컬 모델(Qwen)을 41회 실전 코딩 과제로 비교 검증했습니다.",
+    category: "AI 에이전트 · 벤치마크",
+    readTime: "7분",
+    date: "2026-11-01",
+    url: "/kr/articles/endeavor",
+    source: "/posts/endeavor/ko.md"
+  },
+  {
+    platform: "portfolio",
+    lang: "en",
     slug: "tether",
     title: "Fix the Simulator, Not the Policy",
     excerpt:

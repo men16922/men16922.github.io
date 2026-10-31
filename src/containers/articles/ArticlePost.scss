@@ -156,6 +156,59 @@
     border-left: 3px solid var(--articles-border);
     color: var(--articles-muted);
   }
+
+  details {
+    margin: 18px 0 26px;
+    border: 1px solid var(--articles-border);
+    border-radius: 10px;
+    background: var(--articles-surface);
+    overflow: hidden;
+
+    summary {
+      padding: 13px 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.15s ease;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "▾";
+        font-size: 0.9rem;
+        color: var(--articles-muted);
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        color: var(--articles-accent);
+      }
+    }
+
+    &[open] > summary {
+      border-bottom: 1px solid var(--articles-border);
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    > :not(summary) {
+      margin-left: 18px;
+      margin-right: 18px;
+    }
+
+    > :nth-child(2) {
+      margin-top: 16px;
+    }
+  }
 }
 
 // Korean has no true italics; keep the subtitle upright
