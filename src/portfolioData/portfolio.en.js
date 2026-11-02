@@ -338,6 +338,14 @@ const educationInfo = {
           subHeader: "Google Cloud · Hack2skill Academy",
           duration: "2026",
           desc: "Completed hands-on learning focused on accelerating AI with Cloud Run - building, deploying, and orchestrating intelligent systems on Google Cloud"
+        },
+        {
+          schoolName:
+            "Google Cloud Gen AI Academy APAC 2026 - Cohort 3 Ideathon",
+          logo: require("../assets/images/hack2skill.png"),
+          subHeader: "Google Cloud · Hack2skill Academy",
+          duration: "2026",
+          desc: "Completed the Cohort 3 Ideathon challenge focused on designing and building production-ready AI agent solutions on Google Cloud"
         }
       ]
     },
@@ -565,6 +573,18 @@ const achievementSection = {
   subtitle:
     "Cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3 Ideathon",
+      subtitle: "Verified by Google Cloud & Hack2skill in 2026",
+      image: require("../assets/images/hack2skill.png"),
+      imageAlt: "Google Cloud Gen AI Academy Badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://certificate.hack2skill.com/verify/2026H2S09GCGENAIAPACC3I-P00593"
+        }
+      ]
+    },
     {
       title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3",
       subtitle: "Verified by Google Cloud & Hack2skill in 2026",
