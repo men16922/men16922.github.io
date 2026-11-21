@@ -106,6 +106,34 @@ export const articles = [
   {
     platform: "portfolio",
     lang: "en",
+    slug: "reanimator",
+    title:
+      "I Rebuilt a 1995 DOS Game in WebGL2—So Why Did It Break on Tick 59?",
+    excerpt:
+      "Reverse-engineering ABUSE.EXE past DOS/4GW, locking 11 motion fields at zero tolerance after a blind holdout failure, and scaling a clean-room 3D metroidvania with Kiro for Kiroween 2026.",
+    category: "Game Engineering · AI Agents",
+    readTime: "10 min read",
+    date: "2026-11-22",
+    url: "/articles/reanimator",
+    source: "/posts/reanimator/en.md"
+  },
+  {
+    platform: "portfolio",
+    lang: "ko",
+    slug: "reanimator",
+    title:
+      "1995년 DOS 게임을 브라우저에서 되살렸는데, 왜 59번째 틱에서 무너졌을까",
+    excerpt:
+      "ABUSE.EXE 바이너리 역공학부터 11개 필드 0-오차 물리 계약, 그리고 Kiro 스펙·훅·병렬 워크트리 서브에이전트로 Kiroween 2026 출품작 REANIMATOR를 구축한 기록.",
+    category: "게임 엔지니어링 · AI 에이전트",
+    readTime: "10분",
+    date: "2026-11-22",
+    url: "/kr/articles/reanimator",
+    source: "/posts/reanimator/ko.md"
+  },
+  {
+    platform: "portfolio",
+    lang: "en",
     slug: "endeavor",
     title:
       "Flower Endeavor 1.0 Early Access Review: Benchmarking 5 Coding AI Agents",
