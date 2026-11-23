@@ -601,6 +601,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Cloud Practitioner",
+      subtitle: "AWS에서 2026년 인증",
+      image: require("../assets/images/CLF.png"),
+      imageAlt: "AWS Certified Cloud Practitioner badge",
+      footerLink: [
+        {
+          name: "자격증",
+          url: "https://www.credly.com/badges/c936198a-a9cb-4350-be48-cb4607d13537/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Security - Specialty",
       subtitle: "AWS에서 2026년 인증",
       image: require("../assets/images/SCS.png"),

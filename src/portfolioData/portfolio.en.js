@@ -610,6 +610,18 @@ const achievementSection = {
       ]
     },
     {
+      title: "AWS Certified Cloud Practitioner",
+      subtitle: "Verified by AWS in 2026",
+      image: require("../assets/images/CLF.png"),
+      imageAlt: "AWS Certified Cloud Practitioner badge",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.credly.com/badges/c936198a-a9cb-4350-be48-cb4607d13537/public_url"
+        }
+      ]
+    },
+    {
       title: "AWS Certified Security - Specialty",
       subtitle: "Verified by AWS in 2026",
       image: require("../assets/images/SCS.png"),
