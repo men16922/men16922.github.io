@@ -1,6 +1,6 @@
 # Agent Brief
 
-Last Updated: 2026-07-05
+Last Updated: 2026-11-26
 
 This file is a compressed context for session start (≤60 lines). For details, open linked documents only when needed.
 
@@ -9,10 +9,10 @@ This file is a compressed context for session start (≤60 lines). For details, 
 ## Snapshot
 
 React 16 (Create React App) personal portfolio site based on the developerFolio template, deployed to
-GitHub Pages at https://men16922.github.io. Content lives in `src/portfolio.js` and `src/portfolioData/*`
-(EN/KO). `fetch.js` pulls GitHub data at build time (ONLINE); the failing Medium RSS fetch was removed.
-Latest published content includes the 2026 AWS Machine Learning Engineer - Associate certification.
-Baseline: `make check` green (1 render-smoke test passes offline).
+GitHub Pages at https://men16922.github.io (`master` at `9714700`). Content lives in `src/portfolio.js`,
+`src/portfolioData/*` (EN/KO), and `src/content/articles.js` (`public/posts/*`). Published sections
+include the Articles page, `Awards & Recognition` (`Achievement.js`), and `talkSection.featured` (`Talks.js`).
+Baseline: `make check` (1/1) and `make smoke-local` green offline; Actions `Build and Deploy` green.
 
 ## Active Work
 
