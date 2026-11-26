@@ -561,9 +561,26 @@ Spring Boot 기반 국내외 결제·간편결제 연동 (Cafe24, LG Pay, Alipay
 };
 
 const achievementSection = {
-  title: emoji("Certifications 🏆"),
-  subtitle: "기술 브랜드를 뒷받침하는 클라우드·쿠버네티스·엔지니어링 자격",
+  title: emoji("Awards & Certifications 🏆"),
+  subtitle:
+    "대외 수상 실적과 기술 브랜드를 뒷받침하는 클라우드·쿠버네티스·엔지니어링 자격",
   achievementsCards: [
+    {
+      category: "Awards",
+      title:
+        "Google Cloud Gen AI Academy APAC Cohort 3 — Special Recognition 수상 ($600)",
+      subtitle:
+        "Great Vector Search Implementation (Reflections Journal) · APAC 우수 빌더 5인 선정 · Google Cloud & Hack2skill · 2026.09",
+      image: require("../assets/images/hack2skill-special-recognition.png"),
+      imageAlt:
+        "Google Cloud Gen AI Academy APAC Cohort 3 Special Recognition 수상",
+      footerLink: [
+        {
+          name: "LinkedIn 포스트",
+          url: "https://www.linkedin.com/posts/hack2skill_special-recognition-activity-7510974847473225729-WT67"
+        }
+      ]
+    },
     {
       title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3 Ideathon",
       subtitle: "Google Cloud & Hack2skill에서 2026년 인증",
@@ -818,6 +835,7 @@ const achievementSection = {
       ]
     },
     {
+      category: "Awards",
       title: "현대오토에버 기술대시보드 - 최우수상 수상",
       subtitle: "2025.06",
       image: require("../assets/images/hyundaiLogo2.png"),
@@ -847,6 +865,29 @@ const talkSection = {
   subtitle: emoji(
     "커뮤니티 활동, 발표, 해커톤 출품을 포트폴리오 허브에 연결합니다"
   ),
+  featured: [
+    {
+      badge: "공식 피처링 · 2026.11",
+      title:
+        "Flower Labs 공식 LinkedIn 피처링 — Endeavor 1.0 독립 코딩 벤치마크",
+      subtitle:
+        "3개 파일 복합 버그 수정 독립 평가(10/10 만점 · 속도 2위)가 Flower Labs 공식 LinkedIn 채널에 인용·피처링되고 리뷰 원문으로 연결되었습니다.",
+      image: require("../assets/images/flower-labs-featured.jpg"),
+      imageAlt: "Flower Labs 공식 LinkedIn 피처링 — 최병민",
+      links: [
+        {
+          name: "LinkedIn 포스트",
+          url: "https://www.linkedin.com/posts/flwrlabs_how-good-is-endeavor-for-coding-endeavor-activity-7529453852333355008-bAtR",
+          external: true
+        },
+        {
+          name: "리뷰 원문",
+          url: "/kr/articles/endeavor",
+          external: false
+        }
+      ]
+    }
+  ],
   talks: [
     {
       title: "AWS Community Builder",

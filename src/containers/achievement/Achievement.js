@@ -21,15 +21,24 @@ export default function Achievement() {
     return null;
   }
 
-  // Group certifications into categories (inferred from the title).
-  const CATEGORY_ORDER = ["AWS", "Kubernetes", "Google Cloud", "misc"];
+  // Group certifications into categories (explicit card.category or inferred from title).
+  const CATEGORY_ORDER = [
+    "Awards",
+    "AWS",
+    "Kubernetes",
+    "Google Cloud",
+    "misc"
+  ];
   const CATEGORY_LABEL = {
+    Awards: "Awards & Recognition",
     AWS: "AWS",
     Kubernetes: "Kubernetes",
     "Google Cloud": "Google Cloud",
     misc: "Etc"
   };
-  const categoryOf = title => {
+  const categoryOf = card => {
+    if (card.category) return card.category;
+    const title = card.title;
     if (/AWS/i.test(title)) return "AWS";
     if (/Kubernetes/i.test(title)) return "Kubernetes";
     if (/Google/i.test(title)) return "Google Cloud";
@@ -37,7 +46,7 @@ export default function Achievement() {
   };
   const grouped = {};
   achievementSection.achievementsCards.forEach(card => {
-    const key = categoryOf(card.title);
+    const key = categoryOf(card);
     (grouped[key] = grouped[key] || []).push(card);
   });
   const orderedCategories = CATEGORY_ORDER.filter(key => grouped[key]);

@@ -30,6 +30,72 @@ export default function Talks() {
           </p>
           <Button text={ctaText} className="talk-cta" href={articlesPath} />
         </div>
+        {talkSection.featured && talkSection.featured.length > 0 && (
+          <div className="talk-featured-grid">
+            {talkSection.featured.map((item, i) => (
+              <div
+                key={i}
+                className={
+                  isDark ? "dark-mode talk-featured-card" : "talk-featured-card"
+                }
+              >
+                {item.image && (
+                  <div className="talk-featured-media">
+                    <img
+                      src={item.image}
+                      alt={item.imageAlt || item.title}
+                      className="talk-featured-image"
+                    />
+                  </div>
+                )}
+                <div className="talk-featured-body">
+                  {item.badge && (
+                    <span className="talk-featured-badge">{item.badge}</span>
+                  )}
+                  <h3
+                    className={
+                      isDark
+                        ? "dark-mode talk-featured-title"
+                        : "talk-featured-title"
+                    }
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className={
+                      isDark
+                        ? "dark-mode talk-featured-subtitle"
+                        : "talk-featured-subtitle"
+                    }
+                  >
+                    {item.subtitle}
+                  </p>
+                  {item.links && item.links.length > 0 && (
+                    <div className="talk-featured-actions">
+                      {item.links.map((link, j) => (
+                        <a
+                          key={j}
+                          href={link.url}
+                          target={link.external ? "_blank" : undefined}
+                          rel={
+                            link.external ? "noopener noreferrer" : undefined
+                          }
+                          className={
+                            j === 0
+                              ? "talk-featured-btn"
+                              : "talk-featured-btn talk-featured-btn-secondary"
+                          }
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </Fade>
   );

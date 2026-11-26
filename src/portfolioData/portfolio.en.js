@@ -569,10 +569,25 @@ Global/domestic payment & simplified-payment integrations on Spring Boot (Cafe24
 };
 
 const achievementSection = {
-  title: emoji("Certifications 🏆"),
+  title: emoji("Awards & Certifications 🏆"),
   subtitle:
-    "Cloud, Kubernetes, and engineering credentials that support the brand story",
+    "Awards and cloud, Kubernetes, and engineering credentials that support the brand story",
   achievementsCards: [
+    {
+      category: "Awards",
+      title:
+        "Google Cloud Gen AI Academy APAC Cohort 3 — Special Recognition ($600 Prize)",
+      subtitle:
+        "Great Vector Search Implementation (Reflections Journal) · 1 of 5 APAC recipients · Google Cloud & Hack2skill · Sep 2026",
+      image: require("../assets/images/hack2skill-special-recognition.png"),
+      imageAlt: "Google Cloud Gen AI Academy APAC Cohort 3 Special Recognition",
+      footerLink: [
+        {
+          name: "LinkedIn Post",
+          url: "https://www.linkedin.com/posts/hack2skill_special-recognition-activity-7510974847473225729-WT67"
+        }
+      ]
+    },
     {
       title: "Google Cloud Gen AI Academy APAC 2026 - Cohort 3 Ideathon",
       subtitle: "Verified by Google Cloud & Hack2skill in 2026",
@@ -827,6 +842,7 @@ const achievementSection = {
       ]
     },
     {
+      category: "Awards",
       title: "Hyundai AutoEver Tech Dashboard - Grand Prize",
       subtitle: "2025.06",
       image: require("../assets/images/hyundaiLogo2.png"),
@@ -856,6 +872,29 @@ const talkSection = {
   subtitle: emoji(
     "Community presence, conference speaking, and competitive builds that strengthen the portfolio hub"
   ),
+  featured: [
+    {
+      badge: "Official Feature · Nov 2026",
+      title:
+        "Featured by Flower Labs (Official LinkedIn) — Endeavor 1.0 Independent Coding Benchmark",
+      subtitle:
+        "Independent three-file coding evaluation (10/10, 2nd fastest) cited and featured on Flower Labs' official LinkedIn with a direct link to the full review.",
+      image: require("../assets/images/flower-labs-featured.jpg"),
+      imageAlt: "Flower Labs Official LinkedIn Feature — Paul Choi",
+      links: [
+        {
+          name: "LinkedIn Post",
+          url: "https://www.linkedin.com/posts/flwrlabs_how-good-is-endeavor-for-coding-endeavor-activity-7529453852333355008-bAtR",
+          external: true
+        },
+        {
+          name: "Full Review",
+          url: "/articles/endeavor",
+          external: false
+        }
+      ]
+    }
+  ],
   talks: [
     {
       title: "AWS Community Builder",
