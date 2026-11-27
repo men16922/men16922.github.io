@@ -437,30 +437,6 @@ const bigProjects = {
   subtitle: "기술 브랜딩의 중심이 되는 대표 프로젝트",
   projects: [
     {
-      image: require("../assets/images/mythos.png"),
-      projectName: "Project Mythos",
-      projectDesc: `
-세계:접속은 AI가 만들어내는 서사와 전투를 반복하며 자신만의 세계를 완성해 가는 1인용 SF 루프형 TRPG/CRPG입니다.`,
-      footerLink: [
-        {
-          name: "GitHub",
-          url: "https://github.com/men16922/MythOS"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/nexxa.png"),
-      projectName: "Nexxa",
-      projectDesc: `
-스스로의 실패에서 학습하는 자율 AI 개발 에이전트 — Builder → Reviewer → Verifier 루프로 같은 실수를 반복하지 않습니다.`,
-      footerLink: [
-        {
-          name: "GitHub",
-          url: "https://github.com/men16922/Nexxa"
-        }
-      ]
-    },
-    {
       image: require("../assets/images/gcp.png"),
       projectName: "EV Charging Agent — Google Cloud",
       projectDesc: `

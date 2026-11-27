@@ -445,30 +445,6 @@ const bigProjects = {
     "Representative projects and platform work that define my technical brand",
   projects: [
     {
-      image: require("../assets/images/mythos.png"),
-      projectName: "Project Mythos",
-      projectDesc: `
-A single-player sci-fi, loop-based TRPG/CRPG where AI-generated narrative and combat let you build out your own world.`,
-      footerLink: [
-        {
-          name: "GitHub",
-          url: "https://github.com/men16922/MythOS"
-        }
-      ]
-    },
-    {
-      image: require("../assets/images/nexxa.png"),
-      projectName: "Nexxa",
-      projectDesc: `
-A self-learning autonomous AI dev agent: a Builder → Reviewer → Verifier loop that learns from its own failures so it stops repeating mistakes.`,
-      footerLink: [
-        {
-          name: "GitHub",
-          url: "https://github.com/men16922/Nexxa"
-        }
-      ]
-    },
-    {
       image: require("../assets/images/gcp.png"),
       projectName: "EV Charging Agent — Google Cloud",
       projectDesc: `
